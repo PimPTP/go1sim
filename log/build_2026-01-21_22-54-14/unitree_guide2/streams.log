@@ -1,0 +1,320 @@
+[0.033s] Invoking command in '/home/pim0ubuntu/go1_ws/build/unitree_guide2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/pim0ubuntu/go1_ws/build/unitree_guide2 -- -j4 -l4
+[0.105s] [35m[1mConsolidate compiler generated dependencies of target junior_ctrl[0m
+[0.231s] [  3%] [32mBuilding CXX object CMakeFiles/junior_ctrl.dir/src/main.cpp.o[0m
+[0.233s] [  7%] [32mBuilding CXX object CMakeFiles/junior_ctrl.dir/src/FSM/FSM.cpp.o[0m
+[0.238s] [ 14%] [32mBuilding CXX object CMakeFiles/junior_ctrl.dir/src/control/ControlFrame.cpp.o[0m
+[0.238s] [ 14%] [32mBuilding CXX object CMakeFiles/junior_ctrl.dir/src/FSM/State_ShakeHand.cpp.o[0m
+[2.013s] In file included from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/message/LowlevelCmd.h:8[m[K,
+[2.013s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/control/CtrlComponents.h:7[m[K,
+[2.013s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSMState.h:10[m[K,
+[2.014s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSM.h:8[m[K,
+[2.014s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/src/FSM/FSM.cpp:4[m[K:
+[2.014s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/common/mathTools.h:[m[K In constructor ‘[01m[KAvgCov::AvgCov(unsigned int, std::string, bool, unsigned int, unsigned int, double)[m[K’:
+[2.014s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/common/mathTools.h:278:17:[m[K [01;35m[Kwarning: [m[K‘[01m[KAvgCov::_valueName[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+[2.014s]   278 |     std::string [01;35m[K_valueName[m[K;
+[2.014s]       |                 [01;35m[K^~~~~~~~~~[m[K
+[2.014s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/common/mathTools.h:272:10:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Kbool AvgCov::_avgOnly[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+[2.014s]   272 |     bool [01;35m[K_avgOnly[m[K;
+[2.014s]       |          [01;35m[K^~~~~~~~[m[K
+[2.016s] In file included from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/message/LowlevelCmd.h:8[m[K,
+[2.016s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/control/CtrlComponents.h:7[m[K,
+[2.016s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSMState.h:10[m[K,
+[2.016s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSM.h:8[m[K,
+[2.016s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/src/FSM/FSM.cpp:4[m[K:
+[2.016s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/common/mathTools.h:246:5:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+[2.016s]   246 |     [01;35m[KAvgCov[m[K(unsigned int size, std::string name, bool avgOnly=false, unsigned int showPeriod=1000, unsigned int waitCount=5000, double zoomFactor=10000)
+[2.016s]       |     [01;35m[K^~~~~~[m[K
+[2.063s] In file included from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/message/LowlevelState.h:10[m[K,
+[2.063s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/control/CtrlComponents.h:8[m[K,
+[2.063s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSMState.h:10[m[K,
+[2.063s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSM.h:8[m[K,
+[2.065s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/src/FSM/FSM.cpp:4[m[K:
+[2.065s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/interface/CmdPanel.h:[m[K In member function ‘[01m[Kvirtual void* CmdPanel::run(void*)[m[K’:
+[2.066s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/interface/CmdPanel.h:50:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Karg[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[2.066s]    50 |     virtual void* run([01;35m[Kvoid *arg[m[K){return NULL;}
+[2.066s]       |                       [01;35m[K~~~~~~^~~[m[K
+[2.268s] In file included from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/message/LowlevelCmd.h:8[m[K,
+[2.269s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/control/CtrlComponents.h:7[m[K,
+[2.269s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSMState.h:10[m[K,
+[2.269s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSM.h:8[m[K,
+[2.269s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/control/ControlFrame.h:7[m[K,
+[2.269s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/src/control/ControlFrame.cpp:4[m[K:
+[2.269s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/common/mathTools.h:[m[K In constructor ‘[01m[KAvgCov::AvgCov(unsigned int, std::string, bool, unsigned int, unsigned int, double)[m[K’:
+[2.269s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/common/mathTools.h:278:17:[m[K [01;35m[Kwarning: [m[K‘[01m[KAvgCov::_valueName[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+[2.269s]   278 |     std::string [01;35m[K_valueName[m[K;
+[2.269s]       |                 [01;35m[K^~~~~~~~~~[m[K
+[2.269s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/common/mathTools.h:272:10:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Kbool AvgCov::_avgOnly[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+[2.269s]   272 |     bool [01;35m[K_avgOnly[m[K;
+[2.269s]       |          [01;35m[K^~~~~~~~[m[K
+[2.269s] In file included from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/message/LowlevelCmd.h:8[m[K,
+[2.269s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/control/CtrlComponents.h:7[m[K,
+[2.269s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSMState.h:10[m[K,
+[2.269s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSM.h:8[m[K,
+[2.269s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/control/ControlFrame.h:7[m[K,
+[2.269s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/src/control/ControlFrame.cpp:4[m[K:
+[2.269s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/common/mathTools.h:246:5:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+[2.269s]   246 |     [01;35m[KAvgCov[m[K(unsigned int size, std::string name, bool avgOnly=false, unsigned int showPeriod=1000, unsigned int waitCount=5000, double zoomFactor=10000)
+[2.269s]       |     [01;35m[K^~~~~~[m[K
+[2.273s] In file included from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/message/LowlevelCmd.h:8[m[K,
+[2.273s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/control/CtrlComponents.h:7[m[K,
+[2.273s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSMState.h:10[m[K,
+[2.274s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/State_ShakeHand.h:4[m[K,
+[2.274s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/src/FSM/State_ShakeHand.cpp:2[m[K:
+[2.274s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/common/mathTools.h:[m[K In constructor ‘[01m[KAvgCov::AvgCov(unsigned int, std::string, bool, unsigned int, unsigned int, double)[m[K’:
+[2.274s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/common/mathTools.h:278:17:[m[K [01;35m[Kwarning: [m[K‘[01m[KAvgCov::_valueName[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+[2.274s]   278 |     std::string [01;35m[K_valueName[m[K;
+[2.274s]       |                 [01;35m[K^~~~~~~~~~[m[K
+[2.274s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/common/mathTools.h:272:10:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Kbool AvgCov::_avgOnly[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+[2.274s]   272 |     bool [01;35m[K_avgOnly[m[K;
+[2.274s]       |          [01;35m[K^~~~~~~~[m[K
+[2.274s] In file included from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/message/LowlevelCmd.h:8[m[K,
+[2.274s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/control/CtrlComponents.h:7[m[K,
+[2.274s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSMState.h:10[m[K,
+[2.275s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/State_ShakeHand.h:4[m[K,
+[2.275s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/src/FSM/State_ShakeHand.cpp:2[m[K:
+[2.275s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/common/mathTools.h:246:5:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+[2.275s]   246 |     [01;35m[KAvgCov[m[K(unsigned int size, std::string name, bool avgOnly=false, unsigned int showPeriod=1000, unsigned int waitCount=5000, double zoomFactor=10000)
+[2.275s]       |     [01;35m[K^~~~~~[m[K
+[2.305s] In file included from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/message/LowlevelCmd.h:8[m[K,
+[2.305s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/control/CtrlComponents.h:7[m[K,
+[2.305s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSMState.h:10[m[K,
+[2.305s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSM.h:8[m[K,
+[2.305s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/control/ControlFrame.h:7[m[K,
+[2.305s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/src/main.cpp:9[m[K:
+[2.305s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/common/mathTools.h:[m[K In constructor ‘[01m[KAvgCov::AvgCov(unsigned int, std::string, bool, unsigned int, unsigned int, double)[m[K’:
+[2.305s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/common/mathTools.h:278:17:[m[K [01;35m[Kwarning: [m[K‘[01m[KAvgCov::_valueName[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+[2.305s]   278 |     std::string [01;35m[K_valueName[m[K;
+[2.305s]       |                 [01;35m[K^~~~~~~~~~[m[K
+[2.305s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/common/mathTools.h:272:10:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Kbool AvgCov::_avgOnly[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+[2.305s]   272 |     bool [01;35m[K_avgOnly[m[K;
+[2.305s]       |          [01;35m[K^~~~~~~~[m[K
+[2.306s] In file included from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/message/LowlevelCmd.h:8[m[K,
+[2.306s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/control/CtrlComponents.h:7[m[K,
+[2.306s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSMState.h:10[m[K,
+[2.306s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSM.h:8[m[K,
+[2.306s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/control/ControlFrame.h:7[m[K,
+[2.306s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/src/main.cpp:9[m[K:
+[2.306s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/common/mathTools.h:246:5:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+[2.306s]   246 |     [01;35m[KAvgCov[m[K(unsigned int size, std::string name, bool avgOnly=false, unsigned int showPeriod=1000, unsigned int waitCount=5000, double zoomFactor=10000)
+[2.306s]       |     [01;35m[K^~~~~~[m[K
+[2.328s] In file included from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/message/LowlevelState.h:10[m[K,
+[2.328s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/control/CtrlComponents.h:8[m[K,
+[2.328s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSMState.h:10[m[K,
+[2.328s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/State_ShakeHand.h:4[m[K,
+[2.329s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/src/FSM/State_ShakeHand.cpp:2[m[K:
+[2.329s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/interface/CmdPanel.h:[m[K In member function ‘[01m[Kvirtual void* CmdPanel::run(void*)[m[K’:
+[2.329s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/interface/CmdPanel.h:50:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Karg[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[2.329s]    50 |     virtual void* run([01;35m[Kvoid *arg[m[K){return NULL;}
+[2.329s]       |                       [01;35m[K~~~~~~^~~[m[K
+[2.345s] In file included from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/message/LowlevelState.h:10[m[K,
+[2.345s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/control/CtrlComponents.h:8[m[K,
+[2.345s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSMState.h:10[m[K,
+[2.345s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSM.h:8[m[K,
+[2.345s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/control/ControlFrame.h:7[m[K,
+[2.346s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/src/control/ControlFrame.cpp:4[m[K:
+[2.349s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/interface/CmdPanel.h:[m[K In member function ‘[01m[Kvirtual void* CmdPanel::run(void*)[m[K’:
+[2.349s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/interface/CmdPanel.h:50:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Karg[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[2.349s]    50 |     virtual void* run([01;35m[Kvoid *arg[m[K){return NULL;}
+[2.349s]       |                       [01;35m[K~~~~~~^~~[m[K
+[2.357s] In file included from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/message/LowlevelState.h:10[m[K,
+[2.357s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/control/CtrlComponents.h:8[m[K,
+[2.357s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSMState.h:10[m[K,
+[2.357s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSM.h:8[m[K,
+[2.357s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/control/ControlFrame.h:7[m[K,
+[2.357s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/src/main.cpp:9[m[K:
+[2.357s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/interface/CmdPanel.h:[m[K In member function ‘[01m[Kvirtual void* CmdPanel::run(void*)[m[K’:
+[2.357s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/interface/CmdPanel.h:50:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Karg[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[2.357s]    50 |     virtual void* run([01;35m[Kvoid *arg[m[K){return NULL;}
+[2.357s]       |                       [01;35m[K~~~~~~^~~[m[K
+[5.037s] In file included from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSMState.h:10[m[K,
+[5.037s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSM.h:8[m[K,
+[5.037s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/src/FSM/FSM.cpp:4[m[K:
+[5.037s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/control/CtrlComponents.h:[m[K In destructor ‘[01m[KCtrlComponents::~CtrlComponents()[m[K’:
+[5.037s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/control/CtrlComponents.h:35:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of abstract class type ‘[01m[KIOInterface[m[K’ which has non-virtual destructor will cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+[5.037s]    35 |         [01;35m[Kdelete ioInter[m[K;
+[5.037s]       |         [01;35m[K^~~~~~~~~~~~~~[m[K
+[5.199s] In file included from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/src/FSM/FSM.cpp:4[m[K:
+[5.199s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSM.h:[m[K In member function ‘[01m[Kvoid FSMStateList::deletePtr()[m[K’:
+[5.199s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSM.h:38:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of abstract class type ‘[01m[KFSMState[m[K’ which has non-virtual destructor will cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+[5.199s]    38 |         [01;35m[Kdelete invalid[m[K;
+[5.199s]       |         [01;35m[K^~~~~~~~~~~~~~[m[K
+[5.199s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSM.h:39:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of polymorphic class type ‘[01m[KState_Passive[m[K’ which has non-virtual destructor might cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+[5.199s]    39 |         [01;35m[Kdelete passive[m[K;
+[5.199s]       |         [01;35m[K^~~~~~~~~~~~~~[m[K
+[5.199s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSM.h:40:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of polymorphic class type ‘[01m[KState_FixedStand[m[K’ which has non-virtual destructor might cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+[5.199s]    40 |         [01;35m[Kdelete fixedStand[m[K;
+[5.200s]       |         [01;35m[K^~~~~~~~~~~~~~~~~[m[K
+[5.200s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSM.h:41:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of polymorphic class type ‘[01m[KState_FreeStand[m[K’ which has non-virtual destructor might cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+[5.200s]    41 |         [01;35m[Kdelete freeStand[m[K;
+[5.200s]       |         [01;35m[K^~~~~~~~~~~~~~~~[m[K
+[5.200s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSM.h:42:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of polymorphic class type ‘[01m[KState_Trotting[m[K’ which has non-virtual destructor might cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+[5.200s]    42 |         [01;35m[Kdelete trotting[m[K;
+[5.200s]       |         [01;35m[K^~~~~~~~~~~~~~~[m[K
+[5.200s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSM.h:43:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of polymorphic class type ‘[01m[KState_BalanceTest[m[K’ which has non-virtual destructor might cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+[5.200s]    43 |         [01;35m[Kdelete balanceTest[m[K;
+[5.200s]       |         [01;35m[K^~~~~~~~~~~~~~~~~~[m[K
+[5.200s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSM.h:44:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of polymorphic class type ‘[01m[KState_SwingTest[m[K’ which has non-virtual destructor might cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+[5.200s]    44 |         [01;35m[Kdelete swingTest[m[K;
+[5.200s]       |         [01;35m[K^~~~~~~~~~~~~~~~[m[K
+[5.201s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSM.h:45:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of polymorphic class type ‘[01m[KState_StepTest[m[K’ which has non-virtual destructor might cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+[5.201s]    45 |         [01;35m[Kdelete stepTest[m[K;
+[5.201s]       |         [01;35m[K^~~~~~~~~~~~~~~[m[K
+[5.541s] In file included from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSMState.h:10[m[K,
+[5.541s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSM.h:8[m[K,
+[5.541s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/control/ControlFrame.h:7[m[K,
+[5.541s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/src/control/ControlFrame.cpp:4[m[K:
+[5.541s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/control/CtrlComponents.h:[m[K In destructor ‘[01m[KCtrlComponents::~CtrlComponents()[m[K’:
+[5.541s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/control/CtrlComponents.h:35:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of abstract class type ‘[01m[KIOInterface[m[K’ which has non-virtual destructor will cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+[5.541s]    35 |         [01;35m[Kdelete ioInter[m[K;
+[5.541s]       |         [01;35m[K^~~~~~~~~~~~~~[m[K
+[5.616s] In file included from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSMState.h:10[m[K,
+[5.616s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/State_ShakeHand.h:4[m[K,
+[5.616s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/src/FSM/State_ShakeHand.cpp:2[m[K:
+[5.616s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/control/CtrlComponents.h:[m[K In destructor ‘[01m[KCtrlComponents::~CtrlComponents()[m[K’:
+[5.617s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/control/CtrlComponents.h:35:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of abstract class type ‘[01m[KIOInterface[m[K’ which has non-virtual destructor will cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+[5.617s]    35 |         [01;35m[Kdelete ioInter[m[K;
+[5.617s]       |         [01;35m[K^~~~~~~~~~~~~~[m[K
+[5.640s] In file included from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSMState.h:10[m[K,
+[5.640s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSM.h:8[m[K,
+[5.640s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/control/ControlFrame.h:7[m[K,
+[5.640s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/src/main.cpp:9[m[K:
+[5.640s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/control/CtrlComponents.h:[m[K In destructor ‘[01m[KCtrlComponents::~CtrlComponents()[m[K’:
+[5.640s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/control/CtrlComponents.h:35:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of abstract class type ‘[01m[KIOInterface[m[K’ which has non-virtual destructor will cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+[5.640s]    35 |         [01;35m[Kdelete ioInter[m[K;
+[5.640s]       |         [01;35m[K^~~~~~~~~~~~~~[m[K
+[5.704s] In file included from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/control/ControlFrame.h:7[m[K,
+[5.704s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/src/control/ControlFrame.cpp:4[m[K:
+[5.704s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSM.h:[m[K In member function ‘[01m[Kvoid FSMStateList::deletePtr()[m[K’:
+[5.705s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSM.h:38:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of abstract class type ‘[01m[KFSMState[m[K’ which has non-virtual destructor will cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+[5.705s]    38 |         [01;35m[Kdelete invalid[m[K;
+[5.705s]       |         [01;35m[K^~~~~~~~~~~~~~[m[K
+[5.705s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSM.h:39:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of polymorphic class type ‘[01m[KState_Passive[m[K’ which has non-virtual destructor might cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+[5.705s]    39 |         [01;35m[Kdelete passive[m[K;
+[5.705s]       |         [01;35m[K^~~~~~~~~~~~~~[m[K
+[5.705s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSM.h:40:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of polymorphic class type ‘[01m[KState_FixedStand[m[K’ which has non-virtual destructor might cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+[5.705s]    40 |         [01;35m[Kdelete fixedStand[m[K;
+[5.705s]       |         [01;35m[K^~~~~~~~~~~~~~~~~[m[K
+[5.705s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSM.h:41:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of polymorphic class type ‘[01m[KState_FreeStand[m[K’ which has non-virtual destructor might cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+[5.705s]    41 |         [01;35m[Kdelete freeStand[m[K;
+[5.705s]       |         [01;35m[K^~~~~~~~~~~~~~~~[m[K
+[5.705s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSM.h:42:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of polymorphic class type ‘[01m[KState_Trotting[m[K’ which has non-virtual destructor might cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+[5.705s]    42 |         [01;35m[Kdelete trotting[m[K;
+[5.705s]       |         [01;35m[K^~~~~~~~~~~~~~~[m[K
+[5.705s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSM.h:43:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of polymorphic class type ‘[01m[KState_BalanceTest[m[K’ which has non-virtual destructor might cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+[5.706s]    43 |         [01;35m[Kdelete balanceTest[m[K;
+[5.706s]       |         [01;35m[K^~~~~~~~~~~~~~~~~~[m[K
+[5.706s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSM.h:44:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of polymorphic class type ‘[01m[KState_SwingTest[m[K’ which has non-virtual destructor might cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+[5.706s]    44 |         [01;35m[Kdelete swingTest[m[K;
+[5.706s]       |         [01;35m[K^~~~~~~~~~~~~~~~[m[K
+[5.706s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSM.h:45:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of polymorphic class type ‘[01m[KState_StepTest[m[K’ which has non-virtual destructor might cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+[5.706s]    45 |         [01;35m[Kdelete stepTest[m[K;
+[5.706s]       |         [01;35m[K^~~~~~~~~~~~~~~[m[K
+[5.779s] In file included from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/control/ControlFrame.h:7[m[K,
+[5.779s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/src/main.cpp:9[m[K:
+[5.780s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSM.h:[m[K In member function ‘[01m[Kvoid FSMStateList::deletePtr()[m[K’:
+[5.780s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSM.h:38:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of abstract class type ‘[01m[KFSMState[m[K’ which has non-virtual destructor will cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+[5.780s]    38 |         [01;35m[Kdelete invalid[m[K;
+[5.780s]       |         [01;35m[K^~~~~~~~~~~~~~[m[K
+[5.780s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSM.h:39:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of polymorphic class type ‘[01m[KState_Passive[m[K’ which has non-virtual destructor might cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+[5.780s]    39 |         [01;35m[Kdelete passive[m[K;
+[5.780s]       |         [01;35m[K^~~~~~~~~~~~~~[m[K
+[5.780s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSM.h:40:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of polymorphic class type ‘[01m[KState_FixedStand[m[K’ which has non-virtual destructor might cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+[5.780s]    40 |         [01;35m[Kdelete fixedStand[m[K;
+[5.780s]       |         [01;35m[K^~~~~~~~~~~~~~~~~[m[K
+[5.780s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSM.h:41:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of polymorphic class type ‘[01m[KState_FreeStand[m[K’ which has non-virtual destructor might cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+[5.780s]    41 |         [01;35m[Kdelete freeStand[m[K;
+[5.780s]       |         [01;35m[K^~~~~~~~~~~~~~~~[m[K
+[5.784s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSM.h:42:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of polymorphic class type ‘[01m[KState_Trotting[m[K’ which has non-virtual destructor might cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+[5.784s]    42 |         [01;35m[Kdelete trotting[m[K;
+[5.784s]       |         [01;35m[K^~~~~~~~~~~~~~~[m[K
+[5.784s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSM.h:43:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of polymorphic class type ‘[01m[KState_BalanceTest[m[K’ which has non-virtual destructor might cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+[5.784s]    43 |         [01;35m[Kdelete balanceTest[m[K;
+[5.784s]       |         [01;35m[K^~~~~~~~~~~~~~~~~~[m[K
+[5.785s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSM.h:44:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of polymorphic class type ‘[01m[KState_SwingTest[m[K’ which has non-virtual destructor might cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+[5.785s]    44 |         [01;35m[Kdelete swingTest[m[K;
+[5.785s]       |         [01;35m[K^~~~~~~~~~~~~~~~[m[K
+[5.785s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSM.h:45:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of polymorphic class type ‘[01m[KState_StepTest[m[K’ which has non-virtual destructor might cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+[5.785s]    45 |         [01;35m[Kdelete stepTest[m[K;
+[5.785s]       |         [01;35m[K^~~~~~~~~~~~~~~[m[K
+[6.123s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/src/main.cpp:[m[K In function ‘[01m[Kvoid ShutDown(int)[m[K’:
+[6.124s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/src/main.cpp:26:19:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ksig[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[6.124s]    26 | void ShutDown([01;35m[Kint sig[m[K)
+[6.124s]       |               [01;35m[K~~~~^~~[m[K
+[7.686s] [ 17%] [32m[1mLinking CXX executable junior_ctrl[0m
+[9.804s] [100%] Built target junior_ctrl
+[9.817s] Invoked command in '/home/pim0ubuntu/go1_ws/build/unitree_guide2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/pim0ubuntu/go1_ws/build/unitree_guide2 -- -j4 -l4
+[9.819s] Invoking command in '/home/pim0ubuntu/go1_ws/build/unitree_guide2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/pim0ubuntu/go1_ws/build/unitree_guide2
+[9.825s] -- Install configuration: ""
+[9.825s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include
+[9.826s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2
+[9.826s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/interface
+[9.826s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/interface/WirelessHandle.h
+[9.826s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/interface/IOROS2.h
+[9.826s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/interface/IOInterface.h
+[9.826s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/interface/KeyBoard.h
+[9.826s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/interface/CmdPanel.h
+[9.826s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/interface/IOSDK.h
+[9.826s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/common
+[9.826s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/common/unitreeRobot.h
+[9.826s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/common/mathTypes.h
+[9.826s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/common/enumClass.h
+[9.826s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/common/mathTools.h
+[9.826s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/common/LowPassFilter.h
+[9.826s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/common/timeMarker.h
+[9.826s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/common/unitreeLeg.h
+[9.826s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/common/PyPlot.h
+[9.826s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/message
+[9.826s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/message/unitree_joystick.h
+[9.826s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/message/LowlevelState.h
+[9.827s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/message/LowlevelCmd.h
+[9.827s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/control
+[9.827s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/control/Estimator.h
+[9.827s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/control/BalanceCtrl.h
+[9.827s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/control/ControlFrame.h
+[9.827s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/control/CtrlComponents.h
+[9.827s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/thirdParty
+[9.827s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/thirdParty/quadProgpp
+[9.827s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/thirdParty/quadProgpp/QuadProg++.hh
+[9.827s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/thirdParty/quadProgpp/Array.hh
+[9.827s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/thirdParty/matplotlibcpp.h
+[9.827s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/FSM
+[9.827s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/FSM/FSMState.h
+[9.827s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/FSM/State_Trotting.h
+[9.827s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/FSM/State_StepTest.h
+[9.827s] -- Installing: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/FSM/State_ShakeHand.h
+[9.828s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/FSM/State_FixedStand.h
+[9.828s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/FSM/FSM.h
+[9.828s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/FSM/State_Passive.h
+[9.828s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/FSM/State_move_base.h
+[9.828s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/FSM/State_BalanceTest.h
+[9.828s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/FSM/State_SwingTest.h
+[9.828s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/FSM/State_FreeStand.h
+[9.828s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/Gait
+[9.828s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/Gait/GaitGenerator.h
+[9.828s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/Gait/WaveGenerator.h
+[9.828s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/Gait/FeetEndCal.h
+[9.828s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2//launch
+[9.828s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2//launch/spawn_go1.launch.py
+[9.828s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2//launch/launch_world.launch.py
+[9.828s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2//config
+[9.828s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2//config/gazebo_params.yaml
+[9.828s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2//worlds
+[9.828s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2//worlds/empty.sdf
+[9.828s] -- Installing: /home/pim0ubuntu/go1_ws/install/unitree_guide2/lib/unitree_guide2/junior_ctrl
+[9.844s] -- Set runtime path of "/home/pim0ubuntu/go1_ws/install/unitree_guide2/lib/unitree_guide2/junior_ctrl" to ""
+[9.844s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/ament_index/resource_index/package_run_dependencies/unitree_guide2
+[9.844s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/ament_index/resource_index/parent_prefix_path/unitree_guide2
+[9.844s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2/environment/ament_prefix_path.sh
+[9.844s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2/environment/ament_prefix_path.dsv
+[9.844s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2/environment/path.sh
+[9.844s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2/environment/path.dsv
+[9.844s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2/local_setup.bash
+[9.844s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2/local_setup.sh
+[9.844s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2/local_setup.zsh
+[9.844s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2/local_setup.dsv
+[9.844s] -- Installing: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2/package.dsv
+[9.844s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/ament_index/resource_index/packages/unitree_guide2
+[9.844s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2/cmake/unitree_guide2Config.cmake
+[9.844s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2/cmake/unitree_guide2Config-version.cmake
+[9.844s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2/package.xml
+[9.846s] Invoked command in '/home/pim0ubuntu/go1_ws/build/unitree_guide2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/pim0ubuntu/go1_ws/build/unitree_guide2

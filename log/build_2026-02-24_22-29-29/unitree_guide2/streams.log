@@ -1,0 +1,118 @@
+[0.051s] Invoking command in '/home/pim0ubuntu/go1_ws/build/unitree_guide2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/pim0ubuntu/go1_ws/build/unitree_guide2 -- -j4 -l4
+[0.240s] [  3%] [32mBuilding CXX object CMakeFiles/junior_ctrl.dir/src/FSM/State_ShakeHand.cpp.o[0m
+[2.305s] In file included from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/message/LowlevelCmd.h:8[m[K,
+[2.306s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/control/CtrlComponents.h:7[m[K,
+[2.306s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSMState.h:10[m[K,
+[2.306s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/State_ShakeHand.h:4[m[K,
+[2.306s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/src/FSM/State_ShakeHand.cpp:3[m[K:
+[2.306s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/common/mathTools.h:[m[K In constructor ‘[01m[KAvgCov::AvgCov(unsigned int, std::string, bool, unsigned int, unsigned int, double)[m[K’:
+[2.306s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/common/mathTools.h:278:17:[m[K [01;35m[Kwarning: [m[K‘[01m[KAvgCov::_valueName[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+[2.306s]   278 |     std::string [01;35m[K_valueName[m[K;
+[2.306s]       |                 [01;35m[K^~~~~~~~~~[m[K
+[2.306s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/common/mathTools.h:272:10:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Kbool AvgCov::_avgOnly[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+[2.306s]   272 |     bool [01;35m[K_avgOnly[m[K;
+[2.306s]       |          [01;35m[K^~~~~~~~[m[K
+[2.307s] In file included from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/message/LowlevelCmd.h:8[m[K,
+[2.307s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/control/CtrlComponents.h:7[m[K,
+[2.307s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSMState.h:10[m[K,
+[2.307s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/State_ShakeHand.h:4[m[K,
+[2.307s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/src/FSM/State_ShakeHand.cpp:3[m[K:
+[2.307s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/common/mathTools.h:246:5:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+[2.307s]   246 |     [01;35m[KAvgCov[m[K(unsigned int size, std::string name, bool avgOnly=false, unsigned int showPeriod=1000, unsigned int waitCount=5000, double zoomFactor=10000)
+[2.307s]       |     [01;35m[K^~~~~~[m[K
+[2.365s] In file included from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/message/LowlevelState.h:10[m[K,
+[2.365s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/control/CtrlComponents.h:8[m[K,
+[2.365s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSMState.h:10[m[K,
+[2.365s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/State_ShakeHand.h:4[m[K,
+[2.365s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/src/FSM/State_ShakeHand.cpp:3[m[K:
+[2.366s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/interface/CmdPanel.h:[m[K In member function ‘[01m[Kvirtual void* CmdPanel::run(void*)[m[K’:
+[2.366s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/interface/CmdPanel.h:50:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Karg[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[2.366s]    50 |     virtual void* run([01;35m[Kvoid *arg[m[K){return NULL;}
+[2.366s]       |                       [01;35m[K~~~~~~^~~[m[K
+[5.541s] In file included from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSMState.h:10[m[K,
+[5.541s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/State_ShakeHand.h:4[m[K,
+[5.541s]                  from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/src/FSM/State_ShakeHand.cpp:3[m[K:
+[5.541s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/control/CtrlComponents.h:[m[K In destructor ‘[01m[KCtrlComponents::~CtrlComponents()[m[K’:
+[5.541s] [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/control/CtrlComponents.h:35:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of abstract class type ‘[01m[KIOInterface[m[K’ which has non-virtual destructor will cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+[5.541s]    35 |         [01;35m[Kdelete ioInter[m[K;
+[5.541s]       |         [01;35m[K^~~~~~~~~~~~~~[m[K
+[7.600s] [  7%] [32m[1mLinking CXX executable junior_ctrl[0m
+[10.952s] [100%] Built target junior_ctrl
+[10.966s] Invoked command in '/home/pim0ubuntu/go1_ws/build/unitree_guide2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/pim0ubuntu/go1_ws/build/unitree_guide2 -- -j4 -l4
+[10.967s] Invoking command in '/home/pim0ubuntu/go1_ws/build/unitree_guide2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/pim0ubuntu/go1_ws/build/unitree_guide2
+[10.975s] -- Install configuration: ""
+[10.976s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include
+[10.976s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2
+[10.976s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/interface
+[10.976s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/interface/WirelessHandle.h
+[10.976s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/interface/IOROS2.h
+[10.976s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/interface/IOInterface.h
+[10.976s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/interface/KeyBoard.h
+[10.976s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/interface/CmdPanel.h
+[10.976s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/interface/IOSDK.h
+[10.976s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/common
+[10.976s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/common/unitreeRobot.h
+[10.976s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/common/mathTypes.h
+[10.976s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/common/enumClass.h
+[10.976s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/common/mathTools.h
+[10.977s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/common/LowPassFilter.h
+[10.977s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/common/timeMarker.h
+[10.977s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/common/unitreeLeg.h
+[10.977s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/common/PyPlot.h
+[10.977s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/message
+[10.977s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/message/unitree_joystick.h
+[10.977s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/message/LowlevelState.h
+[10.977s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/message/LowlevelCmd.h
+[10.977s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/control
+[10.977s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/control/Estimator.h
+[10.977s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/control/BalanceCtrl.h
+[10.977s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/control/ControlFrame.h
+[10.977s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/control/CtrlComponents.h
+[10.977s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/thirdParty
+[10.977s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/thirdParty/quadProgpp
+[10.977s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/thirdParty/quadProgpp/QuadProg++.hh
+[10.977s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/thirdParty/quadProgpp/Array.hh
+[10.977s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/thirdParty/matplotlibcpp.h
+[10.977s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/FSM
+[10.977s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/FSM/FSMState.h
+[10.977s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/FSM/State_Trotting.h
+[10.978s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/FSM/State_StepTest.h
+[10.978s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/FSM/VisionUDP.h
+[10.978s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/FSM/State_ShakeHand.h
+[10.978s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/FSM/State_FixedStand.h
+[10.978s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/FSM/Process.h
+[10.978s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/FSM/FSM.h
+[10.978s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/FSM/State_Passive.h
+[10.978s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/FSM/State_move_base.h
+[10.978s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/FSM/State_BalanceTest.h
+[10.978s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/FSM/State_SwingTest.h
+[10.978s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/FSM/State_FreeStand.h
+[10.978s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/Gait
+[10.978s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/Gait/GaitGenerator.h
+[10.978s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/Gait/WaveGenerator.h
+[10.978s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/Gait/FeetEndCal.h
+[10.978s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2//launch
+[10.979s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2//launch/spawn_go1.launch.py
+[10.979s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2//launch/launch_world.launch.py
+[10.979s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2//config
+[10.979s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2//config/gazebo_params.yaml
+[10.979s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2//worlds
+[10.979s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2//worlds/empty.sdf
+[10.979s] -- Installing: /home/pim0ubuntu/go1_ws/install/unitree_guide2/lib/unitree_guide2/junior_ctrl
+[11.001s] -- Set runtime path of "/home/pim0ubuntu/go1_ws/install/unitree_guide2/lib/unitree_guide2/junior_ctrl" to ""
+[11.002s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/ament_index/resource_index/package_run_dependencies/unitree_guide2
+[11.002s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/ament_index/resource_index/parent_prefix_path/unitree_guide2
+[11.002s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2/environment/ament_prefix_path.sh
+[11.002s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2/environment/ament_prefix_path.dsv
+[11.002s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2/environment/path.sh
+[11.002s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2/environment/path.dsv
+[11.002s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2/local_setup.bash
+[11.002s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2/local_setup.sh
+[11.002s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2/local_setup.zsh
+[11.002s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2/local_setup.dsv
+[11.002s] -- Installing: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2/package.dsv
+[11.002s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/ament_index/resource_index/packages/unitree_guide2
+[11.002s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2/cmake/unitree_guide2Config.cmake
+[11.003s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2/cmake/unitree_guide2Config-version.cmake
+[11.003s] -- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2/package.xml
+[11.004s] Invoked command in '/home/pim0ubuntu/go1_ws/build/unitree_guide2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/pim0ubuntu/go1_ws/build/unitree_guide2

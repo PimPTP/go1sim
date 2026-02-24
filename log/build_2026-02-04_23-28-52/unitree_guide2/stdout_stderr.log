@@ -1,0 +1,168 @@
+[35m[1mConsolidate compiler generated dependencies of target junior_ctrl[0m
+[  3%] [32mBuilding CXX object CMakeFiles/junior_ctrl.dir/src/FSM/State_ShakeHand.cpp.o[0m
+In file included from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/message/LowlevelCmd.h:8[m[K,
+                 from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/control/CtrlComponents.h:7[m[K,
+                 from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSMState.h:10[m[K,
+                 from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/State_ShakeHand.h:4[m[K,
+                 from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/src/FSM/State_ShakeHand.cpp:3[m[K:
+[01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/common/mathTools.h:[m[K In constructor ‘[01m[KAvgCov::AvgCov(unsigned int, std::string, bool, unsigned int, unsigned int, double)[m[K’:
+[01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/common/mathTools.h:278:17:[m[K [01;35m[Kwarning: [m[K‘[01m[KAvgCov::_valueName[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  278 |     std::string [01;35m[K_valueName[m[K;
+      |                 [01;35m[K^~~~~~~~~~[m[K
+[01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/common/mathTools.h:272:10:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Kbool AvgCov::_avgOnly[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  272 |     bool [01;35m[K_avgOnly[m[K;
+      |          [01;35m[K^~~~~~~~[m[K
+In file included from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/message/LowlevelCmd.h:8[m[K,
+                 from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/control/CtrlComponents.h:7[m[K,
+                 from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSMState.h:10[m[K,
+                 from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/State_ShakeHand.h:4[m[K,
+                 from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/src/FSM/State_ShakeHand.cpp:3[m[K:
+[01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/common/mathTools.h:246:5:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  246 |     [01;35m[KAvgCov[m[K(unsigned int size, std::string name, bool avgOnly=false, unsigned int showPeriod=1000, unsigned int waitCount=5000, double zoomFactor=10000)
+      |     [01;35m[K^~~~~~[m[K
+In file included from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/message/LowlevelState.h:10[m[K,
+                 from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/control/CtrlComponents.h:8[m[K,
+                 from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSMState.h:10[m[K,
+                 from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/State_ShakeHand.h:4[m[K,
+                 from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/src/FSM/State_ShakeHand.cpp:3[m[K:
+[01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/interface/CmdPanel.h:[m[K In member function ‘[01m[Kvirtual void* CmdPanel::run(void*)[m[K’:
+[01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/interface/CmdPanel.h:50:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Karg[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   50 |     virtual void* run([01;35m[Kvoid *arg[m[K){return NULL;}
+      |                       [01;35m[K~~~~~~^~~[m[K
+In file included from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSMState.h:10[m[K,
+                 from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/State_ShakeHand.h:4[m[K,
+                 from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/src/FSM/State_ShakeHand.cpp:3[m[K:
+[01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/control/CtrlComponents.h:[m[K In destructor ‘[01m[KCtrlComponents::~CtrlComponents()[m[K’:
+[01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/control/CtrlComponents.h:35:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of abstract class type ‘[01m[KIOInterface[m[K’ which has non-virtual destructor will cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+   35 |         [01;35m[Kdelete ioInter[m[K;
+      |         [01;35m[K^~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/src/FSM/State_ShakeHand.cpp:4[m[K:
+[01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/Process.h:[m[K At global scope:
+[01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/Process.h:4:8:[m[K [01;31m[Kerror: [m[Kusing typedef-name ‘[01m[Kusing Vec3 = struct Eigen::Matrix<double, 3, 1>[m[K’ after ‘[01m[Kstruct[m[K’
+    4 | struct [01;31m[KVec3[m[K {
+      |        [01;31m[K^~~~[m[K
+In file included from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/message/LowlevelCmd.h:7[m[K,
+                 from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/control/CtrlComponents.h:7[m[K,
+                 from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSMState.h:10[m[K,
+                 from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/State_ShakeHand.h:4[m[K,
+                 from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/src/FSM/State_ShakeHand.cpp:3[m[K:
+[01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/common/mathTypes.h:16:7:[m[K [01;36m[Knote: [m[K‘[01m[Kusing Vec3 = struct Eigen::Matrix<double, 3, 1>[m[K’ has a previous declaration here
+   16 | using [01;36m[KVec3[m[K = typename Eigen::Matrix<double, 3, 1>;
+      |       [01;36m[K^~~~[m[K
+In file included from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/src/FSM/State_ShakeHand.cpp:4[m[K:
+[01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/Process.h:21:16:[m[K [01;31m[Kerror: [m[Kthe type ‘[01m[Kconst Vec3[m[K’ {aka ‘[01m[Kconst Eigen::Matrix<double, 3, 1>[m[K’} of ‘[01m[Kconstexpr[m[K’ variable ‘[01m[KHIP_FR[m[K’ is not literal
+   21 | constexpr Vec3 [01;31m[KHIP_FR[m[K = {0.1881, -0.04675, 0.0};
+      |                [01;31m[K^~~~~~[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/Core:295[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Dense:1[m[K,
+                 from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/common/mathTypes.h:7[m[K,
+                 from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/message/LowlevelCmd.h:7[m[K,
+                 from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/control/CtrlComponents.h:7[m[K,
+                 from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/FSMState.h:10[m[K,
+                 from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/State_ShakeHand.h:4[m[K,
+                 from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/src/FSM/State_ShakeHand.cpp:3[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:178:7:[m[K [01;36m[Knote: [m[K‘[01m[KEigen::Matrix<double, 3, 1>[m[K’ is not literal because:
+  178 | class [01;36m[KMatrix[m[K
+      |       [01;36m[K^~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:178:7:[m[K [01;36m[Knote: [m[K  ‘[01m[KEigen::Matrix<double, 3, 1>[m[K’ is not an aggregate, does not have a trivial default constructor, and has no ‘[01m[Kconstexpr[m[K’ constructor that is not a copy or move constructor
+In file included from [01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/src/FSM/State_ShakeHand.cpp:4[m[K:
+[01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/Process.h:22:16:[m[K [01;31m[Kerror: [m[Kthe type ‘[01m[Kconst Vec3[m[K’ {aka ‘[01m[Kconst Eigen::Matrix<double, 3, 1>[m[K’} of ‘[01m[Kconstexpr[m[K’ variable ‘[01m[KCAM_BASE[m[K’ is not literal
+   22 | constexpr Vec3 [01;31m[KCAM_BASE[m[K = {0.21, 0.0, 0.25};
+      |                [01;31m[K^~~~~~~~[m[K
+[01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/Process.h:[m[K In function ‘[01m[KVec3 camToBase(const Vec3&)[m[K’:
+[01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/Process.h:27:17:[m[K [01;31m[Kerror: [m[Kinvalid operands of types ‘[01m[K<unresolved overloaded function type>[m[K’ and ‘[01m[K<unresolved overloaded function type>[m[K’ to binary ‘[01m[Koperator+[m[K’
+   27 |         [32m[Kp_cam.x[m[K [01;31m[K+[m[K [34m[KCAM_BASE.x[m[K,
+      |         [32m[K~~~~~~~[m[K [01;31m[K^[m[K [34m[K~~~~~~~~~~[m[K
+      |               [32m[K|[m[K            [34m[K|[m[K
+      |               [32m[K|[m[K            [34m[K<unresolved overloaded function type>[m[K
+      |               [32m[K<unresolved overloaded function type>[m[K
+[01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/Process.h:28:17:[m[K [01;31m[Kerror: [m[Kinvalid operands of types ‘[01m[K<unresolved overloaded function type>[m[K’ and ‘[01m[K<unresolved overloaded function type>[m[K’ to binary ‘[01m[Koperator+[m[K’
+   28 |         [32m[Kp_cam.y[m[K [01;31m[K+[m[K [34m[KCAM_BASE.y[m[K,
+      |         [32m[K~~~~~~~[m[K [01;31m[K^[m[K [34m[K~~~~~~~~~~[m[K
+      |               [32m[K|[m[K            [34m[K|[m[K
+      |               [32m[K|[m[K            [34m[K<unresolved overloaded function type>[m[K
+      |               [32m[K<unresolved overloaded function type>[m[K
+[01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/Process.h:29:17:[m[K [01;31m[Kerror: [m[Kinvalid operands of types ‘[01m[K<unresolved overloaded function type>[m[K’ and ‘[01m[K<unresolved overloaded function type>[m[K’ to binary ‘[01m[Koperator+[m[K’
+   29 |         [32m[Kp_cam.z[m[K [01;31m[K+[m[K [34m[KCAM_BASE.z[m[K
+      |         [32m[K~~~~~~~[m[K [01;31m[K^[m[K [34m[K~~~~~~~~~~[m[K
+      |               [32m[K|[m[K            [34m[K|[m[K
+      |               [32m[K|[m[K            [34m[K<unresolved overloaded function type>[m[K
+      |               [32m[K<unresolved overloaded function type>[m[K
+[01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/Process.h:30:5:[m[K [01;31m[Kerror: [m[Kcould not convert ‘[01m[K{<expression error>, <expression error>, <expression error>}[m[K’ from ‘[01m[K<brace-enclosed initializer list>[m[K’ to ‘[01m[KVec3[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 1>[m[K’}
+   30 |     [01;31m[K}[m[K;
+      |     [01;31m[K^[m[K
+      |     [01;31m[K|[m[K
+      |     [01;31m[K<brace-enclosed initializer list>[m[K
+[01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/Process.h:[m[K In function ‘[01m[KVec3 baseToLegFR(const Vec3&)[m[K’:
+[01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/Process.h:36:18:[m[K [01;31m[Kerror: [m[Kinvalid operands of types ‘[01m[K<unresolved overloaded function type>[m[K’ and ‘[01m[K<unresolved overloaded function type>[m[K’ to binary ‘[01m[Koperator-[m[K’
+   36 |         [32m[Kp_base.x[m[K [01;31m[K-[m[K [34m[KHIP_FR.x[m[K,
+      |         [32m[K~~~~~~~~[m[K [01;31m[K^[m[K [34m[K~~~~~~~~[m[K
+      |                [32m[K|[m[K          [34m[K|[m[K
+      |                [32m[K|[m[K          [34m[K<unresolved overloaded function type>[m[K
+      |                [32m[K<unresolved overloaded function type>[m[K
+[01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/Process.h:37:18:[m[K [01;31m[Kerror: [m[Kinvalid operands of types ‘[01m[K<unresolved overloaded function type>[m[K’ and ‘[01m[K<unresolved overloaded function type>[m[K’ to binary ‘[01m[Koperator-[m[K’
+   37 |         [32m[Kp_base.y[m[K [01;31m[K-[m[K [34m[KHIP_FR.y[m[K,
+      |         [32m[K~~~~~~~~[m[K [01;31m[K^[m[K [34m[K~~~~~~~~[m[K
+      |                [32m[K|[m[K          [34m[K|[m[K
+      |                [32m[K|[m[K          [34m[K<unresolved overloaded function type>[m[K
+      |                [32m[K<unresolved overloaded function type>[m[K
+[01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/Process.h:38:18:[m[K [01;31m[Kerror: [m[Kinvalid operands of types ‘[01m[K<unresolved overloaded function type>[m[K’ and ‘[01m[K<unresolved overloaded function type>[m[K’ to binary ‘[01m[Koperator-[m[K’
+   38 |         [32m[Kp_base.z[m[K [01;31m[K-[m[K [34m[KHIP_FR.z[m[K
+      |         [32m[K~~~~~~~~[m[K [01;31m[K^[m[K [34m[K~~~~~~~~[m[K
+      |                [32m[K|[m[K          [34m[K|[m[K
+      |                [32m[K|[m[K          [34m[K<unresolved overloaded function type>[m[K
+      |                [32m[K<unresolved overloaded function type>[m[K
+[01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/Process.h:39:5:[m[K [01;31m[Kerror: [m[Kcould not convert ‘[01m[K{<expression error>, <expression error>, <expression error>}[m[K’ from ‘[01m[K<brace-enclosed initializer list>[m[K’ to ‘[01m[KVec3[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 1>[m[K’}
+   39 |     [01;31m[K}[m[K;
+      |     [01;31m[K^[m[K
+      |     [01;31m[K|[m[K
+      |     [01;31m[K<brace-enclosed initializer list>[m[K
+[01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/Process.h:[m[K In function ‘[01m[KVec3 solveFK_FR(double, double)[m[K’:
+[01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/Process.h:91:7:[m[K [01;31m[Kerror: [m[Kinvalid use of member function ‘[01m[KEigen::DenseCoeffsBase<Derived, 1>::Scalar& Eigen::DenseCoeffsBase<Derived, 1>::x() [with Derived = Eigen::Matrix<double, 3, 1>; Eigen::DenseCoeffsBase<Derived, 1>::Scalar = double][m[K’ (did you forget the ‘[01m[K()[m[K’ ?)
+   91 |     [01;31m[Kp.x[m[K = L_THIGH * std::cos(q_thigh)
+      |     [01;31m[K~~^[m[K
+      |        [32m[K()[m[K
+[01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/Process.h:94:7:[m[K [01;31m[Kerror: [m[Kinvalid use of member function ‘[01m[KEigen::DenseCoeffsBase<Derived, 1>::Scalar& Eigen::DenseCoeffsBase<Derived, 1>::y() [with Derived = Eigen::Matrix<double, 3, 1>; Eigen::DenseCoeffsBase<Derived, 1>::Scalar = double][m[K’ (did you forget the ‘[01m[K()[m[K’ ?)
+   94 |     [01;31m[Kp.y[m[K = 0.0;
+      |     [01;31m[K~~^[m[K
+      |        [32m[K()[m[K
+[01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/Process.h:96:7:[m[K [01;31m[Kerror: [m[Kinvalid use of member function ‘[01m[KEigen::DenseCoeffsBase<Derived, 1>::Scalar& Eigen::DenseCoeffsBase<Derived, 1>::z() [with Derived = Eigen::Matrix<double, 3, 1>; Eigen::DenseCoeffsBase<Derived, 1>::Scalar = double][m[K’ (did you forget the ‘[01m[K()[m[K’ ?)
+   96 |     [01;31m[Kp.z[m[K = L_HIP
+      |     [01;31m[K~~^[m[K
+      |        [32m[K()[m[K
+[01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/Process.h:[m[K In function ‘[01m[KVec3 path(const Vec3&, const Vec3&, double)[m[K’:
+[01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/Process.h:106:19:[m[K [01;31m[Kerror: [m[Kinvalid operands of types ‘[01m[Kdouble[m[K’ and ‘[01m[K<unresolved overloaded function type>[m[K’ to binary ‘[01m[Koperator*[m[K’
+  106 |         [32m[K(1.0 - t)[m[K [01;31m[K*[m[K [34m[Kp0.x[m[K + t * p1.x,
+      |         [32m[K~~~~~~~~~[m[K [01;31m[K^[m[K [34m[K~~~~[m[K
+      |              [32m[K|[m[K         [34m[K|[m[K
+      |              [32m[Kdouble[m[K    [34m[K<unresolved overloaded function type>[m[K
+[01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/Process.h:106:30:[m[K [01;31m[Kerror: [m[Kinvalid operands of types ‘[01m[Kdouble[m[K’ and ‘[01m[K<unresolved overloaded function type>[m[K’ to binary ‘[01m[Koperator*[m[K’
+  106 |         (1.0 - t) * p0.x + [32m[Kt[m[K [01;31m[K*[m[K [34m[Kp1.x[m[K,
+      |                            [32m[K~[m[K [01;31m[K^[m[K [34m[K~~~~[m[K
+      |                            [32m[K|[m[K      [34m[K|[m[K
+      |                            [32m[Kdouble[m[K [34m[K<unresolved overloaded function type>[m[K
+[01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/Process.h:108:19:[m[K [01;31m[Kerror: [m[Kinvalid operands of types ‘[01m[Kdouble[m[K’ and ‘[01m[K<unresolved overloaded function type>[m[K’ to binary ‘[01m[Koperator*[m[K’
+  108 |         [32m[K(1.0 - t)[m[K [01;31m[K*[m[K [34m[Kp0.z[m[K + t * p1.z
+      |         [32m[K~~~~~~~~~[m[K [01;31m[K^[m[K [34m[K~~~~[m[K
+      |              [32m[K|[m[K         [34m[K|[m[K
+      |              [32m[Kdouble[m[K    [34m[K<unresolved overloaded function type>[m[K
+[01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/Process.h:108:30:[m[K [01;31m[Kerror: [m[Kinvalid operands of types ‘[01m[Kdouble[m[K’ and ‘[01m[K<unresolved overloaded function type>[m[K’ to binary ‘[01m[Koperator*[m[K’
+  108 |         (1.0 - t) * p0.z + [32m[Kt[m[K [01;31m[K*[m[K [34m[Kp1.z[m[K
+      |                            [32m[K~[m[K [01;31m[K^[m[K [34m[K~~~~[m[K
+      |                            [32m[K|[m[K      [34m[K|[m[K
+      |                            [32m[Kdouble[m[K [34m[K<unresolved overloaded function type>[m[K
+[01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/include/unitree_guide2/FSM/Process.h:109:5:[m[K [01;31m[Kerror: [m[Kcould not convert ‘[01m[K{<expression error>, 0.0, <expression error>}[m[K’ from ‘[01m[K<brace-enclosed initializer list>[m[K’ to ‘[01m[KVec3[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 1>[m[K’}
+  109 |     [01;31m[K}[m[K;
+      |     [01;31m[K^[m[K
+      |     [01;31m[K|[m[K
+      |     [01;31m[K<brace-enclosed initializer list>[m[K
+[01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/src/FSM/State_ShakeHand.cpp:[m[K In member function ‘[01m[Kvirtual void State_ShakeHand::run()[m[K’:
+[01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/src/FSM/State_ShakeHand.cpp:104:24:[m[K [01;31m[Kerror: [m[Kcannot resolve overloaded function ‘[01m[Kx[m[K’ based on conversion to type ‘[01m[Kdouble[m[K’
+  104 |         if(![01;31m[KinWorkspace(p_leg.x, p_leg.z)[m[K){
+      |             [01;31m[K~~~~~~~~~~~^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2/src/FSM/State_ShakeHand.cpp:110:23:[m[K [01;31m[Kerror: [m[Kcannot resolve overloaded function ‘[01m[Kx[m[K’ based on conversion to type ‘[01m[Kdouble[m[K’
+  110 |         if(![01;31m[KsolveIK_FR(p_leg.x, p_leg.z, qh, qt, qc)[m[K) break;
+      |             [01;31m[K~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/junior_ctrl.dir/build.make:174: CMakeFiles/junior_ctrl.dir/src/FSM/State_ShakeHand.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/junior_ctrl.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

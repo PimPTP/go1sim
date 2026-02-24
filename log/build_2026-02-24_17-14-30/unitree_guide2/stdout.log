@@ -1,0 +1,82 @@
+[35m[1mConsolidate compiler generated dependencies of target junior_ctrl[0m
+[  3%] [32mBuilding CXX object CMakeFiles/junior_ctrl.dir/src/main.cpp.o[0m
+[  7%] [32mBuilding CXX object CMakeFiles/junior_ctrl.dir/src/FSM/FSM.cpp.o[0m
+[ 10%] [32mBuilding CXX object CMakeFiles/junior_ctrl.dir/src/control/ControlFrame.cpp.o[0m
+[ 14%] [32mBuilding CXX object CMakeFiles/junior_ctrl.dir/src/FSM/State_ShakeHand.cpp.o[0m
+[ 17%] [32m[1mLinking CXX executable junior_ctrl[0m
+[100%] Built target junior_ctrl
+-- Install configuration: ""
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/interface
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/interface/WirelessHandle.h
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/interface/IOROS2.h
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/interface/IOInterface.h
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/interface/KeyBoard.h
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/interface/CmdPanel.h
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/interface/IOSDK.h
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/common
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/common/unitreeRobot.h
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/common/mathTypes.h
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/common/enumClass.h
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/common/mathTools.h
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/common/LowPassFilter.h
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/common/timeMarker.h
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/common/unitreeLeg.h
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/common/PyPlot.h
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/message
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/message/unitree_joystick.h
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/message/LowlevelState.h
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/message/LowlevelCmd.h
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/control
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/control/Estimator.h
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/control/BalanceCtrl.h
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/control/ControlFrame.h
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/control/CtrlComponents.h
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/thirdParty
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/thirdParty/quadProgpp
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/thirdParty/quadProgpp/QuadProg++.hh
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/thirdParty/quadProgpp/Array.hh
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/thirdParty/matplotlibcpp.h
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/FSM
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/FSM/FSMState.h
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/FSM/State_Trotting.h
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/FSM/State_StepTest.h
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/FSM/VisionUDP.h
+-- Installing: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/FSM/State_ShakeHand.h
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/FSM/State_FixedStand.h
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/FSM/Process.h
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/FSM/FSM.h
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/FSM/State_Passive.h
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/FSM/State_move_base.h
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/FSM/State_BalanceTest.h
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/FSM/State_SwingTest.h
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/FSM/State_FreeStand.h
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/Gait
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/Gait/GaitGenerator.h
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/Gait/WaveGenerator.h
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/include/unitree_guide2/Gait/FeetEndCal.h
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2//launch
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2//launch/spawn_go1.launch.py
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2//launch/launch_world.launch.py
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2//config
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2//config/gazebo_params.yaml
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2//worlds
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2//worlds/empty.sdf
+-- Installing: /home/pim0ubuntu/go1_ws/install/unitree_guide2/lib/unitree_guide2/junior_ctrl
+-- Set runtime path of "/home/pim0ubuntu/go1_ws/install/unitree_guide2/lib/unitree_guide2/junior_ctrl" to ""
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/ament_index/resource_index/package_run_dependencies/unitree_guide2
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/ament_index/resource_index/parent_prefix_path/unitree_guide2
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2/environment/ament_prefix_path.sh
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2/environment/path.sh
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2/environment/path.dsv
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2/local_setup.bash
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2/local_setup.sh
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2/local_setup.zsh
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2/local_setup.dsv
+-- Installing: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2/package.dsv
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/ament_index/resource_index/packages/unitree_guide2
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2/cmake/unitree_guide2Config.cmake
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2/cmake/unitree_guide2Config-version.cmake
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_guide2/share/unitree_guide2/package.xml

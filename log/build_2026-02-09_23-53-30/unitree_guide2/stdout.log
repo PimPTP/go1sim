@@ -1,0 +1,7 @@
+[35m[1mConsolidate compiler generated dependencies of target junior_ctrl[0m
+[  3%] [32mBuilding CXX object CMakeFiles/junior_ctrl.dir/src/main.cpp.o[0m
+[  7%] [32mBuilding CXX object CMakeFiles/junior_ctrl.dir/src/FSM/State_ShakeHand.cpp.o[0m
+[ 10%] [32mBuilding CXX object CMakeFiles/junior_ctrl.dir/src/Gait/GaitGenerator.cpp.o[0m
+[ 14%] [32mBuilding CXX object CMakeFiles/junior_ctrl.dir/src/Gait/FeetEndCal.cpp.o[0m
+[ 17%] [32mBuilding CXX object CMakeFiles/junior_ctrl.dir/src/Gait/WaveGenerator.cpp.o[0m
+[ 21%] [32mBuilding CXX object CMakeFiles/junior_ctrl.dir/src/common/LowPassFilter.cpp.o[0m

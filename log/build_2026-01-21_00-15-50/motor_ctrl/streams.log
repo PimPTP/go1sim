@@ -1,0 +1,33 @@
+[0.017s] Invoking command in '/home/pim0ubuntu/go1_ws/build/motor_ctrl': /usr/bin/cmake /home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_actuator_sdk -DCMAKE_INSTALL_PREFIX=/home/pim0ubuntu/go1_ws/install/motor_ctrl
+[0.031s] [0mCMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+[0.031s]   Compatibility with CMake < 2.8.12 will be removed from a future version of
+[0.031s]   CMake.
+[0.031s] 
+[0.031s]   Update the VERSION argument <min> value or use a ...<max> suffix to tell
+[0.031s]   CMake that the project does not need compatibility with older versions.
+[0.031s] 
+[0.031s] [0m
+[0.098s] -- The C compiler identification is GNU 11.4.0
+[0.226s] -- The CXX compiler identification is GNU 11.4.0
+[0.240s] -- Detecting C compiler ABI info
+[0.370s] -- Detecting C compiler ABI info - done
+[0.377s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.377s] -- Detecting C compile features
+[0.378s] -- Detecting C compile features - done
+[0.382s] -- Detecting CXX compiler ABI info
+[0.557s] -- Detecting CXX compiler ABI info - done
+[0.561s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.562s] -- Detecting CXX compile features
+[0.563s] -- Detecting CXX compile features - done
+[0.564s] -- Configuring done
+[0.566s] -- Generating done
+[0.568s] -- Build files have been written to: /home/pim0ubuntu/go1_ws/build/motor_ctrl
+[0.572s] Invoked command in '/home/pim0ubuntu/go1_ws/build/motor_ctrl' returned '0': /usr/bin/cmake /home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_actuator_sdk -DCMAKE_INSTALL_PREFIX=/home/pim0ubuntu/go1_ws/install/motor_ctrl
+[0.575s] Invoking command in '/home/pim0ubuntu/go1_ws/build/motor_ctrl': /usr/bin/cmake --build /home/pim0ubuntu/go1_ws/build/motor_ctrl -- -j4 -l4
+[0.641s] [ 25%] [32mBuilding CXX object CMakeFiles/check_cpp.dir/src/check.cpp.o[0m
+[0.672s] [ 50%] [32mBuilding C object CMakeFiles/check_c.dir/src/check.c.o[0m
+[0.704s] [ 75%] [32m[1mLinking C executable /home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_actuator_sdk/bin/check_c[0m
+[0.729s] [100%] [32m[1mLinking CXX executable /home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_actuator_sdk/bin/check_cpp[0m
+[0.772s] [100%] Built target check_c
+[0.791s] [100%] Built target check_cpp
+[0.801s] Invoked command in '/home/pim0ubuntu/go1_ws/build/motor_ctrl' returned '0': /usr/bin/cmake --build /home/pim0ubuntu/go1_ws/build/motor_ctrl -- -j4 -l4

@@ -1,0 +1,4 @@
+[ 50%] Built target unitree_joint_controller_parameters
+[ 75%] [32mBuilding CXX object CMakeFiles/unitree_joint_controller.dir/src/joint_controller.cpp.o[0m
+[100%] [32m[1mLinking CXX shared library libunitree_joint_controller.so[0m
+[100%] Built target unitree_joint_controller

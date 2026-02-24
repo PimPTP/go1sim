@@ -1,0 +1,302 @@
+[0.000000] (-) TimerEvent: {}
+[0.000685] (-) JobUnselected: {'identifier': 'go1_description'}
+[0.000787] (-) JobUnselected: {'identifier': 'motor_ctrl'}
+[0.000806] (-) JobUnselected: {'identifier': 'ros2_unitree_legged_msgs'}
+[0.000819] (-) JobUnselected: {'identifier': 'unitree_guide2'}
+[0.000837] (unitree_joint_controller) JobQueued: {'identifier': 'unitree_joint_controller', 'dependencies': OrderedDict([('ros2_unitree_legged_msgs', '/home/pim0ubuntu/go1_ws/install/ros2_unitree_legged_msgs')])}
+[0.001926] (unitree_joint_controller) JobStarted: {'identifier': 'unitree_joint_controller'}
+[0.015481] (unitree_joint_controller) JobProgress: {'identifier': 'unitree_joint_controller', 'progress': 'cmake'}
+[0.016844] (unitree_joint_controller) Command: {'cmd': ['/usr/bin/cmake', '/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_joint_controller', '-DCMAKE_INSTALL_PREFIX=/home/pim0ubuntu/go1_ws/install/unitree_joint_controller'], 'cwd': '/home/pim0ubuntu/go1_ws/build/unitree_joint_controller', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'pim0ubuntu'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/pim0ubuntu/go1_ws/install/ros2_unitree_legged_msgs/lib:/home/pim0ubuntu/go1_ws/install/unitree_joint_controller/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/pim0ubuntu'), ('OLDPWD', '/home/pim0ubuntu/go1_ws'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '1755'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/pim0ubuntu/go1_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'pim0ubuntu'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'pim0ubuntu'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/pim0ubuntu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/Ubuntu:@/tmp/.ICE-unix/1731,unix/Ubuntu:/tmp/.ICE-unix/1731'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/a45868cf_c2c6_4a64_a8da_cff445846ead'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.5KI8I3'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.155'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/pim0ubuntu/go1_ws/install/unitree_joint_controller:/home/pim0ubuntu/go1_ws/install/go1_description:/home/pim0ubuntu/go1_ws/install/ros2_unitree_legged_msgs:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/pim0ubuntu/go1_ws/build/unitree_joint_controller'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/pim0ubuntu/go1_ws/install/ros2_unitree_legged_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/pim0ubuntu/go1_ws/install/ros2_unitree_legged_msgs:/home/pim0ubuntu/go1_ws/install/unitree_joint_controller:/home/pim0ubuntu/go1_ws/install/go1_description:/opt/ros/humble')]), 'shell': False}
+[0.081529] (unitree_joint_controller) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.088184] (unitree_joint_controller) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.099854] (-) TimerEvent: {}
+[0.200558] (-) TimerEvent: {}
+[0.202197] (unitree_joint_controller) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.210373] (unitree_joint_controller) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.210723] (unitree_joint_controller) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.211504] (unitree_joint_controller) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.215784] (unitree_joint_controller) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.300753] (-) TimerEvent: {}
+[0.379206] (unitree_joint_controller) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[0.400975] (-) TimerEvent: {}
+[0.501299] (unitree_joint_controller) StdoutLine: {'line': b'-- Found angles: 1.15.0 (/opt/ros/humble/share/angles/cmake)\n'}
+[0.501739] (-) TimerEvent: {}
+[0.506708] (unitree_joint_controller) StdoutLine: {'line': b'-- Found control_msgs: 4.8.0 (/opt/ros/humble/share/control_msgs/cmake)\n'}
+[0.554851] (unitree_joint_controller) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.560157] (unitree_joint_controller) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.570653] (unitree_joint_controller) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.586265] (unitree_joint_controller) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.602012] (-) TimerEvent: {}
+[0.602339] (unitree_joint_controller) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.702215] (-) TimerEvent: {}
+[0.717486] (unitree_joint_controller) StdoutLine: {'line': b'-- Found control_toolbox: 3.6.2 (/opt/ros/humble/share/control_toolbox/cmake)\n'}
+[0.764529] (unitree_joint_controller) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.767517] (unitree_joint_controller) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.803011] (-) TimerEvent: {}
+[0.881340] (unitree_joint_controller) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[0.903188] (-) TimerEvent: {}
+[0.912739] (unitree_joint_controller) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[0.977005] (unitree_joint_controller) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.992748] (unitree_joint_controller) StdoutLine: {'line': b'-- Looking for C++ include pthread.h\n'}
+[1.003584] (-) TimerEvent: {}
+[1.104218] (-) TimerEvent: {}
+[1.149670] (unitree_joint_controller) StdoutLine: {'line': b'-- Looking for C++ include pthread.h - found\n'}
+[1.150406] (unitree_joint_controller) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[1.204495] (-) TimerEvent: {}
+[1.285826] (unitree_joint_controller) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[1.287185] (unitree_joint_controller) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[1.304764] (-) TimerEvent: {}
+[1.405462] (-) TimerEvent: {}
+[1.410605] (unitree_joint_controller) StdoutLine: {'line': b'-- Found controller_interface: 2.52.0 (/opt/ros/humble/share/controller_interface/cmake)\n'}
+[1.419353] (unitree_joint_controller) StdoutLine: {'line': b'-- Found ros2_unitree_legged_msgs: 0.4.0 (/home/pim0ubuntu/go1_ws/install/ros2_unitree_legged_msgs/share/ros2_unitree_legged_msgs/cmake)\n'}
+[1.426984] (unitree_joint_controller) StdoutLine: {'line': b'-- Found urdf: 2.6.1 (/opt/ros/humble/share/urdf/cmake)\n'}
+[1.507231] (-) TimerEvent: {}
+[1.508239] (unitree_joint_controller) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.523545] (unitree_joint_controller) StdoutLine: {'line': b'-- Generating done\n'}
+[1.528769] (unitree_joint_controller) StdoutLine: {'line': b'-- Build files have been written to: /home/pim0ubuntu/go1_ws/build/unitree_joint_controller\n'}
+[1.543025] (unitree_joint_controller) CommandEnded: {'returncode': 0}
+[1.543891] (unitree_joint_controller) JobProgress: {'identifier': 'unitree_joint_controller', 'progress': 'build'}
+[1.545631] (unitree_joint_controller) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/pim0ubuntu/go1_ws/build/unitree_joint_controller', '--', '-j4', '-l4'], 'cwd': '/home/pim0ubuntu/go1_ws/build/unitree_joint_controller', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'pim0ubuntu'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/pim0ubuntu/go1_ws/install/ros2_unitree_legged_msgs/lib:/home/pim0ubuntu/go1_ws/install/unitree_joint_controller/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/pim0ubuntu'), ('OLDPWD', '/home/pim0ubuntu/go1_ws'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '1755'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/pim0ubuntu/go1_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'pim0ubuntu'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'pim0ubuntu'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/pim0ubuntu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/Ubuntu:@/tmp/.ICE-unix/1731,unix/Ubuntu:/tmp/.ICE-unix/1731'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/a45868cf_c2c6_4a64_a8da_cff445846ead'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.5KI8I3'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.155'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/pim0ubuntu/go1_ws/install/unitree_joint_controller:/home/pim0ubuntu/go1_ws/install/go1_description:/home/pim0ubuntu/go1_ws/install/ros2_unitree_legged_msgs:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/pim0ubuntu/go1_ws/build/unitree_joint_controller'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/pim0ubuntu/go1_ws/install/ros2_unitree_legged_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/pim0ubuntu/go1_ws/install/ros2_unitree_legged_msgs:/home/pim0ubuntu/go1_ws/install/unitree_joint_controller:/home/pim0ubuntu/go1_ws/install/go1_description:/opt/ros/humble')]), 'shell': False}
+[1.596433] (unitree_joint_controller) StdoutLine: {'line': b'[ 25%] \x1b[34m\x1b[1mRunning `/opt/ros/humble/bin/generate_parameter_library_cpp /home/pim0ubuntu/go1_ws/build/unitree_joint_controller/include/unitree_joint_controller/unitree_joint_controller_parameters.hpp /home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_joint_controller/src/unitree_joint_controller_parm.yaml validate_ujc_parameters.hpp`\x1b[0m\n'}
+[1.607458] (-) TimerEvent: {}
+[1.708492] (-) TimerEvent: {}
+[1.808854] (-) TimerEvent: {}
+[1.909863] (-) TimerEvent: {}
+[2.011740] (-) TimerEvent: {}
+[2.115071] (-) TimerEvent: {}
+[2.215848] (-) TimerEvent: {}
+[2.289405] (unitree_joint_controller) StdoutLine: {'line': b'[ 50%] \x1b[34m\x1b[1mCreating deprecated header file /home/pim0ubuntu/go1_ws/build/unitree_joint_controller/include/unitree_joint_controller_parameters.hpp\x1b[0m\n'}
+[2.306719] (unitree_joint_controller) StdoutLine: {'line': b'[ 50%] Built target unitree_joint_controller_parameters\n'}
+[2.316423] (-) TimerEvent: {}
+[2.325312] (unitree_joint_controller) StdoutLine: {'line': b'[ 75%] \x1b[32mBuilding CXX object CMakeFiles/unitree_joint_controller.dir/src/joint_controller.cpp.o\x1b[0m\n'}
+[2.416696] (-) TimerEvent: {}
+[2.517282] (-) TimerEvent: {}
+[2.617936] (-) TimerEvent: {}
+[2.718511] (-) TimerEvent: {}
+[2.819078] (-) TimerEvent: {}
+[2.919712] (-) TimerEvent: {}
+[3.020444] (-) TimerEvent: {}
+[3.121169] (-) TimerEvent: {}
+[3.222082] (-) TimerEvent: {}
+[3.322744] (-) TimerEvent: {}
+[3.423259] (-) TimerEvent: {}
+[3.523839] (-) TimerEvent: {}
+[3.624422] (-) TimerEvent: {}
+[3.725203] (-) TimerEvent: {}
+[3.825682] (-) TimerEvent: {}
+[3.926161] (-) TimerEvent: {}
+[4.026684] (-) TimerEvent: {}
+[4.127931] (-) TimerEvent: {}
+[4.228607] (-) TimerEvent: {}
+[4.329176] (-) TimerEvent: {}
+[4.430026] (-) TimerEvent: {}
+[4.530603] (-) TimerEvent: {}
+[4.631338] (-) TimerEvent: {}
+[4.732027] (-) TimerEvent: {}
+[4.752852] (unitree_joint_controller) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_joint_controller/include/unitree_joint_controller/joint_controller.h:21\x1b[m\x1b[K,\n'}
+[4.753211] (unitree_joint_controller) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_joint_controller/src/joint_controller.cpp:1\x1b[m\x1b[K:\n'}
+[4.753293] (unitree_joint_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/pim0ubuntu/go1_ws/build/unitree_joint_controller/include/unitree_joint_controller_parameters.hpp:1:175:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[K#pragma message: #include "unitree_joint_controller_parameters.hpp" is deprecated. Use #include <unitree_joint_controller/unitree_joint_controller_parameters.hpp> instead.\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.753340] (unitree_joint_controller) StderrLine: {'line': b'    1 | ee_joint_controller/unitree_joint_controller_parameters.hpp> instead."\x1b[01;36m\x1b[K)\x1b[m\x1b[K\n'}
+[4.753380] (unitree_joint_controller) StderrLine: {'line': b'      |                                                                       \x1b[01;36m\x1b[K^\x1b[m\x1b[K\n'}
+[4.753419] (unitree_joint_controller) StderrLine: {'line': b'\n'}
+[4.832225] (-) TimerEvent: {}
+[4.932685] (-) TimerEvent: {}
+[5.000656] (unitree_joint_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_joint_controller/src/joint_controller.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[Kunitree_joint_controller::UnitreeJointController::UnitreeJointController()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[5.000884] (unitree_joint_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_joint_controller/src/joint_controller.cpp:9:15:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kvoid* memset(void*, int, size_t)\x1b[m\x1b[K\xe2\x80\x99 clearing an object of non-trivial type \xe2\x80\x98\x1b[01m\x1b[Kusing MotorCmd = struct ros2_unitree_legged_msgs::msg::MotorCmd_<std::allocator<void> >\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kstruct ros2_unitree_legged_msgs::msg::MotorCmd_<std::allocator<void> >\x1b[m\x1b[K\xe2\x80\x99}; use assignment or value-initialization instead [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wclass-memaccess\x07-Wclass-memaccess\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[5.000950] (unitree_joint_controller) StderrLine: {'line': b'    9 |         \x1b[01;35m\x1b[Kmemset(&lastCmd_, 0, sizeof(ros2_unitree_legged_msgs::msg::MotorCmd))\x1b[m\x1b[K;\n'}
+[5.000993] (unitree_joint_controller) StderrLine: {'line': b'      |         \x1b[01;35m\x1b[K~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.001034] (unitree_joint_controller) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/pim0ubuntu/go1_ws/install/ros2_unitree_legged_msgs/include/ros2_unitree_legged_msgs/ros2_unitree_legged_msgs/msg/motor_cmd.hpp:7\x1b[m\x1b[K,\n'}
+[5.001123] (unitree_joint_controller) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_joint_controller/include/unitree_joint_controller/joint_controller.h:14\x1b[m\x1b[K,\n'}
+[5.001204] (unitree_joint_controller) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_joint_controller/src/joint_controller.cpp:1\x1b[m\x1b[K:\n'}
+[5.001251] (unitree_joint_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/pim0ubuntu/go1_ws/install/ros2_unitree_legged_msgs/include/ros2_unitree_legged_msgs/ros2_unitree_legged_msgs/msg/detail/motor_cmd__struct.hpp:32:8:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kusing MotorCmd = struct ros2_unitree_legged_msgs::msg::MotorCmd_<std::allocator<void> >\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kstruct ros2_unitree_legged_msgs::msg::MotorCmd_<std::allocator<void> >\x1b[m\x1b[K\xe2\x80\x99} declared here\n'}
+[5.001294] (unitree_joint_controller) StderrLine: {'line': b'   32 | struct \x1b[01;36m\x1b[KMotorCmd_\x1b[m\x1b[K\n'}
+[5.001333] (unitree_joint_controller) StderrLine: {'line': b'      |        \x1b[01;36m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[5.001371] (unitree_joint_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_joint_controller/src/joint_controller.cpp:10:15:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kvoid* memset(void*, int, size_t)\x1b[m\x1b[K\xe2\x80\x99 clearing an object of non-trivial type \xe2\x80\x98\x1b[01m\x1b[Kusing MotorState = struct ros2_unitree_legged_msgs::msg::MotorState_<std::allocator<void> >\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kstruct ros2_unitree_legged_msgs::msg::MotorState_<std::allocator<void> >\x1b[m\x1b[K\xe2\x80\x99}; use assignment or value-initialization instead [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wclass-memaccess\x07-Wclass-memaccess\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[5.001416] (unitree_joint_controller) StderrLine: {'line': b'   10 |         \x1b[01;35m\x1b[Kmemset(&lastState_, 0, sizeof(ros2_unitree_legged_msgs::msg::MotorState))\x1b[m\x1b[K;\n'}
+[5.001457] (unitree_joint_controller) StderrLine: {'line': b'      |         \x1b[01;35m\x1b[K~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.001496] (unitree_joint_controller) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/pim0ubuntu/go1_ws/install/ros2_unitree_legged_msgs/include/ros2_unitree_legged_msgs/ros2_unitree_legged_msgs/msg/motor_state.hpp:7\x1b[m\x1b[K,\n'}
+[5.001535] (unitree_joint_controller) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_joint_controller/include/unitree_joint_controller/joint_controller.h:15\x1b[m\x1b[K,\n'}
+[5.001574] (unitree_joint_controller) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_joint_controller/src/joint_controller.cpp:1\x1b[m\x1b[K:\n'}
+[5.001616] (unitree_joint_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/pim0ubuntu/go1_ws/install/ros2_unitree_legged_msgs/include/ros2_unitree_legged_msgs/ros2_unitree_legged_msgs/msg/detail/motor_state__struct.hpp:32:8:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kusing MotorState = struct ros2_unitree_legged_msgs::msg::MotorState_<std::allocator<void> >\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kstruct ros2_unitree_legged_msgs::msg::MotorState_<std::allocator<void> >\x1b[m\x1b[K\xe2\x80\x99} declared here\n'}
+[5.001656] (unitree_joint_controller) StderrLine: {'line': b'   32 | struct \x1b[01;36m\x1b[KMotorState_\x1b[m\x1b[K\n'}
+[5.001693] (unitree_joint_controller) StderrLine: {'line': b'      |        \x1b[01;36m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.011654] (unitree_joint_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_joint_controller/src/joint_controller.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual controller_interface::return_type unitree_joint_controller::UnitreeJointController::update(const rclcpp::Time&, const rclcpp::Duration&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[5.011975] (unitree_joint_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_joint_controller/src/joint_controller.cpp:20:91:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Ktime\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[5.012057] (unitree_joint_controller) StderrLine: {'line': b'   20 | rn_type UnitreeJointController::update(\x1b[01;35m\x1b[Kconst rclcpp::Time & time\x1b[m\x1b[K, const rclcpp::Duration & period)  {\n'}
+[5.012118] (unitree_joint_controller) StderrLine: {'line': b'      |                                        \x1b[01;35m\x1b[K~~~~~~~~~~~~~~~~~~~~~^~~~\x1b[m\x1b[K\n'}
+[5.012158] (unitree_joint_controller) StderrLine: {'line': b'\n'}
+[5.019191] (unitree_joint_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_joint_controller/src/joint_controller.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kbool unitree_joint_controller::UnitreeJointController::waitForParameter(const string&, std::string&, int)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[5.019416] (unitree_joint_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_joint_controller/src/joint_controller.cpp:188:71:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kparam_name\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[5.019474] (unitree_joint_controller) StderrLine: {'line': b'  188 | nitreeJointController::waitForParameter( \x1b[01;35m\x1b[Kconst std::string& param_name\x1b[m\x1b[K, std::string& param_value, int timeout_seconds) {\n'}
+[5.019517] (unitree_joint_controller) StderrLine: {'line': b'      |                                          \x1b[01;35m\x1b[K~~~~~~~~~~~~~~~~~~~^~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.019557] (unitree_joint_controller) StderrLine: {'line': b'\n'}
+[5.027354] (unitree_joint_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_joint_controller/src/joint_controller.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual controller_interface::CallbackReturn unitree_joint_controller::UnitreeJointController::on_configure(const rclcpp_lifecycle::State&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[5.027609] (unitree_joint_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_joint_controller/src/joint_controller.cpp:228:110:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kprevious_state\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[5.027676] (unitree_joint_controller) StderrLine: {'line': b'  228 | ointController::on_configure(\x1b[01;35m\x1b[Kconst rclcpp_lifecycle::State& previous_state\x1b[m\x1b[K)  {\n'}
+[5.027720] (unitree_joint_controller) StderrLine: {'line': b'      |                              \x1b[01;35m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.027762] (unitree_joint_controller) StderrLine: {'line': b'\n'}
+[5.029873] (unitree_joint_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_joint_controller/src/joint_controller.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual controller_interface::CallbackReturn unitree_joint_controller::UnitreeJointController::on_deactivate(const rclcpp_lifecycle::State&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[5.030054] (unitree_joint_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_joint_controller/src/joint_controller.cpp:299:111:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kprevious_state\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[5.030111] (unitree_joint_controller) StderrLine: {'line': b'  299 | intController::on_deactivate(\x1b[01;35m\x1b[Kconst rclcpp_lifecycle::State& previous_state\x1b[m\x1b[K)  {\n'}
+[5.030152] (unitree_joint_controller) StderrLine: {'line': b'      |                              \x1b[01;35m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.030190] (unitree_joint_controller) StderrLine: {'line': b'\n'}
+[5.030229] (unitree_joint_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_joint_controller/src/joint_controller.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual controller_interface::CallbackReturn unitree_joint_controller::UnitreeJointController::on_cleanup(const rclcpp_lifecycle::State&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[5.030270] (unitree_joint_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_joint_controller/src/joint_controller.cpp:307:108:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kprevious_state\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[5.030313] (unitree_joint_controller) StderrLine: {'line': b'  307 | eJointController::on_cleanup(\x1b[01;35m\x1b[Kconst rclcpp_lifecycle::State& previous_state\x1b[m\x1b[K)  {\n'}
+[5.030352] (unitree_joint_controller) StderrLine: {'line': b'      |                              \x1b[01;35m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.030390] (unitree_joint_controller) StderrLine: {'line': b'\n'}
+[5.030427] (unitree_joint_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_joint_controller/src/joint_controller.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual controller_interface::CallbackReturn unitree_joint_controller::UnitreeJointController::on_error(const rclcpp_lifecycle::State&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[5.030467] (unitree_joint_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_joint_controller/src/joint_controller.cpp:312:106:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kprevious_state\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[5.030506] (unitree_joint_controller) StderrLine: {'line': b'  312 | reeJointController::on_error(\x1b[01;35m\x1b[Kconst rclcpp_lifecycle::State& previous_state\x1b[m\x1b[K)  {\n'}
+[5.030545] (unitree_joint_controller) StderrLine: {'line': b'      |                              \x1b[01;35m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.030582] (unitree_joint_controller) StderrLine: {'line': b'\n'}
+[5.030620] (unitree_joint_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_joint_controller/src/joint_controller.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual controller_interface::CallbackReturn unitree_joint_controller::UnitreeJointController::on_shutdown(const rclcpp_lifecycle::State&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[5.030662] (unitree_joint_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_joint_controller/src/joint_controller.cpp:317:109:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kprevious_state\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[5.030701] (unitree_joint_controller) StderrLine: {'line': b'  317 | JointController::on_shutdown(\x1b[01;35m\x1b[Kconst rclcpp_lifecycle::State& previous_state\x1b[m\x1b[K)  {\n'}
+[5.030745] (unitree_joint_controller) StderrLine: {'line': b'      |                              \x1b[01;35m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.030819] (unitree_joint_controller) StderrLine: {'line': b'\n'}
+[5.032914] (-) TimerEvent: {}
+[5.133758] (-) TimerEvent: {}
+[5.234403] (-) TimerEvent: {}
+[5.334993] (-) TimerEvent: {}
+[5.435591] (-) TimerEvent: {}
+[5.536269] (-) TimerEvent: {}
+[5.636978] (-) TimerEvent: {}
+[5.737487] (-) TimerEvent: {}
+[5.838115] (-) TimerEvent: {}
+[5.938816] (-) TimerEvent: {}
+[6.039526] (-) TimerEvent: {}
+[6.140309] (-) TimerEvent: {}
+[6.241277] (-) TimerEvent: {}
+[6.342078] (-) TimerEvent: {}
+[6.443189] (-) TimerEvent: {}
+[6.543608] (-) TimerEvent: {}
+[6.644793] (-) TimerEvent: {}
+[6.745460] (-) TimerEvent: {}
+[6.847065] (-) TimerEvent: {}
+[6.947632] (-) TimerEvent: {}
+[7.048342] (-) TimerEvent: {}
+[7.148933] (-) TimerEvent: {}
+[7.249603] (-) TimerEvent: {}
+[7.350267] (-) TimerEvent: {}
+[7.450866] (-) TimerEvent: {}
+[7.551817] (-) TimerEvent: {}
+[7.652474] (-) TimerEvent: {}
+[7.754392] (-) TimerEvent: {}
+[7.854870] (-) TimerEvent: {}
+[7.955396] (-) TimerEvent: {}
+[8.055984] (-) TimerEvent: {}
+[8.157282] (-) TimerEvent: {}
+[8.257880] (-) TimerEvent: {}
+[8.358617] (-) TimerEvent: {}
+[8.459146] (-) TimerEvent: {}
+[8.559649] (-) TimerEvent: {}
+[8.660901] (-) TimerEvent: {}
+[8.761420] (-) TimerEvent: {}
+[8.862137] (-) TimerEvent: {}
+[8.963153] (-) TimerEvent: {}
+[9.063684] (-) TimerEvent: {}
+[9.165349] (-) TimerEvent: {}
+[9.266050] (-) TimerEvent: {}
+[9.366928] (-) TimerEvent: {}
+[9.467795] (-) TimerEvent: {}
+[9.568342] (-) TimerEvent: {}
+[9.668886] (-) TimerEvent: {}
+[9.769655] (-) TimerEvent: {}
+[9.870249] (-) TimerEvent: {}
+[9.970830] (-) TimerEvent: {}
+[10.071816] (-) TimerEvent: {}
+[10.172441] (-) TimerEvent: {}
+[10.273247] (-) TimerEvent: {}
+[10.375360] (-) TimerEvent: {}
+[10.475824] (-) TimerEvent: {}
+[10.576374] (-) TimerEvent: {}
+[10.676828] (-) TimerEvent: {}
+[10.777443] (-) TimerEvent: {}
+[10.878298] (-) TimerEvent: {}
+[10.978882] (-) TimerEvent: {}
+[11.079543] (-) TimerEvent: {}
+[11.180027] (-) TimerEvent: {}
+[11.280809] (-) TimerEvent: {}
+[11.381348] (-) TimerEvent: {}
+[11.481925] (-) TimerEvent: {}
+[11.582448] (-) TimerEvent: {}
+[11.683047] (-) TimerEvent: {}
+[11.783772] (-) TimerEvent: {}
+[11.884413] (-) TimerEvent: {}
+[11.984861] (-) TimerEvent: {}
+[12.085582] (-) TimerEvent: {}
+[12.186120] (-) TimerEvent: {}
+[12.286655] (-) TimerEvent: {}
+[12.387350] (-) TimerEvent: {}
+[12.488041] (-) TimerEvent: {}
+[12.588548] (-) TimerEvent: {}
+[12.689078] (-) TimerEvent: {}
+[12.789630] (-) TimerEvent: {}
+[12.890225] (-) TimerEvent: {}
+[12.990825] (-) TimerEvent: {}
+[13.091375] (-) TimerEvent: {}
+[13.192144] (-) TimerEvent: {}
+[13.292898] (-) TimerEvent: {}
+[13.393544] (-) TimerEvent: {}
+[13.495102] (-) TimerEvent: {}
+[13.595843] (-) TimerEvent: {}
+[13.696507] (-) TimerEvent: {}
+[13.797045] (-) TimerEvent: {}
+[13.897683] (-) TimerEvent: {}
+[13.998407] (-) TimerEvent: {}
+[14.099047] (-) TimerEvent: {}
+[14.199774] (-) TimerEvent: {}
+[14.300584] (-) TimerEvent: {}
+[14.401274] (-) TimerEvent: {}
+[14.489482] (unitree_joint_controller) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX shared library libunitree_joint_controller.so\x1b[0m\n'}
+[14.501494] (-) TimerEvent: {}
+[14.603146] (-) TimerEvent: {}
+[14.704179] (-) TimerEvent: {}
+[14.806372] (-) TimerEvent: {}
+[14.907892] (-) TimerEvent: {}
+[15.008761] (-) TimerEvent: {}
+[15.110585] (-) TimerEvent: {}
+[15.211143] (-) TimerEvent: {}
+[15.300578] (unitree_joint_controller) StdoutLine: {'line': b'[100%] Built target unitree_joint_controller\n'}
+[15.311529] (-) TimerEvent: {}
+[15.312848] (unitree_joint_controller) CommandEnded: {'returncode': 0}
+[15.313909] (unitree_joint_controller) JobProgress: {'identifier': 'unitree_joint_controller', 'progress': 'install'}
+[15.321814] (unitree_joint_controller) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/pim0ubuntu/go1_ws/build/unitree_joint_controller'], 'cwd': '/home/pim0ubuntu/go1_ws/build/unitree_joint_controller', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'pim0ubuntu'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/pim0ubuntu/go1_ws/install/ros2_unitree_legged_msgs/lib:/home/pim0ubuntu/go1_ws/install/unitree_joint_controller/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/pim0ubuntu'), ('OLDPWD', '/home/pim0ubuntu/go1_ws'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '1755'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/pim0ubuntu/go1_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'pim0ubuntu'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'pim0ubuntu'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/pim0ubuntu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/Ubuntu:@/tmp/.ICE-unix/1731,unix/Ubuntu:/tmp/.ICE-unix/1731'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/a45868cf_c2c6_4a64_a8da_cff445846ead'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.5KI8I3'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.155'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/pim0ubuntu/go1_ws/install/unitree_joint_controller:/home/pim0ubuntu/go1_ws/install/go1_description:/home/pim0ubuntu/go1_ws/install/ros2_unitree_legged_msgs:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/pim0ubuntu/go1_ws/build/unitree_joint_controller'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/pim0ubuntu/go1_ws/install/ros2_unitree_legged_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/pim0ubuntu/go1_ws/install/ros2_unitree_legged_msgs:/home/pim0ubuntu/go1_ws/install/unitree_joint_controller:/home/pim0ubuntu/go1_ws/install/go1_description:/opt/ros/humble')]), 'shell': False}
+[15.328617] (unitree_joint_controller) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[15.328833] (unitree_joint_controller) StdoutLine: {'line': b'-- Installing: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/include/unitree_joint_controller\n'}
+[15.329010] (unitree_joint_controller) StdoutLine: {'line': b'-- Installing: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/include/unitree_joint_controller/validate_ujc_parameters.hpp\n'}
+[15.329150] (unitree_joint_controller) StdoutLine: {'line': b'-- Installing: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/include/unitree_joint_controller/unitree_joint_controller_parameters.hpp\n'}
+[15.329390] (unitree_joint_controller) StdoutLine: {'line': b'-- Installing: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/unitree_joint_controller/unitree_controller_plugin.xml\n'}
+[15.329565] (unitree_joint_controller) StdoutLine: {'line': b'-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/include/unitree_joint_controller\n'}
+[15.329627] (unitree_joint_controller) StdoutLine: {'line': b'-- Installing: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/include/unitree_joint_controller/unitree_joint_controller\n'}
+[15.329685] (unitree_joint_controller) StdoutLine: {'line': b'-- Installing: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/include/unitree_joint_controller/unitree_joint_controller/joint_controller.h\n'}
+[15.329789] (unitree_joint_controller) StdoutLine: {'line': b'-- Installing: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/include/unitree_joint_controller/unitree_joint_controller/validate_ujc_parameters.hpp\n'}
+[15.329853] (unitree_joint_controller) StdoutLine: {'line': b'-- Installing: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/include/unitree_joint_controller/unitree_joint_controller/unitree_joint_control_tool.h\n'}
+[15.329987] (unitree_joint_controller) StdoutLine: {'line': b'-- Installing: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/lib/libunitree_joint_controller.so\n'}
+[15.343853] (unitree_joint_controller) StdoutLine: {'line': b'-- Set runtime path of "/home/pim0ubuntu/go1_ws/install/unitree_joint_controller/lib/libunitree_joint_controller.so" to ""\n'}
+[15.344106] (unitree_joint_controller) StdoutLine: {'line': b'-- Installing: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/unitree_joint_controller/environment/library_path.sh\n'}
+[15.344297] (unitree_joint_controller) StdoutLine: {'line': b'-- Installing: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/unitree_joint_controller/environment/library_path.dsv\n'}
+[15.344480] (unitree_joint_controller) StdoutLine: {'line': b'-- Installing: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/ament_index/resource_index/package_run_dependencies/unitree_joint_controller\n'}
+[15.344553] (unitree_joint_controller) StdoutLine: {'line': b'-- Installing: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/ament_index/resource_index/parent_prefix_path/unitree_joint_controller\n'}
+[15.344657] (unitree_joint_controller) StdoutLine: {'line': b'-- Installing: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/unitree_joint_controller/environment/ament_prefix_path.sh\n'}
+[15.344703] (unitree_joint_controller) StdoutLine: {'line': b'-- Installing: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/unitree_joint_controller/environment/ament_prefix_path.dsv\n'}
+[15.344751] (unitree_joint_controller) StdoutLine: {'line': b'-- Installing: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/unitree_joint_controller/environment/path.sh\n'}
+[15.344871] (unitree_joint_controller) StdoutLine: {'line': b'-- Installing: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/unitree_joint_controller/environment/path.dsv\n'}
+[15.344943] (unitree_joint_controller) StdoutLine: {'line': b'-- Installing: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/unitree_joint_controller/local_setup.bash\n'}
+[15.345070] (unitree_joint_controller) StdoutLine: {'line': b'-- Installing: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/unitree_joint_controller/local_setup.sh\n'}
+[15.345238] (unitree_joint_controller) StdoutLine: {'line': b'-- Installing: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/unitree_joint_controller/local_setup.zsh\n'}
+[15.345313] (unitree_joint_controller) StdoutLine: {'line': b'-- Installing: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/unitree_joint_controller/local_setup.dsv\n'}
+[15.345478] (unitree_joint_controller) StdoutLine: {'line': b'-- Installing: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/unitree_joint_controller/package.dsv\n'}
+[15.345556] (unitree_joint_controller) StdoutLine: {'line': b'-- Installing: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/ament_index/resource_index/packages/unitree_joint_controller\n'}
+[15.345611] (unitree_joint_controller) StdoutLine: {'line': b'-- Installing: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/ament_index/resource_index/controller_interface__pluginlib__plugin/unitree_joint_controller\n'}
+[15.345715] (unitree_joint_controller) StdoutLine: {'line': b'-- Installing: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/unitree_joint_controller/cmake/export_unitree_joint_controllerExport.cmake\n'}
+[15.345826] (unitree_joint_controller) StdoutLine: {'line': b'-- Installing: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/unitree_joint_controller/cmake/export_unitree_joint_controllerExport-noconfig.cmake\n'}
+[15.345899] (unitree_joint_controller) StdoutLine: {'line': b'-- Installing: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/unitree_joint_controller/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[15.346004] (unitree_joint_controller) StdoutLine: {'line': b'-- Installing: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/unitree_joint_controller/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[15.346166] (unitree_joint_controller) StdoutLine: {'line': b'-- Installing: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/unitree_joint_controller/cmake/unitree_joint_controllerConfig.cmake\n'}
+[15.346291] (unitree_joint_controller) StdoutLine: {'line': b'-- Installing: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/unitree_joint_controller/cmake/unitree_joint_controllerConfig-version.cmake\n'}
+[15.346389] (unitree_joint_controller) StdoutLine: {'line': b'-- Installing: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/unitree_joint_controller/package.xml\n'}
+[15.348636] (unitree_joint_controller) CommandEnded: {'returncode': 0}
+[15.367301] (unitree_joint_controller) JobEnded: {'identifier': 'unitree_joint_controller', 'rc': 0}
+[15.368761] (-) EventReactorShutdown: {}

@@ -1,0 +1,5 @@
+[35m[1mConsolidate compiler generated dependencies of target junior_ctrl[0m
+[  3%] [32mBuilding CXX object CMakeFiles/junior_ctrl.dir/src/main.cpp.o[0m
+[ 10%] [32mBuilding CXX object CMakeFiles/junior_ctrl.dir/src/control/ControlFrame.cpp.o[0m
+[ 10%] [32mBuilding CXX object CMakeFiles/junior_ctrl.dir/src/FSM/State_ShakeHand.cpp.o[0m
+[ 14%] [32mBuilding CXX object CMakeFiles/junior_ctrl.dir/src/FSM/FSM.cpp.o[0m

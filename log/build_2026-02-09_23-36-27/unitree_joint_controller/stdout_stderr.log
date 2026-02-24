@@ -1,0 +1,37 @@
+[ 50%] Built target unitree_joint_controller_parameters
+[ 75%] [32m[1mLinking CXX shared library libunitree_joint_controller.so[0m
+[100%] Built target unitree_joint_controller
+-- Install configuration: ""
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/include/unitree_joint_controller
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/include/unitree_joint_controller/validate_ujc_parameters.hpp
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/include/unitree_joint_controller/unitree_joint_controller_parameters.hpp
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/unitree_joint_controller/unitree_controller_plugin.xml
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/include/unitree_joint_controller
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/include/unitree_joint_controller/unitree_joint_controller
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/include/unitree_joint_controller/unitree_joint_controller/joint_controller.h
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/include/unitree_joint_controller/unitree_joint_controller/validate_ujc_parameters.hpp
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/include/unitree_joint_controller/unitree_joint_controller/unitree_joint_control_tool.h
+-- Installing: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/lib/libunitree_joint_controller.so
+-- Set runtime path of "/home/pim0ubuntu/go1_ws/install/unitree_joint_controller/lib/libunitree_joint_controller.so" to ""
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/unitree_joint_controller/environment/library_path.sh
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/unitree_joint_controller/environment/library_path.dsv
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/ament_index/resource_index/package_run_dependencies/unitree_joint_controller
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/ament_index/resource_index/parent_prefix_path/unitree_joint_controller
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/unitree_joint_controller/environment/ament_prefix_path.sh
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/unitree_joint_controller/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/unitree_joint_controller/environment/path.sh
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/unitree_joint_controller/environment/path.dsv
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/unitree_joint_controller/local_setup.bash
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/unitree_joint_controller/local_setup.sh
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/unitree_joint_controller/local_setup.zsh
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/unitree_joint_controller/local_setup.dsv
+-- Installing: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/unitree_joint_controller/package.dsv
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/ament_index/resource_index/packages/unitree_joint_controller
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/ament_index/resource_index/controller_interface__pluginlib__plugin/unitree_joint_controller
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/unitree_joint_controller/cmake/export_unitree_joint_controllerExport.cmake
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/unitree_joint_controller/cmake/export_unitree_joint_controllerExport-noconfig.cmake
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/unitree_joint_controller/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/unitree_joint_controller/cmake/ament_cmake_export_targets-extras.cmake
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/unitree_joint_controller/cmake/unitree_joint_controllerConfig.cmake
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/unitree_joint_controller/cmake/unitree_joint_controllerConfig-version.cmake
+-- Up-to-date: /home/pim0ubuntu/go1_ws/install/unitree_joint_controller/share/unitree_joint_controller/package.xml

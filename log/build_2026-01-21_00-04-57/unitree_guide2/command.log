@@ -1,0 +1,6 @@
+Invoking command in '/home/pim0ubuntu/go1_ws/build/unitree_guide2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2 -DCMAKE_INSTALL_PREFIX=/home/pim0ubuntu/go1_ws/install/unitree_guide2
+Invoked command in '/home/pim0ubuntu/go1_ws/build/unitree_guide2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_guide2 -DCMAKE_INSTALL_PREFIX=/home/pim0ubuntu/go1_ws/install/unitree_guide2
+Invoking command in '/home/pim0ubuntu/go1_ws/build/unitree_guide2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/pim0ubuntu/go1_ws/build/unitree_guide2 -- -j4 -l4
+Invoked command in '/home/pim0ubuntu/go1_ws/build/unitree_guide2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/pim0ubuntu/go1_ws/build/unitree_guide2 -- -j4 -l4
+Invoking command in '/home/pim0ubuntu/go1_ws/build/unitree_guide2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/pim0ubuntu/go1_ws/build/unitree_guide2
+Invoked command in '/home/pim0ubuntu/go1_ws/build/unitree_guide2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/pim0ubuntu/go1_ws/build/unitree_guide2

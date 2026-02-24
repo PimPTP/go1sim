@@ -1,0 +1,8 @@
+[0.032s] Invoking command in '/home/pim0ubuntu/go1_ws/build/motor_ctrl': /usr/bin/cmake --build /home/pim0ubuntu/go1_ws/build/motor_ctrl -- -j4 -l4
+[0.085s] [ 25%] [32mBuilding CXX object CMakeFiles/check_cpp.dir/src/check.cpp.o[0m
+[0.086s] [ 50%] [32mBuilding C object CMakeFiles/check_c.dir/src/check.c.o[0m
+[0.151s] [ 75%] [32m[1mLinking CXX executable /home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_actuator_sdk/bin/check_cpp[0m
+[0.195s] [100%] [32m[1mLinking C executable /home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_actuator_sdk/bin/check_c[0m
+[0.362s] [100%] Built target check_cpp
+[0.400s] [100%] Built target check_c
+[0.423s] Invoked command in '/home/pim0ubuntu/go1_ws/build/motor_ctrl' returned '0': /usr/bin/cmake --build /home/pim0ubuntu/go1_ws/build/motor_ctrl -- -j4 -l4
