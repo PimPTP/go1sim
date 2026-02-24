@@ -1,1 +1,0 @@
-/usr/bin/cc -rdynamic CMakeFiles/check_c.dir/src/check.c.o -o /home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_actuator_sdk/bin/check_c   -L/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_actuator_sdk/lib  -Wl,-rpath,/home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_actuator_sdk/lib -lUnitree_motor_SDK_Linux64 

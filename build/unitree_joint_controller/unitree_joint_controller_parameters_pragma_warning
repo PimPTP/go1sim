@@ -1,1 +1,0 @@
-#pragma message("#include \"unitree_joint_controller_parameters.hpp\" is deprecated. Use #include <unitree_joint_controller/unitree_joint_controller_parameters.hpp> instead.")

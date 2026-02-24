@@ -1,6 +1,0 @@
-[0.031s] Invoking command in '/home/pim0ubuntu/go1_ws/build/motor_ctrl': /usr/bin/cmake --build /home/pim0ubuntu/go1_ws/build/motor_ctrl -- -j4 -l4
-[0.101s] [35m[1mConsolidate compiler generated dependencies of target check_cpp[0m
-[0.105s] [35m[1mConsolidate compiler generated dependencies of target check_c[0m
-[0.132s] [ 50%] Built target check_cpp
-[0.166s] [100%] Built target check_c
-[0.252s] Invoked command in '/home/pim0ubuntu/go1_ws/build/motor_ctrl' returned '0': /usr/bin/cmake --build /home/pim0ubuntu/go1_ws/build/motor_ctrl -- -j4 -l4

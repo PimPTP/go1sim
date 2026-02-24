@@ -1,6 +1,0 @@
-[ 25%] [32mBuilding CXX object CMakeFiles/check_cpp.dir/src/check.cpp.o[0m
-[ 50%] [32mBuilding C object CMakeFiles/check_c.dir/src/check.c.o[0m
-[ 75%] [32m[1mLinking CXX executable /home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_actuator_sdk/bin/check_cpp[0m
-[100%] [32m[1mLinking C executable /home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_actuator_sdk/bin/check_c[0m
-[100%] Built target check_cpp
-[100%] Built target check_c

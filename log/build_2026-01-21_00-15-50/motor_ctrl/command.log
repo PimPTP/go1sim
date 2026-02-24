@@ -1,4 +1,0 @@
-Invoking command in '/home/pim0ubuntu/go1_ws/build/motor_ctrl': /usr/bin/cmake /home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_actuator_sdk -DCMAKE_INSTALL_PREFIX=/home/pim0ubuntu/go1_ws/install/motor_ctrl
-Invoked command in '/home/pim0ubuntu/go1_ws/build/motor_ctrl' returned '0': /usr/bin/cmake /home/pim0ubuntu/go1_ws/src/unitree_guide2/unitree_actuator_sdk -DCMAKE_INSTALL_PREFIX=/home/pim0ubuntu/go1_ws/install/motor_ctrl
-Invoking command in '/home/pim0ubuntu/go1_ws/build/motor_ctrl': /usr/bin/cmake --build /home/pim0ubuntu/go1_ws/build/motor_ctrl -- -j4 -l4
-Invoked command in '/home/pim0ubuntu/go1_ws/build/motor_ctrl' returned '0': /usr/bin/cmake --build /home/pim0ubuntu/go1_ws/build/motor_ctrl -- -j4 -l4
