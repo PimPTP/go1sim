@@ -186,6 +186,10 @@ void State_ShakeHand::run(){
         
         if(_percent >= 0.999f && isLegReached){
             std::cout << "[SHAKEHAND] Raise." << std::endl;
+            std::cout << "MotorState FR: "
+              << _lowState->motorState[3].q << " "
+              << _lowState->motorState[4].q << " "
+              << _lowState->motorState[5].q << std::endl;
             _percent = 0.0f;
             _phase = 3;
         }
