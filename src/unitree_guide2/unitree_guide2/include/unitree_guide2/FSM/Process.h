@@ -29,9 +29,9 @@ inline Vec3 baseToLegFR(const Vec3& p_base)
 
 inline bool inWorkspace(double x, double y, double z)
 {
-    double r_xy = std::sqrt(x*x + y*y);
+    double r = std::sqrt(x*x + y*y);
     double z2   = z - L_HIP;
-    double d    = std::sqrt(r_xy*r_xy + z2*z2);
+    double d    = std::sqrt(r*r + z2*z2);
 
     return (d >= std::fabs(L_THIGH - L_CALF)) &&
            (d <= (L_THIGH + L_CALF));
@@ -48,19 +48,18 @@ inline bool checkJointLimit(double q1, double q2, double q3)
 inline Vec3 solveFK_FR(double q_hip, double q_thigh, double q_calf)
 {
     double r =
-        L_THIGH * cos(q_thigh)
-      + L_CALF  * cos(q_thigh + q_calf);
+        L_THIGH * std::cos(q_thigh)
+      + L_CALF  * std::cos(q_thigh + q_calf);
 
     Vec3 p;
-    p.x() = cos(q_hip) * r;
-    p.y() = sin(q_hip) * r;
+    p.x() = std::cos(q_hip) * r;
+    p.y() = std::sin(q_hip) * r;
     p.z() = L_HIP
-          + L_THIGH * sin(q_thigh)
-          + L_CALF  * sin(q_thigh + q_calf);
+          + L_THIGH * std::sin(q_thigh)
+          + L_CALF  * std::sin(q_thigh + q_calf);
 
     return p;
 }
-
 
 inline bool solveIK_FR(
     double x, double y, double z,
@@ -68,31 +67,32 @@ inline bool solveIK_FR(
     double& q_thigh,
     double& q_calf)
 {
+    // Hip
     q_hip = std::atan2(y, x);
 
-    double r_xy = std::sqrt(x*x + y*y);
-
+    double r  = std::sqrt(x*x + y*y);
     double z2 = z - L_HIP;
-    double d  = std::sqrt(r_xy*r_xy + z2*z2);
+    double d2 = r*r + z2*z2;
 
-    if(d > (L_THIGH + L_CALF)) return false;
-    if(d < std::fabs(L_THIGH - L_CALF)) return false;
+    // Calf
+    double c = (d2 - L_THIGH*L_THIGH - L_CALF*L_CALF)
+             / (2.0 * L_THIGH * L_CALF);
 
-    double c = (L_THIGH*L_THIGH + L_CALF*L_CALF - d*d) /
-               (2.0 * L_THIGH * L_CALF);
+    if (c >  1.0) c =  1.0;
+    if (c < -1.0) c = -1.0;
 
-    if(c < -1.0 || c > 1.0) return false;
+    double s_sq = 1.0 - c*c;
+    if (s_sq < 0.0) s_sq = 0.0;
 
-    double theta = std::acos(c);
-    q_calf = -(M_PI - theta);
+    double s = -std::sqrt(s_sq); 
+    q_calf = std::atan2(s, c);
 
-    double alpha = std::atan2(z2, r_xy);
-    double beta  = std::acos(
-        (L_THIGH*L_THIGH + d*d - L_CALF*L_CALF) /
-        (2.0 * L_THIGH * d)
-    );
+    // Thigh
+    double k1 = L_THIGH + L_CALF * std::cos(q_calf);
+    double k2 = L_CALF  * std::sin(q_calf);
 
-    q_thigh = alpha - beta;
+    q_thigh = std::atan2(z2, r)
+            - std::atan2(k2, k1);
 
     return true;
 }

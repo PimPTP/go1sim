@@ -35,19 +35,19 @@ void State_ShakeHand::enter(){
         _targetPos[i] = _startPos[i];
     }
 
-    _targetPos[0] = 0.0;   // FL hip
-    _targetPos[1] = 0.6;   // FL thigh
-    _targetPos[2] = -1.2;  // FL calf
+    _targetPos[0] = 0.0; 
+    _targetPos[1] = 0.6;  
+    _targetPos[2] = -1.2;  
 
-    _targetPos[3] = 0.0;   // FR 
+    _targetPos[3] = 0.0;   
     _targetPos[4] = 0.6;
     _targetPos[5] = -1.2;
 
-    _targetPos[6]  = 0.0;   // RL 
+    _targetPos[6]  = 0.0;   
     _targetPos[7]  = 1.4;   
     _targetPos[8]  = -2.4; 
 
-    _targetPos[9]  = 0.0;   // RR 
+    _targetPos[9]  = 0.0;   
     _targetPos[10] = 1.4;
     _targetPos[11] = -2.4;
 
@@ -110,6 +110,22 @@ void State_ShakeHand::run(){
         Vec3 p_base = camToBase(p_cam);
         Vec3 p_leg  = baseToLegFR(p_base);
 
+        std::cout << "TARGET CHECK\n";
+        std::cout << "Cam  : "
+          << p_cam.x()  << " "
+          << p_cam.y()  << " "
+          << p_cam.z()  << std::endl;
+
+        std::cout << "Base : "
+          << p_base.x() << " "
+          << p_base.y() << " "
+          << p_base.z() << std::endl;
+
+        std::cout << "Leg  : "
+          << p_leg.x()  << " "
+          << p_leg.y()  << " "
+          << p_leg.z()  << std::endl;
+
         if(!inWorkspace(p_leg.x(), p_leg.y(), p_leg.z())){
             std::cout << "[SHAKEHAND] Out of workspace";
             break;
@@ -120,12 +136,23 @@ void State_ShakeHand::run(){
            qh, qt, qc)) break;
         if(!checkJointLimit(qh, qt, qc)) break;
 
+        std::cout << "IK q: "
+          << qh << " "
+          << qt << " "
+          << qc << std::endl;
+
+        Vec3 fk = solveFK_FR(qh, qt, qc);
+        std::cout << "FK result  : "
+          << fk.x() << " "
+          << fk.y() << " "
+          << fk.z() << std::endl;
+
         for(int i=0;i<12;i++)
             _startPos[i] = _lowCmd->motorCmd[i].q;
 
-        _targetPos[3] = qh;
-        _targetPos[4] = qt;
-        _targetPos[5] = qc;
+        _targetPos[0] = qh;
+        _targetPos[1] = qt;
+        _targetPos[2] = qc;
 
         _percent = 0.0f;
         _phase   = 2;
@@ -144,13 +171,13 @@ void State_ShakeHand::run(){
             _lowCmd->motorCmd[j].q = _startPos[j];
         }
 
-        for(int j=3; j<=5; j++){
+        for(int j=0; j<=2; j++){
             _lowCmd->motorCmd[j].q =
                 (1.0f - _percent)*_startPos[j] + _percent*_targetPos[j];
         }
 
         bool isLegReached = true;
-        for(int j=3; j<=5; j++){
+        for(int j=0; j<=2; j++){
             if(std::fabs(_lowState->motorState[j].q - _targetPos[j]) > 0.08){
                 isLegReached = false;
                 break;
@@ -175,9 +202,9 @@ void State_ShakeHand::run(){
         for(int i=0;i<12;i++)
             _startPos[i] = _lowCmd->motorCmd[i].q;
 
-        _targetPos[3] = 0.0;
-        _targetPos[4] = 0.6;
-        _targetPos[5] = -1.2;
+        _targetPos[0] = 0.0;
+        _targetPos[1] = 0.6;
+        _targetPos[2] = -1.2;
 
         _percent = 0.0f;
         _phase = 4;
@@ -189,13 +216,13 @@ void State_ShakeHand::run(){
         _percent += _ctrlComp->dt / 1.5f;
         if(_percent > 1.0f) _percent = 1.0f;
 
-        for(int j=3; j<=5; j++){
+        for(int j=0; j<=2; j++){
             _lowCmd->motorCmd[j].q =
                 (1.0f - _percent)*_startPos[j] + _percent*_targetPos[j];
         }
 
         bool isLegReached = true;
-        for(int j=3; j<=5; j++){
+        for(int j=0; j<=2; j++){
             if(std::fabs(_lowState->motorState[j].q - _targetPos[j]) > 0.08){
                 isLegReached = false;
                 break;
