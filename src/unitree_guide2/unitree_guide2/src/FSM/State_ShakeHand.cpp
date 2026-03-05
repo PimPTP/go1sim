@@ -110,7 +110,7 @@ void State_ShakeHand::run(){
         Vec3 p_base = camToBase(p_cam);
         Vec3 p_leg  = baseToLegFR(p_base);
 
-        std::cout << "TARGET CHECK\n";
+        std::cout << "[TARGET CHECK]\n";
         std::cout << "Cam  : "
           << p_cam.x()  << " "
           << p_cam.y()  << " "
@@ -127,7 +127,7 @@ void State_ShakeHand::run(){
           << p_leg.z()  << std::endl;
 
         if(!inWorkspace(p_leg.x(), p_leg.y(), p_leg.z())){
-            std::cout << "[SHAKEHAND] Out of workspace";
+            std::cout << "Out of workspace";
             break;
         }
 
@@ -136,13 +136,13 @@ void State_ShakeHand::run(){
            qh, qt, qc)) break;
         if(!checkJointLimit(qh, qt, qc)) break;
 
-        std::cout << "IK q: "
+        std::cout << "[IK] q: "
           << qh << " "
           << qt << " "
           << qc << std::endl;
 
         Vec3 fk = solveFK_FR(qh, qt, qc);
-        std::cout << "FK result  : "
+        std::cout << "[FK] result: "
           << fk.x() << " "
           << fk.y() << " "
           << fk.z() << std::endl;
@@ -161,8 +161,8 @@ void State_ShakeHand::run(){
 
     case 2:
     {
-        *_ctrlComp->contact = VecInt4(1, 0, 1, 1);
         _ctrlComp->setAllStance();
+        *_ctrlComp->contact = VecInt4(1, 0, 1, 1);
 
         _percent += _ctrlComp->dt / 1.5f;
         if(_percent > 1.0f) _percent = 1.0f;
@@ -186,10 +186,22 @@ void State_ShakeHand::run(){
         
         if(_percent >= 0.999f && isLegReached){
             std::cout << "[SHAKEHAND] Raise." << std::endl;
+
+            double qhs, qts, qcs;
+            qhs = _lowState->motorState[0].q;
+            qts = _lowState->motorState[1].q;
+            qcs = _lowState->motorState[2].q;
             std::cout << "MotorState FR: "
-              << _lowState->motorState[3].q << " "
-              << _lowState->motorState[4].q << " "
-              << _lowState->motorState[5].q << std::endl;
+              << qhs << " "
+              << qts << " "
+              << qcs << std::endl;
+
+            Vec3 fks = solveFK_FR(qhs, qts, qcs);
+            std::cout << "[FK] result: "
+              << fks.x() << " "
+              << fks.y() << " "
+              << fks.z() << std::endl;
+
             _percent = 0.0f;
             _phase = 3;
         }

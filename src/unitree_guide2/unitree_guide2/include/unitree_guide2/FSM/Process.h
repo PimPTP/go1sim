@@ -37,12 +37,12 @@ inline bool inWorkspace(double x, double y, double z)
            (d <= (L_THIGH + L_CALF));
 }
 
-inline bool checkJointLimit(double q1, double q2, double q3)
+inline bool checkJointLimit(double q_hip, double q_thigh, double q_calf)
 {
     using namespace GO1_LIMIT;
-    return (q1 >= HIP_MIN   && q1 <= HIP_MAX) &&
-           (q2 >= THIGH_MIN && q2 <= THIGH_MAX) &&
-           (q3 >= CALF_MIN  && q3 <= CALF_MAX);
+    return (q_hip >= HIP_MIN     && q_hip <= HIP_MAX) &&
+           (q_thigh >= THIGH_MIN && q_thigh <= THIGH_MAX) &&
+           (q_calf >= CALF_MIN   && q_calf <= CALF_MAX);
 }
 
 inline Vec3 solveFK_FR(double q_hip, double q_thigh, double q_calf)
