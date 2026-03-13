@@ -29,9 +29,9 @@ inline Vec3 baseToLegFR(const Vec3& p_base)
 
 inline bool inWorkspace(double x, double y, double z)
 {
-    double r = std::sqrt(x*x + y*y);
-    double z2   = z - L_HIP;
-    double d    = std::sqrt(r*r + z2*z2);
+    double y2 = y - L_HIP;
+    double r  = std::sqrt(x*x + y2*y2);
+    double d  = std::sqrt(r*r + z*z);
 
     return (d >= std::fabs(L_THIGH - L_CALF)) &&
            (d <= (L_THIGH + L_CALF));
@@ -52,11 +52,11 @@ inline Vec3 solveFK_FR(double q_hip, double q_thigh, double q_calf)
       + L_CALF  * std::cos(q_thigh + q_calf);
 
     Vec3 p;
-    p.x() = std::cos(q_hip) * r;
-    p.y() = std::sin(q_hip) * r;
-    p.z() = L_HIP
-          + L_THIGH * std::sin(q_thigh)
-          + L_CALF  * std::sin(q_thigh + q_calf);
+    p.x() = r * std::cos(q_hip);
+    p.y() = L_HIP + r * std::sin(q_hip);
+    p.z() =
+          L_THIGH * std::sin(q_thigh)
+        + L_CALF  * std::sin(q_thigh + q_calf);
 
     return p;
 }
@@ -67,12 +67,13 @@ inline bool solveIK_FR(
     double& q_thigh,
     double& q_calf)
 {
-    // Hip
-    q_hip = std::atan2(y, x);
+    double y2 = y - L_HIP;
 
-    double r  = std::sqrt(x*x + y*y);
-    double z2 = z - L_HIP;
-    double d2 = r*r + z2*z2;
+    // Hip
+    q_hip = std::atan2(y2, x);
+
+    double r  = std::sqrt(x*x + y2*y2);
+    double d2 = r*r + z*z;
 
     // Calf
     double c = (d2 - L_THIGH*L_THIGH - L_CALF*L_CALF)
@@ -91,7 +92,7 @@ inline bool solveIK_FR(
     double k1 = L_THIGH + L_CALF * std::cos(q_calf);
     double k2 = L_CALF  * std::sin(q_calf);
 
-    q_thigh = std::atan2(z2, r)
+    q_thigh = std::atan2(z, r)
             - std::atan2(k2, k1);
 
     return true;
