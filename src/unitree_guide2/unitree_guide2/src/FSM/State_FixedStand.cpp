@@ -48,7 +48,7 @@ FSMStateName State_FixedStand::checkChange(){
         return FSMStateName::TROTTING;
     }
     else if(_lowState->userCmd == UserCommand::L1_B){
-        return FSMStateName::SHAKEHAND;
+        return FSMStateName::PAWREQUEST;
     }
     else if(_lowState->userCmd == UserCommand::L1_X){
         return FSMStateName::BALANCETEST;

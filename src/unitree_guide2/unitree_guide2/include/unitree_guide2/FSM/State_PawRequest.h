@@ -1,5 +1,5 @@
-#ifndef STATE_SHAKEHAND_H
-#define STATE_SHAKEHAND_H
+#ifndef STATE_PAWREQUEST_H
+#define STATE_PAWREQUEST_H
 
 #include "FSM/FSMState.h"
 #include "VisionUDP.h"
@@ -9,10 +9,10 @@ struct VisionTarget{
     bool valid; 
 };
 
-class State_ShakeHand : public FSMState {
+class State_PawRequest : public FSMState {
 public:
-    State_ShakeHand(CtrlComponents *ctrlComp);
-    ~State_ShakeHand() {}
+    State_PawRequest(CtrlComponents *ctrlComp);
+    ~State_PawRequest() {}
 
     void enter();
     void run();

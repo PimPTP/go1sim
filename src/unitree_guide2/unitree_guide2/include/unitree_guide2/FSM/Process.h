@@ -69,11 +69,15 @@ inline bool solveIK_FR(
 {
     double y2 = y - L_HIP;
 
-    // Hip
+    // Hip roll
     q_hip = std::atan2(y2, x);
 
-    double r  = std::sqrt(x*x + y2*y2);
-    double d2 = r*r + z*z;
+    double xp =  std::cos(q_hip) * x
+               + std::sin(q_hip) * y2;
+
+    double zp = z;
+
+    double d2 = xp*xp + zp*zp;
 
     // Calf
     double c = (d2 - L_THIGH*L_THIGH - L_CALF*L_CALF)
@@ -85,18 +89,20 @@ inline bool solveIK_FR(
     double s_sq = 1.0 - c*c;
     if (s_sq < 0.0) s_sq = 0.0;
 
-    double s = -std::sqrt(s_sq); 
+    double s = -std::sqrt(s_sq);
+
     q_calf = std::atan2(s, c);
 
     // Thigh
     double k1 = L_THIGH + L_CALF * std::cos(q_calf);
     double k2 = L_CALF  * std::sin(q_calf);
 
-    q_thigh = std::atan2(z, r)
+    q_thigh = std::atan2(zp, xp)
             - std::atan2(k2, k1);
 
     return true;
 }
+
 
 inline Vec3 path(const Vec3& p0, const Vec3& p1, double t)
 {

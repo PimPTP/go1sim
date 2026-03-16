@@ -1,10 +1,10 @@
 #include <iostream>
 #include <cmath>
-#include "FSM/State_ShakeHand.h"
+#include "FSM/State_PawRequest.h"
 #include "FSM/Process.h"
 
-State_ShakeHand::State_ShakeHand(CtrlComponents *ctrlComp)
-    : FSMState(ctrlComp, FSMStateName::SHAKEHAND, "shake hand"),
+State_PawRequest::State_PawRequest(CtrlComponents *ctrlComp)
+    : FSMState(ctrlComp, FSMStateName::PAWREQUEST, "paw request"),
     _visionUDP(9000)
 {
     _percent   = 0.0f;
@@ -14,9 +14,9 @@ State_ShakeHand::State_ShakeHand(CtrlComponents *ctrlComp)
     _hasTarget = false;
 }
 
-void State_ShakeHand::enter(){
+void State_PawRequest::enter(){
 
-    std::cout << "[FSM] Enter SHAKEHAND" << std::endl;
+    std::cout << "[FSM] Enter PAWREQUEST" << std::endl;
 
     for(int i=0; i<4; i++){
         if(_ctrlComp->ctrlPlatform == CtrlPlatform::GAZEBO){
@@ -58,7 +58,7 @@ void State_ShakeHand::enter(){
     *_ctrlComp->contact = VecInt4(1,1,1,1);
 }
 
-void State_ShakeHand::run(){
+void State_PawRequest::run(){
 
     switch(_phase){
     case 0:
@@ -80,7 +80,7 @@ void State_ShakeHand::run(){
         }
 
         if(_percent >= 0.999f && isSitReached){
-            std::cout << "[SHAKEHAND] Sit." << std::endl;
+            std::cout << "[PAWREQUEST] Sit." << std::endl;
             _percent = 0.0f;
             _phase   = 1;
         }
@@ -151,9 +151,9 @@ void State_ShakeHand::run(){
         for(int i=0;i<12;i++)
             _startPos[i] = _lowCmd->motorCmd[i].q;
 
-        _targetPos[3] = qh;
-        _targetPos[4] = qt;
-        _targetPos[5] = qc;
+        _targetPos[0] = qh;
+        _targetPos[1] = qt;
+        _targetPos[2] = qc;
 
         _percent = 0.0f;
         _phase   = 2;
@@ -167,13 +167,13 @@ void State_ShakeHand::run(){
         _percent += _ctrlComp->dt / 1.5f;
         if(_percent > 1.0f) _percent = 1.0f;
 
-        for(int j=3; j<=5; j++){
+        for(int j=0; j<=2; j++){
             _lowCmd->motorCmd[j].q =
                 (1.0f - _percent)*_startPos[j] + _percent*_targetPos[j];
         }
 
         bool isLegReached = true;
-        for(int j=3; j<=5; j++){
+        for(int j=0; j<=2; j++){
             if(std::fabs(_lowState->motorState[j].q - _targetPos[j]) > 0.08){
                 isLegReached = false;
                 break;
@@ -181,12 +181,12 @@ void State_ShakeHand::run(){
         }
         
         if(_percent >= 0.999f && isLegReached){
-            std::cout << "[SHAKEHAND] Raise." << std::endl;
+            std::cout << "[PAWREQUEST] Raise." << std::endl;
 
             double qhs, qts, qcs;
-            qhs = _lowState->motorState[3].q;
-            qts = _lowState->motorState[4].q;
-            qcs = _lowState->motorState[5].q;
+            qhs = _lowState->motorState[0].q;
+            qts = _lowState->motorState[1].q;
+            qcs = _lowState->motorState[2].q;
             std::cout << "MotorState FR: "
               << qhs << " "
               << qts << " "
@@ -210,13 +210,13 @@ void State_ShakeHand::run(){
         if(_holdTime < 5.0f)
             break;
 
-        std::cout << "[SHAKEHAND] Lower." << std::endl;
+        std::cout << "[PAWREQUEST] Lower." << std::endl;
         for(int i=0;i<12;i++)
             _startPos[i] = _lowCmd->motorCmd[i].q;
 
-        _targetPos[3] = 0.0;
-        _targetPos[4] = 0.6;
-        _targetPos[5] = -1.2;
+        _targetPos[0] = 0.0;
+        _targetPos[1] = 0.6;
+        _targetPos[2] = -1.2;
 
         _percent = 0.0f;
         _phase = 4;
@@ -228,13 +228,13 @@ void State_ShakeHand::run(){
         _percent += _ctrlComp->dt / 1.5f;
         if(_percent > 1.0f) _percent = 1.0f;
 
-        for(int j=3; j<=5; j++){
+        for(int j=0; j<=2; j++){
             _lowCmd->motorCmd[j].q =
                 (1.0f - _percent)*_startPos[j] + _percent*_targetPos[j];
         }
 
         bool isLegReached = true;
-        for(int j=3; j<=5; j++){
+        for(int j=0; j<=2; j++){
             if(std::fabs(_lowState->motorState[j].q - _targetPos[j]) > 0.08){
                 isLegReached = false;
                 break;
@@ -249,17 +249,17 @@ void State_ShakeHand::run(){
     }
 }
 
-void State_ShakeHand::exit(){
-    std::cout << "[FSM] Exit SHAKEHAND" << std::endl;
+void State_PawRequest::exit(){
+    std::cout << "[FSM] Exit PAWREQUEST" << std::endl;
     _percent = 0;
     _phase   = 0;
 }
 
-FSMStateName State_ShakeHand::checkChange(){
+FSMStateName State_PawRequest::checkChange(){
 
     if(_lowState->userCmd == UserCommand::L2_A){
         return FSMStateName::FIXEDSTAND;
     }
 
-    return FSMStateName::SHAKEHAND;
+    return FSMStateName::PAWREQUEST;
 }

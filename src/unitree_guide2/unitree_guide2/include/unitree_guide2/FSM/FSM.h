@@ -10,7 +10,7 @@
 #include "FSM/State_Passive.h"
 #include "FSM/State_FreeStand.h"
 #include "FSM/State_Trotting.h"
-#include "FSM/State_ShakeHand.h"
+#include "FSM/State_PawRequest.h"
 #include "FSM/State_BalanceTest.h"
 #include "FSM/State_SwingTest.h"
 #include "FSM/State_StepTest.h"
@@ -26,7 +26,7 @@ struct FSMStateList{
     State_FixedStand *fixedStand;
     State_FreeStand *freeStand;
     State_Trotting *trotting;
-    State_ShakeHand *shakeHand;
+    State_PawRequest *pawrequest;
     State_BalanceTest *balanceTest;
     State_SwingTest *swingTest;
     State_StepTest *stepTest;
