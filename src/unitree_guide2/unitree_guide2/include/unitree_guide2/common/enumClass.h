@@ -27,10 +27,9 @@ enum class UserCommand{
 #ifdef COMPILE_WITH_MOVE_BASE
     L2_Y,       // move_base
 #endif  // COMPILE_WITH_MOVE_BASE
-    L1_X,       // balanceTest
-    L1_A,       // swingTest
-    L1_Y,       // stepTest
-    L1_B        // pawrequest
+    L1_X,
+    L1_A,       // 9 pawrequest
+    L1_Y,       // 8 pointnav
 };
 
 enum class FrameType{

@@ -47,18 +47,12 @@ FSMStateName State_FixedStand::checkChange(){
     else if(_lowState->userCmd == UserCommand::START){
         return FSMStateName::TROTTING;
     }
-    else if(_lowState->userCmd == UserCommand::L1_B){
+    else if(_lowState->userCmd == UserCommand::L1_A){
         return FSMStateName::PAWREQUEST;
     }
-    else if(_lowState->userCmd == UserCommand::L1_X){
-        return FSMStateName::BALANCETEST;
-    }
-    else if(_lowState->userCmd == UserCommand::L1_A){
-        return FSMStateName::SWINGTEST;
-    }
-    else if(_lowState->userCmd == UserCommand::L1_Y){
-        return FSMStateName::STEPTEST;
-    }
+//    else if(_lowState->userCmd == UserCommand::L1_Y){
+//        return FSMStateName:: ;
+//    }
 #ifdef COMPILE_WITH_MOVE_BASE
     else if(_lowState->userCmd == UserCommand::L2_Y){
         return FSMStateName::MOVE_BASE;
