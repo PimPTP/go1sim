@@ -29,7 +29,7 @@ enum class UserCommand{
 #endif  // COMPILE_WITH_MOVE_BASE
     L1_X,
     L1_A,       // 9 pawrequest
-    L1_Y,       // 8 pointnav
+    L1_B,       // 8 trottingNav
 };
 
 enum class FrameType{
@@ -57,6 +57,7 @@ enum class FSMStateName{
     FREESTAND,
     TROTTING,
     PAWREQUEST,
+    TROTTINGNAV,
 #ifdef COMPILE_WITH_MOVE_BASE
     MOVE_BASE,       // move_base
 #endif  // COMPILE_WITH_MOVE_BASE

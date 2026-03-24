@@ -50,9 +50,9 @@ FSMStateName State_FixedStand::checkChange(){
     else if(_lowState->userCmd == UserCommand::L1_A){
         return FSMStateName::PAWREQUEST;
     }
-//    else if(_lowState->userCmd == UserCommand::L1_Y){
-//        return FSMStateName:: ;
-//    }
+    else if(_lowState->userCmd == UserCommand::L1_B){
+        return FSMStateName::TROTTINGNAV;
+    }
 #ifdef COMPILE_WITH_MOVE_BASE
     else if(_lowState->userCmd == UserCommand::L2_Y){
         return FSMStateName::MOVE_BASE;

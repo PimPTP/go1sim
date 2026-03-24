@@ -42,7 +42,7 @@ UserCommand KeyBoard::checkCmd(){
     case '9':
         return UserCommand::L1_A;
     case '8':
-        return UserCommand::L1_Y;
+        return UserCommand::L1_B;
     case ' ':
         userValue.setZero();
         return UserCommand::NONE;

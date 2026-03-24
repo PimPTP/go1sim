@@ -11,6 +11,7 @@
 #include "FSM/State_FreeStand.h"
 #include "FSM/State_Trotting.h"
 #include "FSM/State_PawRequest.h"
+#include "FSM/State_TrottingNav.h"
 #include "FSM/State_BalanceTest.h"
 #include "FSM/State_SwingTest.h"
 #include "FSM/State_StepTest.h"
@@ -27,6 +28,7 @@ struct FSMStateList{
     State_FreeStand *freeStand;
     State_Trotting *trotting;
     State_PawRequest *pawrequest;
+    State_TrottingNav *trottingNav;
     State_BalanceTest *balanceTest;
     State_SwingTest *swingTest;
     State_StepTest *stepTest;

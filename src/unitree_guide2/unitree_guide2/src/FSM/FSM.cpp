@@ -13,6 +13,7 @@ FSM::FSM(CtrlComponents *ctrlComp)
     _stateList.freeStand = new State_FreeStand(_ctrlComp);
     _stateList.trotting = new State_Trotting(_ctrlComp);
     _stateList.pawrequest = new State_PawRequest(_ctrlComp);
+    _stateList.trottingNav = new State_TrottingNav(_ctrlComp);
     _stateList.balanceTest = new State_BalanceTest(_ctrlComp);
     _stateList.swingTest = new State_SwingTest(_ctrlComp);
     _stateList.stepTest = new State_StepTest(_ctrlComp);
@@ -83,6 +84,9 @@ FSMState* FSM::getNextState(FSMStateName stateName){
         break;
     case FSMStateName::PAWREQUEST:
         return _stateList.pawrequest;
+        break;
+    case FSMStateName::TROTTINGNAV:
+        return _stateList.trottingNav;
         break;
     case FSMStateName::BALANCETEST:
         return _stateList.balanceTest;
