@@ -1,5 +1,5 @@
-#ifndef TROTTING_NAV_H
-#define TROTTING_NAV_H
+#ifndef TROTTINGNAV_H
+#define TROTTINGNAV_H
 
 #include "FSM/FSMState.h"
 #include "Gait/GaitGenerator.h"
@@ -25,6 +25,8 @@ private:
     // ROS2
     rclcpp::Node::SharedPtr _node;
     rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr _sub_cmd;
+    rclcpp::executors::SingleThreadedExecutor _executor;  
+
     geometry_msgs::msg::Twist _cmd_vel;
 
     GaitGenerator *_gait;

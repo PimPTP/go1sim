@@ -23,13 +23,14 @@ State_TrottingNav::State_TrottingNav(CtrlComponents *ctrlComp)
     _vyLim = _robModel->getRobVelLimitY();
     _wyawLim = _robModel->getRobVelLimitYaw();
 
-    // ROS2
     _node = rclcpp::Node::make_shared("trotting_nav_node");
 
     _sub_cmd = _node->create_subscription<geometry_msgs::msg::Twist>(
         "/cmd_vel", 10,
         std::bind(&State_TrottingNav::cmdCallback, this, std::placeholders::_1)
     );
+
+    _executor.add_node(_node); 
 }
 
 State_TrottingNav::~State_TrottingNav(){
@@ -74,7 +75,8 @@ void State_TrottingNav::getNavCmd(){
 }
 
 void State_TrottingNav::run(){
-    rclcpp::spin_some(_node);  
+
+    _executor.spin_some();
 
     _posBody = _est->getPosition();
     _velBody = _est->getVelocity();
@@ -89,7 +91,17 @@ void State_TrottingNav::run(){
 
     getNavCmd();
 
-    // reuse trotting logic
+    if( fabs(_vCmdBody(0)) > 0.03 ||
+        fabs(_vCmdBody(1)) > 0.03 ||
+        fabs(_dYawCmd) > 0.20 )
+    {
+        _ctrlComp->setStartWave();
+    }
+    else
+    {
+        _ctrlComp->setAllStance();
+    }
+
     _vCmdGlobal = _B2G_RotMat * _vCmdBody;
 
     _pcd(0) += _vCmdGlobal(0) * _ctrlComp->dt;
@@ -106,7 +118,8 @@ void State_TrottingNav::run(){
     _velError = _vCmdGlobal - _velBody;
 
     _ddPcd = _Kpp * _posError + _Kdp * _velError;
-    _dWbd  = _kpw*rotMatToExp(_Rd*_G2B_RotMat) + _Kdw * (_wCmdGlobal - _lowState->getGyroGlobal());
+    _dWbd  = _kpw*rotMatToExp(_Rd*_G2B_RotMat)
+           + _Kdw * (_wCmdGlobal - _lowState->getGyroGlobal());
 
     _forceFeetGlobal = - _balCtrl->calF(_ddPcd, _dWbd, _B2G_RotMat, _posFeet2BGlobal, *_contact);
 
