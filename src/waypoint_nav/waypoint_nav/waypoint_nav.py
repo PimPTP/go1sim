@@ -40,7 +40,7 @@ class WaypointNav(Node):
 
         cmd = Twist()
 
-        STOP_DIST = 0.3
+        STOP_DIST = 0.2
 
         if dist < STOP_DIST:
             cmd.linear.x = 0.0
