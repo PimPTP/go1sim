@@ -25,6 +25,7 @@ class WaypointNav(Node):
 
         self.hx = None
         self.hy = None
+        self.hyaw = 0.0
 
     def goal_cb(self, msg):
         self.goal = msg.pose
@@ -33,22 +34,30 @@ class WaypointNav(Node):
 
     def model_cb(self, msg):
         try:
-            idx = msg.name.index('go1')
-            pose = msg.pose[idx]
+            i = msg.name.index('go1')
+            pose = msg.pose[i]
             self.x = pose.position.x
             self.y = pose.position.y
+
             q = pose.orientation
             self.yaw = math.atan2(
                 2*(q.w*q.z + q.x*q.y),
-                1 - 2*(q.y*q.y + q.z*q.z))
+                1 - 2*(q.y*q.y + q.z*q.z)
+            )
         except ValueError:
             pass
 
         try:
-            idx_h = msg.name.index('human')
-            pose_h = msg.pose[idx_h]
-            self.hx = pose_h.position.x
-            self.hy = pose_h.position.y
+            i = msg.name.index('human')
+            pose = msg.pose[i]
+            self.hx = pose.position.x
+            self.hy = pose.position.y
+
+            q = pose.orientation
+            self.hyaw = math.atan2(
+                2*(q.w*q.z + q.x*q.y),
+                1 - 2*(q.y*q.y + q.z*q.z)
+            )
         except ValueError:
             self.hx = None
 
@@ -56,62 +65,100 @@ class WaypointNav(Node):
         if self.x is None or self.y is None or not self.goal_received:
             return
 
+        # TARGET
         if self.hx is not None:
             safe_dist = 0.5
-            vec_x = self.hx - self.x
-            vec_y = self.hy - self.y
-            vec_len = math.sqrt(vec_x**2 + vec_y**2)
 
-            if vec_len > safe_dist:
-                target_dist = min(0.5, vec_len - safe_dist)
-                desired_yaw = math.atan2(vec_y, vec_x)
-                yaw_err = math.atan2(math.sin(desired_yaw - self.yaw), math.cos(desired_yaw - self.yaw))
-                curve_factor = 0.5
-                look_yaw = self.yaw + curve_factor * yaw_err
+            dx = self.hx - self.x
+            dy = self.hy - self.y
+            dist = math.sqrt(dx*dx + dy*dy)
 
-                gx = self.x + target_dist * math.cos(look_yaw)
-                gy = self.y + target_dist * math.sin(look_yaw)
+            if dist > 1e-6:
+                ux = dx / dist
+                uy = dy / dist
             else:
-                gx, gy = self.x, self.y
+                ux, uy = 0.0, 0.0
 
-            final_yaw = math.atan2(self.hy - self.y, self.hx - self.x)
+            gx = self.hx - safe_dist * ux
+            gy = self.hy - safe_dist * uy
+
+            goal_yaw = math.atan2(self.hy - gy, self.hx - gx)
         else:
-            gx, gy = self.goal.position.x, self.goal.position.y
-            final_yaw = None
+            gx = self.goal.position.x
+            gy = self.goal.position.y
+            goal_yaw = None
 
-        dx, dy = gx - self.x, gy - self.y
-        dist = math.sqrt(dx*dx + dy*dy)
-        target_yaw = math.atan2(dy, dx)
-        yaw_err = math.atan2(math.sin(target_yaw - self.yaw), math.cos(target_yaw - self.yaw))
+        # ERROR
+        dx = gx - self.x
+        dy = gy - self.y
+        rho = math.sqrt(dx*dx + dy*dy)
 
-        speed_scale = max(0.2, 1 - abs(yaw_err)/math.pi)
-        vx = speed_scale * 0.6 * min(dist/1.0, 1.0)
-        wz = 1.2 * math.tanh(2*yaw_err)
+        theta = math.atan2(dy, dx)
+        alpha = math.atan2(math.sin(theta - self.yaw),
+                           math.cos(theta - self.yaw))
+
+        if goal_yaw is not None:
+            beta = math.atan2(math.sin(goal_yaw - self.yaw),
+                              math.cos(goal_yaw - self.yaw))
+        else:
+            beta = 0.0
+
+        # CONTROL 
+        k_rho = 0.8
+        k_alpha = 1.5
+        k_beta = -0.5
+
+        if abs(alpha) > 0.3:
+            vx = 0.0
+            wz = 1.5 * alpha
+        else:
+            vx = k_rho * rho
+            wz = k_alpha * alpha + k_beta * beta
+
+        # LIMIT
+        vx = min(vx, 0.6)
         wz = max(min(wz, 1.0), -1.0)
 
-        stop_dist = 0.35
-        stop_yaw_thresh = 0.05
-        if dist < stop_dist:
+        if rho < 0.5:
+            vx *= rho / 0.5
+
+        if rho < 0.2:
+            vx = min(vx, 0.15)
+
+        # FINAL ALIGN 
+        stop_dist = 0.08
+        align_thresh = 0.03
+
+        if rho < stop_dist:
             vx = 0.0
-            if final_yaw is not None:
-                yaw_err2 = math.atan2(math.sin(final_yaw - self.yaw), math.cos(final_yaw - self.yaw))
-                wz = max(min(1.5 * yaw_err2, 1.0), -1.0)
-                if abs(yaw_err2) < stop_yaw_thresh:
+
+            if goal_yaw is not None:
+                yaw_err = math.atan2(math.sin(goal_yaw - self.yaw),
+                                     math.cos(goal_yaw - self.yaw))
+
+                if abs(yaw_err) > align_thresh:
+                    wz = max(min(1.5 * yaw_err, 1.0), -1.0)
+                else:
                     wz = 0.0
                     print("STOP")
             else:
                 wz = 0.0
                 print("STOP")
 
+        # PUBLISH 
         cmd = Twist()
         cmd.linear.x = vx
         cmd.angular.z = wz
         self.cmd_pub.publish(cmd)
 
+        # DEBUG 
         print(
-            f"robot: {self.x:.2f},{self.y:.2f} | "
-            f"human: {self.hx:.2f},{self.hy:.2f} | "
-            f"target: {gx:.2f},{gy:.2f} | dist: {dist:.2f} | yaw_err: {yaw_err:.2f}")
+            f"robot: {self.x:.2f},{self.y:.2f} "
+            f"(yaw={self.yaw:.2f}, {self.yaw*180/math.pi:.1f}deg) | "
+            f"human: {self.hx if self.hx else 0:.2f},{self.hy if self.hy else 0:.2f} "
+            f"(yaw={self.hyaw:.2f}, {self.hyaw*180/math.pi:.1f}deg) | "
+#            f"rho: {rho:.3f} | alpha: {alpha:.2f} | beta: {beta:.2f}"
+        )
 
 
 def main():
