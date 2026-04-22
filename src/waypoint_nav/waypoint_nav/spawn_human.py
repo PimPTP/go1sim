@@ -6,13 +6,17 @@ from gazebo_msgs.msg import EntityState
 import os
 import math
 
+def quat_to_yaw(q):
+    return math.atan2(
+        2.0 * (q.w * q.z + q.x * q.y),
+        1.0 - 2.0 * (q.y * q.y + q.z * q.z))
 
 class SpawnHuman(Node):
     def __init__(self):
         super().__init__('spawn_human')
 
         self.name = "human"
-        self.model_path = os.path.expanduser('~/human_model/model.sdf')
+        self.model_path = os.path.expanduser('~/human_model/person_standing/model.sdf')
         self.spawned = False
 
         self.spawn_cli = self.create_client(SpawnEntity, '/spawn_entity')
@@ -25,6 +29,8 @@ class SpawnHuman(Node):
         self.robot_x = 0.0
         self.robot_y = 0.0
         self.robot_yaw = 0.0
+
+        self.MODEL_YAW_OFFSET = 1.5708 
 
     def spawn_human(self):
         if self.spawned:
@@ -55,12 +61,18 @@ class SpawnHuman(Node):
         x_world = self.robot_x + math.cos(self.robot_yaw) * x_base - math.sin(self.robot_yaw) * y_base
         y_world = self.robot_y + math.sin(self.robot_yaw) * x_base + math.cos(self.robot_yaw) * y_base
 
+        yaw = quat_to_yaw(msg.pose.orientation)
+        yaw += self.MODEL_YAW_OFFSET 
+
         state = EntityState()
         state.name = self.name
         state.pose.position.x = x_world
         state.pose.position.y = y_world
         state.pose.position.z = msg.pose.position.z
-        state.pose.orientation = msg.pose.orientation
+
+        state.pose.orientation.z = math.sin(yaw / 2.0)
+        state.pose.orientation.w = math.cos(yaw / 2.0)
+
         state.reference_frame = "world"
 
         req = SetEntityState.Request()
@@ -68,7 +80,7 @@ class SpawnHuman(Node):
 
         self.set_cli.call_async(req)
 
-        print(f"move ({x_world:.2f},{y_world:.2f})")
+        print(f"move ({x_world:.2f},{y_world:.2f}) yaw={yaw:.2f}")
 
 
 def main():

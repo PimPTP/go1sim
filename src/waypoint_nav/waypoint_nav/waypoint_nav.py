@@ -67,7 +67,7 @@ class WaypointNav(Node):
 
         # TARGET
         if self.hx is not None:
-            safe_dist = 0.5
+            safe_dist = 0.28
 
             dx = self.hx - self.x
             dy = self.hy - self.y
@@ -126,7 +126,7 @@ class WaypointNav(Node):
             vx = min(vx, 0.15)
 
         # FINAL ALIGN 
-        stop_dist = 0.08
+        stop_dist = 0.28
         align_thresh = 0.03
 
         if rho < stop_dist:
