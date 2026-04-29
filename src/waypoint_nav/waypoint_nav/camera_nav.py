@@ -227,7 +227,7 @@ class CameraNav(Node):
         self.cmd_pub.publish(cmd)
 
         print(
-            f"rgb={self.rgb is not None} depth={self.depth is not None} | "
+            f"rgb={self.rgb is not None} depth={self.depth is not None}\n"
             f"robot: {self.x:.2f},{self.y:.2f} "
             f"(yaw={self.yaw:.2f}, {self.yaw*180/math.pi:.1f}deg) | "
             f"human: {self.hx if self.hx else 0:.2f},{self.hy if self.hy else 0:.2f} "
