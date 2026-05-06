@@ -15,7 +15,7 @@ constexpr double CALF_MAX  = -0.837;
 }
 
 static const Vec3 HIP_FR(0.1881, -0.04675, 0.0);
-static const Vec3 CAM_BASE(0.21, 0.0, 0.25);
+static const Vec3 CAM_BASE(0.26, 0.0, 0.1);
 
 inline Vec3 camToBase(const Vec3& p_cam)
 {
@@ -29,7 +29,7 @@ inline Vec3 baseToLegFR(const Vec3& p_base)
 
 inline bool inWorkspace(double x, double y, double z)
 {
-    double y2 = y - L_HIP;
+    double y2 = y + L_HIP;
     double r  = std::sqrt(x*x + y2*y2);
     double d  = std::sqrt(r*r + z*z);
 
@@ -53,7 +53,7 @@ inline Vec3 solveFK_FR(double q_hip, double q_thigh, double q_calf)
 
     Vec3 p;
     p.x() = r * std::cos(q_hip);
-    p.y() = L_HIP + r * std::sin(q_hip);
+    p.y() = - L_HIP + r * std::sin(q_hip);
     p.z() =
           L_THIGH * std::sin(q_thigh)
         + L_CALF  * std::sin(q_thigh + q_calf);
@@ -67,7 +67,7 @@ inline bool solveIK_FR(
     double& q_thigh,
     double& q_calf)
 {
-    double y2 = y - L_HIP;
+    double y2 = y + L_HIP;
 
     // Hip roll
     q_hip = std::atan2(y2, x);
@@ -103,8 +103,14 @@ inline bool solveIK_FR(
     return true;
 }
 
-
-inline Vec3 path(const Vec3& p0, const Vec3& p1, double t)
+inline Vec3 path(const Vec3& p0, const Vec3& p1, const Vec3& p2, double t)
 {
-    return (1.0 - t) * p0 + t * p1;
+    return (1-t)*(1-t)*p0
+         + 2*(1-t)*t*p1
+         + t*t*p2;
+}
+
+inline double smooth(double t)
+{
+    return 0.5 - 0.5 * cos(M_PI * t);  
 }

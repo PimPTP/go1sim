@@ -21,17 +21,32 @@ public:
 
 private:
     float _percent;
-    int _phase;
+    int   _phase;
     float _duration;
     float _holdTime;
+    float _waitTime;
 
     float _startPos[12];
     float _targetPos[12];
 
-    bool  _hasTarget;
-    float _visionTarget[3];
-
     VisionUDP _visionUDP;
+    bool _target_init;
+    bool _hasTarget;
+
+    bool getVisionTarget(Vec3& p_leg_out);
+
+    Vec3 _p_target_filt;
+
+    bool  _use_path;   
+    bool  _path_init;
+    float _path_t;
+
+    Vec3   _last_target;
+    double _target_thresh;
+
+    Vec3 _p_start;
+    Vec3 _p_mid;
+    Vec3 _p_target;
 };
 
 #endif

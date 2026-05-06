@@ -40,8 +40,8 @@ class CameraNav(Node):
         self.hy = None
         self.hyaw = 0.0
 
-        self.last_seen_time = self.get_clock().now()
-        self.lost_timeout = 0.5
+        self.last_goal_yaw = None
+        self.human_visible = False
 
     def goal_cb(self, msg):
         self.goal = msg.pose
@@ -57,8 +57,8 @@ class CameraNav(Node):
 
             q = pose.orientation
             self.yaw = math.atan2(
-                2*(q.w*q.z + q.x*q.y),
-                1 - 2*(q.y*q.y + q.z*q.z))
+                2 * (q.w * q.z + q.x * q.y),
+                1 - 2 * (q.y * q.y + q.z * q.z))
         except ValueError:
             pass
 
@@ -70,99 +70,107 @@ class CameraNav(Node):
 
     def detect_human(self):
         if self.rgb is None or self.depth is None:
+            self.human_visible = False
             return None
 
         results = self.model(self.rgb, imgsz=320, verbose=False)[0]
+
         print("YOLO boxes:", len(results.boxes))
+
+        best = None
+        best_z = 999.0
+
+        h, w = self.rgb.shape[:2]
+
+        fx = 585.0
+        fy = 585.0
+        cx0 = w / 2.0
+        cy0 = h / 2.0
 
         for box in results.boxes:
             cls = int(box.cls[0])
             conf = float(box.conf[0])
 
-            if cls == 0 and conf > 0.3:
-                x1, y1, x2, y2 = map(int, box.xyxy[0])
+            if cls != 0 or conf < 0.25:
+                continue
 
-                cx = int((x1 + x2) / 2)
-                cy = max(0, y2 - 5)
+            x1, y1, x2, y2 = map(int, box.xyxy[0])
 
-                patch = self.depth[max(0,cy-4):cy+5, max(0,cx-4):cx+5]
-                patch = patch[np.isfinite(patch)]
+            cx = int((x1 + x2) * 0.5)
+            cy = int(y1 + 0.82 * (y2 - y1))
 
-                if len(patch) == 0:
-                    continue
+            if cx < 0 or cx >= w or cy < 0 or cy >= h:
+                continue
 
-                z = float(np.median(patch))
+            patch = self.depth[max(0, cy - 2):cy + 3, max(0, cx - 2):cx + 3]
+            patch = patch[np.isfinite(patch)]
 
-                if z <= 0 or z > 3.0:
-                    continue
+            if len(patch) == 0:
+                continue
 
-                fx = 300.0
-                cx0 = self.rgb.shape[1] / 2
+            z = float(np.median(patch))
 
-                X = (cx - cx0) * z / fx
+            if z <= 0.2 or z > 3.0:
+                continue
 
-                forward = z
-                lateral = -X
+            if z < best_z:
+                best_z = z
+                best = (cx, cy, z)
 
-                hx = self.x + math.cos(self.yaw) * forward - math.sin(self.yaw) * lateral
-                hy = self.y + math.sin(self.yaw) * forward + math.cos(self.yaw) * lateral
+        if best is None:
+            self.human_visible = False
+            return None
 
-                if self.hx is not None:
-                    old_dist = math.sqrt((self.hx - self.x)**2 + (self.hy - self.y)**2)
-                    new_dist = math.sqrt((hx - self.x)**2 + (hy - self.y)**2)
+        self.human_visible = True
 
-                    if new_dist > old_dist + 0.5:
-                        print("DEPTH JUMP → IGNORE")
-                        return None
+        cx, cy, z = best
 
-                    if new_dist > old_dist:
-                        print("DIST INCREASE → IGNORE")
-                        return None
+        x_cam = (cx - cx0) * z / fx
+        y_cam = (cy - cy0) * z / fy
 
-                self.hyaw = math.atan2(hy - self.y, hx - self.x)
+        forward = z
+        lateral = -x_cam
 
-                print(f"z={z:.2f} bx={forward:.2f} by={lateral:.2f}")
+        bx = forward
+        by = lateral
 
-                return hx, hy
+        hx = self.x + math.cos(self.yaw) * bx - math.sin(self.yaw) * by
+        hy = self.y + math.sin(self.yaw) * bx + math.cos(self.yaw) * by
 
-        return None
+        self.hyaw = math.atan2(hy - self.y, hx - self.x)
+
+        print(f"z={z:.2f} bx={bx:.2f} by={by:.2f}")
+
+        return hx, hy
 
     def loop(self):
         if self.x is None or self.y is None or not self.goal_received:
             return
 
         human = self.detect_human()
-        now = self.get_clock().now()
 
-        if human is not None:
-            new_hx, new_hy = human
-
-            if self.hx is not None:
-                self.hx = 0.8*self.hx + 0.2*new_hx
-                self.hy = 0.8*self.hy + 0.2*new_hy
-            else:
-                self.hx, self.hy = new_hx, new_hy
-
-            self.last_seen_time = now
-
-        else:
-            dt = (now - self.last_seen_time).nanoseconds * 1e-9
-
-            if dt > self.lost_timeout:
-                print("LOST HUMAN → STOP")
-                self.hx = None
-                self.hy = None
-
-        if self.hx is None:
+        if human is None:
             cmd = Twist()
             self.cmd_pub.publish(cmd)
+
+            self.hx = None
+            self.hy = None
+
+            print(
+                f"robot: {self.x:.2f},{self.y:.2f} "
+                f"(yaw={self.yaw:.2f}, {self.yaw*180/math.pi:.1f}deg) | "
+                f"human: 0.00,0.00 "
+                f"(yaw={self.hyaw:.2f}, {self.hyaw*180/math.pi:.1f}deg) | "
+                f"rgb={self.rgb is not None} depth={self.depth is not None}")
             return
+
+        self.hx, self.hy = human
 
         safe_dist = 0.28
 
         dx = self.hx - self.x
         dy = self.hy - self.y
-        dist = math.sqrt(dx*dx + dy*dy)
+        dist = math.sqrt(dx * dx + dy * dy)
 
         if dist > 1e-6:
             ux = dx / dist
@@ -175,16 +183,27 @@ class CameraNav(Node):
 
         goal_yaw = math.atan2(self.hy - gy, self.hx - gx)
 
+        if dist < 0.6:
+            if self.last_goal_yaw is not None:
+                goal_yaw = self.last_goal_yaw
+        else:
+            self.last_goal_yaw = goal_yaw
+
         dx = gx - self.x
         dy = gy - self.y
-        rho = math.sqrt(dx*dx + dy*dy)
+        rho = math.sqrt(dx * dx + dy * dy)
 
         theta = math.atan2(dy, dx)
-        alpha = math.atan2(math.sin(theta - self.yaw),
-                           math.cos(theta - self.yaw))
 
-        beta = math.atan2(math.sin(goal_yaw - self.yaw),
-                          math.cos(goal_yaw - self.yaw))
+        alpha = math.atan2(
+            math.sin(theta - self.yaw),
+            math.cos(theta - self.yaw)
+        )
+
+        beta = math.atan2(
+            math.sin(goal_yaw - self.yaw),
+            math.cos(goal_yaw - self.yaw)
+        )
 
         k_rho = 0.8
         k_alpha = 1.5
@@ -207,16 +226,17 @@ class CameraNav(Node):
             vx = min(vx, 0.15)
 
         stop_dist = 0.28
-        align_thresh = 0.03
+        align_thresh = 0.04
 
         if rho < stop_dist:
             vx = 0.0
 
-            yaw_err = math.atan2(math.sin(goal_yaw - self.yaw),
-                                 math.cos(goal_yaw - self.yaw))
+            yaw_err = math.atan2(
+                math.sin(goal_yaw - self.yaw),
+                math.cos(goal_yaw - self.yaw))
 
             if abs(yaw_err) > align_thresh:
-                wz = max(min(1.5 * yaw_err, 1.0), -1.0)
+                wz = max(min(1.0 * yaw_err, 0.4), -0.4)
             else:
                 wz = 0.0
                 print("STOP")
@@ -227,12 +247,11 @@ class CameraNav(Node):
         self.cmd_pub.publish(cmd)
 
         print(
-            f"rgb={self.rgb is not None} depth={self.depth is not None}\n"
             f"robot: {self.x:.2f},{self.y:.2f} "
             f"(yaw={self.yaw:.2f}, {self.yaw*180/math.pi:.1f}deg) | "
             f"human: {self.hx if self.hx else 0:.2f},{self.hy if self.hy else 0:.2f} "
             f"(yaw={self.hyaw:.2f}, {self.hyaw*180/math.pi:.1f}deg) | "
-        )
+            f"rgb={self.rgb is not None} depth={self.depth is not None}")
 
 
 def main():
