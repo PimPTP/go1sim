@@ -22,7 +22,6 @@ public:
 private:
     float _percent;
     int   _phase;
-    float _duration;
     float _holdTime;
     float _waitTime;
 

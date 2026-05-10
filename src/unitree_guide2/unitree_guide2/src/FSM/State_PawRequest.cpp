@@ -50,7 +50,6 @@ State_PawRequest::State_PawRequest(CtrlComponents *ctrlComp)
 {
     _percent   = 0.0f;
     _phase     = 0;
-    _duration  = 2.0f;
     _holdTime  = 0.0f;
     _waitTime  = 0.0f;
 
@@ -107,7 +106,7 @@ void State_PawRequest::run()
     // SIT 
     case 0:
     {
-        _percent += _ctrlComp->dt / _duration;
+        _percent += _ctrlComp->dt / 2.0f;
         if(_percent > 1.0f) _percent = 1.0f;
 
         for(int j = 0; j < 12; j++){
@@ -181,7 +180,7 @@ void State_PawRequest::run()
                 std::cout << "[PATH] Start\n";
             }
 
-            _path_t += _ctrlComp->dt / 0.6;
+            _path_t += _ctrlComp->dt / 2.0f;
             if(_path_t > 1.0f)
                 _path_t = 1.0f;
 
@@ -255,7 +254,7 @@ void State_PawRequest::run()
     // LOWER 
     case 4:
     {
-        _percent += _ctrlComp->dt / 1.5f;
+        _percent += _ctrlComp->dt / 2.0f;
         if(_percent > 1.0f)
             _percent = 1.0f;
 
