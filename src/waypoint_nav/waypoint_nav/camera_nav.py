@@ -7,6 +7,7 @@ from cv_bridge import CvBridge
 import math
 import numpy as np
 from ultralytics import YOLO
+import cv2
 
 
 class CameraNav(Node):
@@ -64,6 +65,9 @@ class CameraNav(Node):
 
     def rgb_cb(self, msg):
         self.rgb = self.bridge.imgmsg_to_cv2(msg, 'bgr8')
+        img = self.rgb.copy()
+        cv2.imshow('camera',img)
+        cv2.waitKey(1)
 
     def depth_cb(self, msg):
         self.depth = self.bridge.imgmsg_to_cv2(msg, '32FC1')
