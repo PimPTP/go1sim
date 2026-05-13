@@ -201,13 +201,11 @@ class CameraNav(Node):
 
         alpha = math.atan2(
             math.sin(theta - self.yaw),
-            math.cos(theta - self.yaw)
-        )
+            math.cos(theta - self.yaw))
 
         beta = math.atan2(
             math.sin(goal_yaw - self.yaw),
-            math.cos(goal_yaw - self.yaw)
-        )
+            math.cos(goal_yaw - self.yaw))
 
         k_rho = 0.8
         k_alpha = 1.5
