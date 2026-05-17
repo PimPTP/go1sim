@@ -234,7 +234,6 @@ class CameraNav(Node):
                 + k_beta * beta)
 
         vx = min(vx, 0.6)
-
         wz = max(min(wz, 1.0), -1.0)
 
         if rho < 0.6:
@@ -254,18 +253,15 @@ class CameraNav(Node):
                 math.cos(goal_yaw - self.yaw))
 
             if abs(yaw_err) > align_thresh:
-                wz = max(min(1.0 * yaw_err, 0.4),-0.4)
+                wz = max(min(1.0 * yaw_err, 0.4), -0.4)
 
             else:
-
                 wz = 0.0
                 print("STOP")
 
         cmd = Twist()
-
         cmd.linear.x = vx
         cmd.angular.z = wz
-
         self.cmd_pub.publish(cmd)
 
         print(
