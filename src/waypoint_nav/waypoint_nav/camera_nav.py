@@ -24,11 +24,10 @@ class CameraNav(Node):
         self.create_subscription(Image, '/camera/camera/depth/image_raw', self.depth_cb, 10)
 
         self.bridge = CvBridge()
+        self.model = YOLO("yolov8n.pt")
 
         self.rgb = None
         self.depth = None
-
-        self.model = YOLO("yolov8n.pt")
 
         self.goal = None
         self.goal_received = False
