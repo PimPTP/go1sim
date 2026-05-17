@@ -38,12 +38,10 @@ class WaypointNav(Node):
             pose = msg.pose[i]
             self.x = pose.position.x
             self.y = pose.position.y
-
             q = pose.orientation
             self.yaw = math.atan2(
                 2*(q.w*q.z + q.x*q.y),
-                1 - 2*(q.y*q.y + q.z*q.z)
-            )
+                1 - 2*(q.y*q.y + q.z*q.z))
         except ValueError:
             pass
 
@@ -52,12 +50,10 @@ class WaypointNav(Node):
             pose = msg.pose[i]
             self.hx = pose.position.x
             self.hy = pose.position.y
-
             q = pose.orientation
             self.hyaw = math.atan2(
                 2*(q.w*q.z + q.x*q.y),
-                1 - 2*(q.y*q.y + q.z*q.z)
-            )
+                1 - 2*(q.y*q.y + q.z*q.z))
         except ValueError:
             self.hx = None
 
@@ -157,7 +153,7 @@ class WaypointNav(Node):
             f"(yaw={self.yaw:.2f}, {self.yaw*180/math.pi:.1f}deg) | "
             f"human: {self.hx if self.hx else 0:.2f},{self.hy if self.hy else 0:.2f} "
             f"(yaw={self.hyaw:.2f}, {self.hyaw*180/math.pi:.1f}deg) | "
-#            f"rho: {rho:.3f} | alpha: {alpha:.2f} | beta: {beta:.2f}"
+            f"rho: {rho:.3f} | alpha: {alpha:.2f} | beta: {beta:.2f}"
         )
 
 
