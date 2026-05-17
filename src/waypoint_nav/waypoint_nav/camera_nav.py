@@ -5,9 +5,9 @@ from gazebo_msgs.msg import ModelStates
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
 from ultralytics import YOLO
+import cv2
 import math
 import numpy as np
-import cv2
 
 
 class CameraNav(Node):
