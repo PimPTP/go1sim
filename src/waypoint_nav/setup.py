@@ -27,6 +27,7 @@ setup(
             'waypoint_nav = waypoint_nav.waypoint_nav:main',
             'spawn_human = waypoint_nav.spawn_human:main',
             'camera_nav = waypoint_nav.camera_nav:main',
+            'human_nav = waypoint_nav.human_nav:main',
         ],
     },
 )

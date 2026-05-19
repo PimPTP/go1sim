@@ -1,7 +1,7 @@
 import rclpy
 from rclpy.node import Node
-from geometry_msgs.msg import PoseStamped, Twist
-from gazebo_msgs.msg import ModelStates
+from geometry_msgs.msg import Twist
+from nav_msgs.msg import Odometry
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
 from ultralytics import YOLO
@@ -10,27 +10,22 @@ import math
 import numpy as np
 
 
-class CameraNav(Node):
+class HumanNav(Node):
 
     def __init__(self):
-        super().__init__('camera_nav')
+        super().__init__('HumanNav')
 
         self.cmd_pub = self.create_publisher(Twist, '/cmd_vel', 10)
+        self.create_subscription(Odometry, '/odom', self.odom_cb, 10)
 
-        self.create_subscription(PoseStamped, '/goal_pose', self.goal_cb, 10)
-        self.create_subscription(ModelStates, '/model_states', self.model_cb, 10)
-
-        self.create_subscription(Image, '/camera/camera/image_raw', self.rgb_cb, 10)
-        self.create_subscription(Image, '/camera/camera/depth/image_raw', self.depth_cb, 10)
+        self.create_subscription(Image, '/depth_cam/rgb/image_raw', self.rgb_cb, 10)
+        self.create_subscription(Image, '/depth_cam/depth/image_raw', self.depth_cb, 10)
 
         self.bridge = CvBridge()
         self.model = YOLO('yolov8n.pt')
 
         self.rgb = None
         self.depth = None
-
-        self.goal = None
-        self.goal_received = False
 
         self.x = None
         self.y = None
@@ -40,28 +35,18 @@ class CameraNav(Node):
         self.hy = None
         self.hyaw = 0.0
 
-        self.last_goal_yaw = None
         self.last_detect = False
+        self.last_goal_yaw = None
 
         self.create_timer(0.05, self.loop)
 
-    def goal_cb(self, msg):
-        self.goal = msg.pose
-        self.goal_received = True
-        print('goal received')
-
-    def model_cb(self, msg):
-        try:
-            i = msg.name.index('go1')
-            pose = msg.pose[i]
-            self.x = pose.position.x
-            self.y = pose.position.y
-            q = pose.orientation
-            self.yaw = math.atan2(
-                2 * (q.w * q.z + q.x * q.y),
-                1 - 2 * (q.y * q.y + q.z * q.z))
-        except ValueError:
-            pass
+    def odom_cb(self, msg):
+        self.x = msg.pose.pose.position.x
+        self.y = msg.pose.pose.position.y
+        q = msg.pose.pose.orientation
+        self.yaw = math.atan2(
+            2 * (q.w * q.z + q.x * q.y),
+            1 - 2 * (q.y * q.y + q.z * q.z))
 
     def rgb_cb(self, msg):
         self.rgb = self.bridge.imgmsg_to_cv2(msg, 'bgr8')
@@ -85,6 +70,7 @@ class CameraNav(Node):
         h, w = self.rgb.shape[:2]
 
         fx = 585.0
+
         cx0 = w * 0.5
 
         best = None
@@ -100,6 +86,11 @@ class CameraNav(Node):
                 continue
 
             x1, y1, x2, y2 = map(int, box.xyxy[0])
+
+            area = (x2 - x1) * (y2 - y1)
+
+            if area < 3000:
+                continue
 
             cx = int((x1 + x2) * 0.5)
 
@@ -157,7 +148,8 @@ class CameraNav(Node):
             print(
                 f'[DETECT] '
                 f'human=({hx:.2f}, {hy:.2f}) '
-                f'yaw={math.degrees(self.hyaw):.1f}deg')
+                f'yaw={math.degrees(self.hyaw):.1f}deg'
+            )
 
         self.last_detect = True
 
@@ -165,9 +157,7 @@ class CameraNav(Node):
 
     def loop(self):
 
-        if (self.x is None or
-            self.y is None or
-            not self.goal_received):
+        if self.x is None or self.y is None:
             return
 
         human = self.detect_human()
@@ -176,8 +166,7 @@ class CameraNav(Node):
             self.hx = None
             self.hy = None
 
-            cmd = Twist()
-            self.cmd_pub.publish(cmd)
+#            self.cmd_pub.publish(Twist())
 
             return
 
@@ -188,7 +177,7 @@ class CameraNav(Node):
         dx = self.hx - self.x
         dy = self.hy - self.y
 
-        dist = math.sqrt(dx * dx + dy * dy)
+        dist = math.hypot(dx, dy)
 
         if dist > 1e-6:
             ux = dx / dist
@@ -210,12 +199,13 @@ class CameraNav(Node):
                 goal_yaw = self.last_goal_yaw
 
         else:
+
             self.last_goal_yaw = goal_yaw
 
         dx = gx - self.x
         dy = gy - self.y
 
-        rho = math.sqrt(dx * dx + dy * dy)
+        rho = math.hypot(dx, dy)
 
         theta = math.atan2(dy, dx)
 
@@ -227,18 +217,14 @@ class CameraNav(Node):
             math.sin(goal_yaw - self.yaw),
             math.cos(goal_yaw - self.yaw))
 
-        k_rho = 0.8
-        k_alpha = 1.5
-        k_beta = -0.5
-
         if abs(alpha) > 0.3:
             vx = 0.0
             wz = 1.5 * alpha
 
         else:
-            vx = k_rho * rho
-            wz = (k_alpha * alpha
-                + k_beta * beta)
+            vx = 0.8 * rho
+            wz = (1.5 * alpha
+                - 0.5 * beta)
 
         vx = min(vx, 0.6)
         wz = max(min(wz, 1.0), -1.0)
@@ -260,7 +246,7 @@ class CameraNav(Node):
                 math.cos(goal_yaw - self.yaw))
 
             if abs(yaw_err) > align_thresh:
-                wz = max(min(1.0 * yaw_err, 0.4), -0.4)
+                wz = max(min(yaw_err, 0.4), -0.4)
 
             else:
                 wz = 0.0
@@ -269,7 +255,7 @@ class CameraNav(Node):
         cmd = Twist()
         cmd.linear.x = vx
         cmd.angular.z = wz
-        self.cmd_pub.publish(cmd)
+#        self.cmd_pub.publish(cmd)
 
         print(
             f'[CTRL] '
@@ -285,7 +271,7 @@ class CameraNav(Node):
 
 def main():
     rclpy.init()
-    node = CameraNav()
+    node = HumanNav()
     rclpy.spin(node)
     rclpy.shutdown()
 
