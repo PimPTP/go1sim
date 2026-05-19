@@ -249,7 +249,7 @@ class CameraNav(Node):
         if rho < 0.2:
             vx = min(vx, 0.15)
 
-        stop_dist = 0.28
+        stop_dist = 0.05
         align_thresh = 0.04
 
         if rho < stop_dist:

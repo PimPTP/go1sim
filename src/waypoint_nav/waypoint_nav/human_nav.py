@@ -160,17 +160,19 @@ class HumanNav(Node):
         if self.x is None or self.y is None:
             return
 
-        human = self.detect_human()
+#        human = self.detect_human()
 
-        if human is None:
-            self.hx = None
-            self.hy = None
+#        if human is None:
+#            self.hx = None
+#            self.hy = None
 
 #            self.cmd_pub.publish(Twist())
 
-            return
+#            return
 
-        self.hx, self.hy = human
+#        self.hx, self.hy = human
+        self.hx = 1.28
+        self.hy = 0.0
 
         safe_dist = 0.28
 
@@ -192,6 +194,12 @@ class HumanNav(Node):
         goal_yaw = math.atan2(
             self.hy - gy,
             self.hx - gx)
+        
+        print(
+            f'[GOAL] '
+            f'human=({self.hx:.2f}, {self.hy:.2f}) -> '
+            f'goal=({gx:.2f}, {gy:.2f})'
+        )
 
         if dist < 0.6:
 
@@ -235,7 +243,7 @@ class HumanNav(Node):
         if rho < 0.2:
             vx = min(vx, 0.15)
 
-        stop_dist = 0.28
+        stop_dist = 0.05
         align_thresh = 0.04
 
         if rho < stop_dist:
@@ -255,7 +263,7 @@ class HumanNav(Node):
         cmd = Twist()
         cmd.linear.x = vx
         cmd.angular.z = wz
-#        self.cmd_pub.publish(cmd)
+        self.cmd_pub.publish(cmd)
 
         print(
             f'[CTRL] '
