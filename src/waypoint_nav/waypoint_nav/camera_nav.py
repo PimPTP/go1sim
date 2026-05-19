@@ -24,7 +24,7 @@ class CameraNav(Node):
         self.create_subscription(Image, '/camera/camera/depth/image_raw', self.depth_cb, 10)
 
         self.bridge = CvBridge()
-        self.model = YOLO("yolov8n.pt")
+        self.model = YOLO('yolov8n.pt')
 
         self.rgb = None
         self.depth = None
@@ -48,7 +48,7 @@ class CameraNav(Node):
     def goal_cb(self, msg):
         self.goal = msg.pose
         self.goal_received = True
-        print("goal received")
+        print('goal received')
 
     def model_cb(self, msg):
         try:
@@ -65,11 +65,10 @@ class CameraNav(Node):
 
     def rgb_cb(self, msg):
         self.rgb = self.bridge.imgmsg_to_cv2(msg, 'bgr8')
-        cv2.imshow("camera", self.rgb)
+        cv2.imshow('camera', self.rgb)
         cv2.waitKey(1)
 
     def depth_cb(self, msg):
-
         self.depth = self.bridge.imgmsg_to_cv2(msg, '32FC1')
 
     def detect_human(self):
@@ -86,13 +85,12 @@ class CameraNav(Node):
         h, w = self.rgb.shape[:2]
 
         fx = 585.0
-        fy = 585.0
-
         cx0 = w * 0.5
-        cy0 = h * 0.5
 
         best = None
         best_z = 999.0
+
+        print('[YOLO]', len(results.boxes))
 
         for box in results.boxes:
             cls = int(box.cls[0])
@@ -104,37 +102,48 @@ class CameraNav(Node):
             x1, y1, x2, y2 = map(int, box.xyxy[0])
 
             cx = int((x1 + x2) * 0.5)
-            cy = int(y1 + 0.82 * (y2 - y1))
 
-            if cx < 0 or cx >= w or cy < 0 or cy >= h:
-                continue
+            z = None
 
-            patch = self.depth[
-                max(0, cy - 2):cy + 3,
-                max(0, cx - 2):cx + 3]
+            for ratio in [0.45, 0.60, 0.75]:
 
-            patch = patch[np.isfinite(patch)]
+                cy = int(
+                    y1 + ratio * (y2 - y1))
 
-            if len(patch) == 0:
-                continue
+                if (cx < 0 or cx >= w or
+                    cy < 0 or cy >= h):
+                    continue
 
-            z = float(np.median(patch))
+                patch = self.depth[
+                    max(0, cy - 4):cy + 5,
+                    max(0, cx - 4):cx + 5]
 
-            if z <= 0.2 or z > 3.0:
+                patch = patch[np.isfinite(patch)]
+
+                if len(patch) == 0:
+                    continue
+
+                d = float(np.median(patch))
+
+                if 0.2 < d < 4.0:
+
+                    z = d
+                    break
+
+            if z is None:
                 continue
 
             if z < best_z:
                 best_z = z
-                best = (cx, cy, z)
+                best = (cx, z)
 
         if best is None:
             self.last_detect = False
             return None
 
-        cx, cy, z = best
+        cx, z = best
 
         x_cam = (cx - cx0) * z / fx
-        y_cam = (cy - cy0) * z / fy
 
         forward = z
         lateral = -x_cam
@@ -147,10 +156,9 @@ class CameraNav(Node):
         if not self.last_detect:
 
             print(
-                f"[DETECT] "
-                f"human=({hx:.2f}, {hy:.2f}) "
-                f"yaw={math.degrees(self.hyaw):.1f}deg"
-            )
+                f'[DETECT] '
+                f'human=({hx:.2f}, {hy:.2f}) '
+                f'yaw={math.degrees(self.hyaw):.1f}deg')
 
         self.last_detect = True
 
@@ -257,7 +265,7 @@ class CameraNav(Node):
 
             else:
                 wz = 0.0
-                print("STOP")
+                print('STOP')
 
         cmd = Twist()
         cmd.linear.x = vx
@@ -265,14 +273,14 @@ class CameraNav(Node):
         self.cmd_pub.publish(cmd)
 
         print(
-            f"[CTRL] "
-            f"robot=({self.x:.2f}, {self.y:.2f}) "
-            f"yaw={math.degrees(self.yaw):.1f}deg | "
-            f"rho={rho:.2f} "
-            f"alpha={alpha:.2f} "
-            f"beta={beta:.2f} | "
-            f"vx={vx:.2f} "
-            f"wz={wz:.2f}"
+            f'[CTRL] '
+            f'robot=({self.x:.2f}, {self.y:.2f}) '
+            f'yaw={math.degrees(self.yaw):.1f}deg | '
+            f'rho={rho:.2f} '
+            f'alpha={alpha:.2f} '
+            f'beta={beta:.2f} | '
+            f'vx={vx:.2f} '
+            f'wz={wz:.2f}'
         )
 
 
