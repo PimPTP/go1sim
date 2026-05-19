@@ -96,10 +96,10 @@ class CameraNav(Node):
 
             cx = int((x1 + x2) * 0.5)
 
-            cy = int(y1 + 0.82 * (y2 - y1))
+            cy = int(y1 + 0.8 * (y2 - y1))
 
-            if not (0 <= cx < w and
-                    0 <= cy < h):
+            if (cx < 0 or cx >= w or
+                cy < 0 or cy >= h):
                 continue
 
             patch = self.depth[
@@ -112,9 +112,6 @@ class CameraNav(Node):
                 continue
 
             z = float(np.median(patch))
-
-            if z <= 0.2 or z > 3.0:
-                continue
 
             if z < best_z:
                 best_z = z
@@ -188,6 +185,12 @@ class CameraNav(Node):
         goal_yaw = math.atan2(
             self.hy - gy,
             self.hx - gx)
+        
+        print(
+            f'[GOAL] '
+            f'human=({self.hx:.2f}, {self.hy:.2f}) -> '
+            f'goal=({gx:.2f}, {gy:.2f})'
+        )
 
         if dist < 0.6:
 
