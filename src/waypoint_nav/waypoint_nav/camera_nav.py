@@ -1,6 +1,6 @@
 import rclpy
 from rclpy.node import Node
-from geometry_msgs.msg import PoseStamped, Twist
+from geometry_msgs.msg import Twist
 from gazebo_msgs.msg import ModelStates
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
@@ -16,8 +16,6 @@ class CameraNav(Node):
         super().__init__('camera_nav')
 
         self.cmd_pub = self.create_publisher(Twist, '/cmd_vel', 10)
-
-        self.create_subscription(PoseStamped, '/goal_pose', self.goal_cb, 10)
         self.create_subscription(ModelStates, '/model_states', self.model_cb, 10)
 
         self.create_subscription(Image, '/camera/camera/image_raw', self.rgb_cb, 10)
@@ -28,9 +26,6 @@ class CameraNav(Node):
 
         self.rgb = None
         self.depth = None
-
-        self.goal = None
-        self.goal_received = False
 
         self.x = None
         self.y = None
@@ -44,11 +39,6 @@ class CameraNav(Node):
         self.last_detect = False
 
         self.create_timer(0.05, self.loop)
-
-    def goal_cb(self, msg):
-        self.goal = msg.pose
-        self.goal_received = True
-        print('goal received')
 
     def model_cb(self, msg):
         try:
@@ -82,15 +72,18 @@ class CameraNav(Node):
             verbose=False
         )[0]
 
+        print('[YOLO]', len(results.boxes))
+
         h, w = self.rgb.shape[:2]
 
         fx = 585.0
+        fy = 585.0
+
         cx0 = w * 0.5
+        cy0 = h * 0.5
 
         best = None
         best_z = 999.0
-
-        print('[YOLO]', len(results.boxes))
 
         for box in results.boxes:
             cls = int(box.cls[0])
@@ -103,46 +96,40 @@ class CameraNav(Node):
 
             cx = int((x1 + x2) * 0.5)
 
-            z = None
+            cy = int(y1 + 0.82 * (y2 - y1))
 
-            for ratio in [0.45, 0.60, 0.75]:
+            if not (0 <= cx < w and
+                    0 <= cy < h):
+                continue
 
-                cy = int(y1 + ratio * (y2 - y1))
+            patch = self.depth[
+                max(0, cy - 2):cy + 3,
+                max(0, cx - 2):cx + 3]
 
-                if (cx < 0 or cx >= w or
-                    cy < 0 or cy >= h):
-                    continue
+            patch = patch[np.isfinite(patch)]
 
-                patch = self.depth[
-                    max(0, cy - 4):cy + 5,
-                    max(0, cx - 4):cx + 5]
+            if len(patch) == 0:
+                continue
 
-                patch = patch[np.isfinite(patch)]
+            z = float(np.median(patch))
 
-                if len(patch) == 0:
-                    continue
-
-                d = float(np.median(patch))
-
-                if 0.2 < d < 4.0:
-
-                    z = d
-                    break
-
-            if z is None:
+            if z <= 0.2 or z > 3.0:
                 continue
 
             if z < best_z:
                 best_z = z
-                best = (cx, z)
+
+                best = (cx, cy, z)
 
         if best is None:
             self.last_detect = False
+            print('[LOST]')
             return None
 
-        cx, z = best
+        cx, cy, z = best
 
-        x_cam = (cx - cx0) * z / fx
+        x_cam = ((cx - cx0) * z / fx)
+        y_cam = ((cy - cy0) * z / fy)
 
         forward = z
         lateral = -x_cam
@@ -165,9 +152,7 @@ class CameraNav(Node):
 
     def loop(self):
 
-        if (self.x is None or
-            self.y is None or
-            not self.goal_received):
+        if self.x is None or self.y is None:
             return
 
         human = self.detect_human()
@@ -227,18 +212,14 @@ class CameraNav(Node):
             math.sin(goal_yaw - self.yaw),
             math.cos(goal_yaw - self.yaw))
 
-        k_rho = 0.8
-        k_alpha = 1.5
-        k_beta = -0.5
-
         if abs(alpha) > 0.3:
             vx = 0.0
             wz = 1.5 * alpha
 
         else:
-            vx = k_rho * rho
-            wz = (k_alpha * alpha
-                + k_beta * beta)
+            vx = 0.8 * rho
+            wz = (1.5 * alpha
+                - 0.5 * beta)
 
         vx = min(vx, 0.6)
         wz = max(min(wz, 1.0), -1.0)

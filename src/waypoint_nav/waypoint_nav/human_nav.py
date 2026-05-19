@@ -171,8 +171,8 @@ class HumanNav(Node):
 #            return
 
 #        self.hx, self.hy = human
-        self.hx = 1.28
-        self.hy = 0.0
+        self.hx = 1.25
+        self.hy = 0.63
 
         safe_dist = 0.28
 
