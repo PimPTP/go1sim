@@ -248,7 +248,7 @@ class CameraNav(Node):
 
             else:
                 wz = 0.0
-                print('STOP')
+                print('[STOP]')
 
         cmd = Twist()
         cmd.linear.x = vx

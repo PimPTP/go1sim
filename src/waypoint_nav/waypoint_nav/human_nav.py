@@ -171,8 +171,8 @@ class HumanNav(Node):
 #            return
 
 #        self.hx, self.hy = human
-        self.hx = 1.25
-        self.hy = 0.63
+        self.hx = 1.28
+        self.hy = 0
 
         safe_dist = 0.28
 
@@ -258,7 +258,7 @@ class HumanNav(Node):
 
             else:
                 wz = 0.0
-                print('STOP')
+                print('[STOP]')
 
         cmd = Twist()
         cmd.linear.x = vx

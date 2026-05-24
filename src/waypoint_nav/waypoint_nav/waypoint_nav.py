@@ -27,10 +27,12 @@ class WaypointNav(Node):
         self.hy = None
         self.hyaw = 0.0
 
+        self.last_goal_yaw = None
+
     def goal_cb(self, msg):
         self.goal = msg.pose
         self.goal_received = True
-        print("goal received")
+        print('[GOAL RECEIVED]')
 
     def model_cb(self, msg):
         try:
@@ -79,10 +81,32 @@ class WaypointNav(Node):
             gy = self.hy - safe_dist * uy
 
             goal_yaw = math.atan2(self.hy - gy, self.hx - gx)
+
+            # yaw lock near target
+
+            if dist < 0.6:
+
+                if self.last_goal_yaw is not None:
+                    goal_yaw = self.last_goal_yaw
+
+            else:
+                self.last_goal_yaw = goal_yaw
+
+            print(
+                f'[GOAL] '
+                f'human=({self.hx:.2f}, {self.hy:.2f}) -> '
+                f'goal=({gx:.2f}, {gy:.2f})'
+            )
+
         else:
             gx = self.goal.position.x
             gy = self.goal.position.y
             goal_yaw = None
+
+            print(
+                f'[WAYPOINT] '
+                f'goal=({gx:.2f}, {gy:.2f})'
+            )
 
         # ERROR
         dx = gx - self.x
@@ -99,7 +123,7 @@ class WaypointNav(Node):
         else:
             beta = 0.0
 
-        # CONTROL 
+        # CONTROL
         k_rho = 0.8
         k_alpha = 1.5
         k_beta = -0.5
@@ -109,21 +133,23 @@ class WaypointNav(Node):
             wz = 1.5 * alpha
         else:
             vx = k_rho * rho
-            wz = k_alpha * alpha + k_beta * beta
+            wz = (k_alpha * alpha +
+                k_beta * beta)
 
         # LIMIT
         vx = min(vx, 0.6)
         wz = max(min(wz, 1.0), -1.0)
 
-        if rho < 0.5:
-            vx *= rho / 0.5
+        # smooth slowdown
+        if rho < 0.6:
+            vx *= rho / 0.6
 
         if rho < 0.2:
             vx = min(vx, 0.15)
 
-        # FINAL ALIGN 
-        stop_dist = 0.28
-        align_thresh = 0.03
+        # FINAL ALIGN
+        stop_dist = 0.05
+        align_thresh = 0.04
 
         if rho < stop_dist:
             vx = 0.0
@@ -135,25 +161,29 @@ class WaypointNav(Node):
                 if abs(yaw_err) > align_thresh:
                     wz = max(min(1.5 * yaw_err, 1.0), -1.0)
                 else:
+
                     wz = 0.0
-                    print("STOP")
+                    print('[STOP]')
             else:
                 wz = 0.0
-                print("STOP")
+                print('[STOP]')
 
-        # PUBLISH 
+        # PUBLISH
         cmd = Twist()
         cmd.linear.x = vx
         cmd.angular.z = wz
         self.cmd_pub.publish(cmd)
 
-        # DEBUG 
+        # DEBUG
         print(
-            f"robot: {self.x:.2f},{self.y:.2f} "
-            f"(yaw={self.yaw:.2f}, {self.yaw*180/math.pi:.1f}deg) | "
-            f"human: {self.hx if self.hx else 0:.2f},{self.hy if self.hy else 0:.2f} "
-            f"(yaw={self.hyaw:.2f}, {self.hyaw*180/math.pi:.1f}deg) | "
-            f"rho: {rho:.3f} | alpha: {alpha:.2f} | beta: {beta:.2f}"
+            f'[CTRL] '
+            f'robot=({self.x:.2f}, {self.y:.2f}) '
+            f'yaw={math.degrees(self.yaw):.1f}deg | '
+            f'rho={rho:.2f} '
+            f'alpha={alpha:.2f} '
+            f'beta={beta:.2f} | '
+            f'vx={vx:.2f} '
+            f'wz={wz:.2f}'
         )
 
 
