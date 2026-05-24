@@ -6,6 +6,7 @@ import math
 
 
 class WaypointNav(Node):
+    
     def __init__(self):
         super().__init__('waypoint_nav')
 

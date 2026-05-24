@@ -156,7 +156,6 @@ class HumanNav(Node):
         return hx, hy
 
     def loop(self):
-
         if self.x is None or self.y is None:
             return
 

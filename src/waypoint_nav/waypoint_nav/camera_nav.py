@@ -148,7 +148,6 @@ class CameraNav(Node):
         return hx, hy
 
     def loop(self):
-
         if self.x is None or self.y is None:
             return
 
@@ -160,7 +159,6 @@ class CameraNav(Node):
 
             cmd = Twist()
             self.cmd_pub.publish(cmd)
-
             return
 
         self.hx, self.hy = human
