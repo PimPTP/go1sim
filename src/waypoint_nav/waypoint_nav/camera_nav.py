@@ -38,6 +38,8 @@ class CameraNav(Node):
         self.last_goal_yaw = None
         self.last_detect = False
 
+        self.enable_motion = True
+
         self.create_timer(0.05, self.loop)
 
     def model_cb(self, msg):
@@ -157,8 +159,10 @@ class CameraNav(Node):
             self.hx = None
             self.hy = None
 
-            cmd = Twist()
-            self.cmd_pub.publish(cmd)
+            if self.enable_motion:
+                cmd = Twist()
+                self.cmd_pub.publish(cmd)
+
             return
 
         self.hx, self.hy = human
@@ -231,7 +235,7 @@ class CameraNav(Node):
         if rho < 0.2:
             vx = min(vx, 0.15)
 
-        stop_dist = 0.05
+        stop_dist = 0.2
         align_thresh = 0.04
 
         if rho < stop_dist:
@@ -248,10 +252,11 @@ class CameraNav(Node):
                 wz = 0.0
                 print('[STOP]')
 
-        cmd = Twist()
-        cmd.linear.x = vx
-        cmd.angular.z = wz
-        self.cmd_pub.publish(cmd)
+        if self.enable_motion:
+            cmd = Twist()
+            cmd.linear.x = vx
+            cmd.angular.z = wz
+            self.cmd_pub.publish(cmd)
 
         print(
             f'[CTRL] '

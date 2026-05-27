@@ -189,6 +189,24 @@ void State_PawRequest::run()
 
             if(_path_t >= 1.0f){
                 std::cout << "[PATH] Done\n";
+
+                double qhs, qts, qcs;
+                qhs = _lowState->motorState[0].q;
+                qts = _lowState->motorState[1].q;
+                qcs = _lowState->motorState[2].q;
+
+                std::cout << "MotorState FR: "
+                          << qhs << " "
+                          << qts << " "
+                          << qcs << std::endl;
+    
+                Vec3 fks = solveFK_FR(qhs, qts, qcs);
+
+                std::cout << "[FK] result: "
+                          << fks.x() << " "
+                          << fks.y() << " "
+                          << fks.z() << std::endl;
+
                 _holdTime = 0.0f;
                 _phase = 3;
                 break;
