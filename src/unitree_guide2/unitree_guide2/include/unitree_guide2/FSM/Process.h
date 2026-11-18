@@ -30,8 +30,9 @@ inline Vec3 baseToLegFR(const Vec3& p_base)
 inline bool inWorkspace(double x, double y, double z)
 {
     double y2 = y + L_HIP;
-    double r  = std::sqrt(x*x + y2*y2);
-    double d  = std::sqrt(r*r + z*z);
+    double q1 = atan2(y2, x);
+    double xp = cos(q1)*x + sin(q1)*y2;
+    double d  = sqrt(xp*xp + z*z);
 
     return (d >= std::fabs(L_THIGH - L_CALF)) &&
            (d <= (L_THIGH + L_CALF));
