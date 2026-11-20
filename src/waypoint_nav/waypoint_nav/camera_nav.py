@@ -184,73 +184,51 @@ class CameraNav(Node):
         gx = self.hx - safe_dist * ux
         gy = self.hy - safe_dist * uy
 
-        goal_yaw = math.atan2(
-            self.hy - gy,
-            self.hx - gx)
-        
         print(
             f'[GOAL] '
             f'human=({self.hx:.2f}, {self.hy:.2f}) -> '
-            f'goal=({gx:.2f}, {gy:.2f})'
-        )
+            f'goal=({gx:.2f}, {gy:.2f})')
 
-        if dist < 0.6:
-
-            if self.last_goal_yaw is not None:
-                goal_yaw = self.last_goal_yaw
-
-        else:
-            self.last_goal_yaw = goal_yaw
-
-        dx = gx - self.x
-        dy = gy - self.y
-
-        rho = math.sqrt(dx * dx + dy * dy)
+        rho = math.sqrt(
+            (gx - self.x) ** 2 +
+            (gy - self.y) ** 2)
 
         theta = math.atan2(dy, dx)
-
         alpha = math.atan2(
             math.sin(theta - self.yaw),
             math.cos(theta - self.yaw))
 
-        beta = math.atan2(
-            math.sin(goal_yaw - self.yaw),
-            math.cos(goal_yaw - self.yaw))
+        stop_dist = 0.30
+        align_thresh = 0.05
 
-        if abs(alpha) > 0.3:
-            vx = 0.0
-            wz = 1.5 * alpha
+        if dist > stop_dist:
+
+            if abs(alpha) > align_thresh:
+                vx = 0.0
+                wz = 1.5 * alpha
+
+            else:
+                vx = 0.8 * rho
+                wz = 0.0
+
+                if rho < 0.6:
+                    vx *= rho / 0.6
+
+                if rho < 0.2:
+                    vx = min(vx, 0.15)
 
         else:
-            vx = 0.8 * rho
-            wz = (1.5 * alpha
-                - 0.5 * beta)
-
-        vx = min(vx, 0.6)
-        wz = max(min(wz, 1.0), -1.0)
-
-        if rho < 0.6:
-            vx *= rho / 0.6
-
-        if rho < 0.2:
-            vx = min(vx, 0.15)
-
-        stop_dist = 0.2
-        align_thresh = 0.04
-
-        if rho < stop_dist:
             vx = 0.0
 
-            yaw_err = math.atan2(
-                math.sin(goal_yaw - self.yaw),
-                math.cos(goal_yaw - self.yaw))
-
-            if abs(yaw_err) > align_thresh:
-                wz = max(min(1.0 * yaw_err, 0.4), -0.4)
+            if abs(alpha) > align_thresh:
+                wz = max(min(1.0 * alpha, 0.4), -0.4)
 
             else:
                 wz = 0.0
                 print('[STOP]')
+
+        vx = min(vx, 0.6)
+        wz = max(min(wz, 1.0), -1.0)
 
         if self.enable_motion:
             cmd = Twist()
@@ -263,8 +241,7 @@ class CameraNav(Node):
             f'robot=({self.x:.2f}, {self.y:.2f}) '
             f'yaw={math.degrees(self.yaw):.1f}deg | '
             f'rho={rho:.2f} '
-            f'alpha={alpha:.2f} '
-            f'beta={beta:.2f} | '
+            f'alpha={alpha:.2f} | '
             f'vx={vx:.2f} '
             f'wz={wz:.2f}'
         )

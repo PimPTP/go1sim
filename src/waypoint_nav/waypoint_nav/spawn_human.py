@@ -1,5 +1,6 @@
 import rclpy
 from rclpy.node import Node
+from rclpy.qos import qos_profile_sensor_data
 from geometry_msgs.msg import PoseStamped
 from gazebo_msgs.srv import SpawnEntity, SetEntityState
 from gazebo_msgs.msg import EntityState, ModelStates
@@ -20,17 +21,20 @@ def set_yaw(orientation, yaw):
     orientation.z = math.sin(yaw / 2.0)
     orientation.w = math.cos(yaw / 2.0)
 
+def normalize_angle(angle):
+    return math.atan2(math.sin(angle), math.cos(angle))
+
 
 class SpawnHuman(Node):
     def __init__(self):
         super().__init__('spawn_human')
 
-        self.human_name = "human"
-        self.hand_name = "visual_hand"
-        self.robot_name = "go1"
+        self.human_name = 'human'
+        self.hand_name = 'visual_hand'
+        self.robot_name = 'go1'
 
-        self.human_model_path = os.path.expanduser('~/human_model/person_standing/model.sdf')
-        self.hand_model_path = os.path.expanduser('~/human_model/hand/model.sdf')
+        self.human_model_path = os.path.expanduser('~/go1_ws/human_model/person_standing/model.sdf')
+        self.hand_model_path = os.path.expanduser('~/go1_ws/human_model/hand/model.sdf')
 
         self.spawn_step = 0
         self.spawn_future = None
@@ -39,7 +43,7 @@ class SpawnHuman(Node):
         self.set_cli = self.create_client(SetEntityState, '/set_entity_state')
 
         self.create_subscription(PoseStamped, '/goal_pose', self.move_human, 10)
-        self.create_subscription(ModelStates, '/gazebo/model_states', self.model_states_callback, 10)
+        self.create_subscription(ModelStates, '/gazebo/model_states', self.model_states_callback, qos_profile_sensor_data)
 
         self.hand_pub = self.create_publisher(PoseStamped, '/hand_target_pose', 10)
 
@@ -48,6 +52,7 @@ class SpawnHuman(Node):
         self.human_z = 0.0
         self.human_yaw = 0.0
         self.human_pose_received = False
+        self.pose_lock = threading.Lock()
 
         self.robot_x = 0.0
         self.robot_y = 0.0
@@ -70,8 +75,7 @@ class SpawnHuman(Node):
 
         self.terminal_thread = threading.Thread(
             target=self.terminal_input_loop,
-            daemon=True
-        )
+            daemon=True)
         self.terminal_thread.start()
 
         print('[INFO] SpawnHuman started.')
@@ -101,11 +105,12 @@ class SpawnHuman(Node):
                       else 'Visual hand', 'spawned.')
 
                 if self.spawn_step == 0:
-                    self.human_x = 0.0
-                    self.human_y = 0.0
-                    self.human_z = 0.0
-                    self.human_yaw = self.MODEL_YAW_OFFSET
-                    self.human_pose_received = True
+                    with self.pose_lock:
+                        self.human_x = 0.0
+                        self.human_y = 0.0
+                        self.human_z = 0.0
+                        self.human_yaw = 0.0
+                        self.human_pose_received = True
 
                 self.spawn_step += 1
                 self.spawn_future = None
@@ -147,47 +152,75 @@ class SpawnHuman(Node):
 
     def model_states_callback(self, msg):
         if self.human_name in msg.name:
-            pose = msg.pose[msg.name.index(self.human_name)]
-            self.human_x = pose.position.x
-            self.human_y = pose.position.y
-            self.human_z = pose.position.z
-            self.human_yaw = quat_to_yaw(pose.orientation)
-            self.human_pose_received = True
+            idx = msg.name.index(self.human_name)
+            pose = msg.pose[idx]
+            actual_yaw = quat_to_yaw(pose.orientation)
+
+            with self.pose_lock:
+                self.human_x = pose.position.x
+                self.human_y = pose.position.y
+                self.human_z = pose.position.z
+                self.human_yaw = normalize_angle(
+                    actual_yaw - self.MODEL_YAW_OFFSET
+                )
+                self.human_pose_received = True
 
         if self.robot_name in msg.name:
-            pose = msg.pose[msg.name.index(self.robot_name)]
+            idx = msg.name.index(self.robot_name)
+            pose = msg.pose[idx]
             self.robot_x = pose.position.x
             self.robot_y = pose.position.y
             self.robot_yaw = quat_to_yaw(pose.orientation)
             self.robot_pose_received = True
 
     def set_human_pose(self, x, y, z, desired_yaw):
-        if self.human_move_pending or not self.set_cli.service_is_ready():
-            return
+        if self.human_move_pending:
+            print('[WAIT] Previous person command is still running.')
+            return False
+
+        if not self.set_cli.service_is_ready():
+            print('[WAIT] /set_entity_state service is not available.')
+            return False
+
+        desired_yaw = normalize_angle(desired_yaw)
 
         state = EntityState()
         state.name = self.human_name
-        state.reference_frame = "world"
-        state.pose.position.x = x
-        state.pose.position.y = y
-        state.pose.position.z = z
-        set_yaw(state.pose.orientation,
-                desired_yaw + self.MODEL_YAW_OFFSET)
+        state.reference_frame = 'world'
+        state.pose.position.x = float(x)
+        state.pose.position.y = float(y)
+        state.pose.position.z = float(z)
+        set_yaw(
+            state.pose.orientation,
+            desired_yaw + self.MODEL_YAW_OFFSET)
 
         req = SetEntityState.Request()
         req.state = state
 
+        target_pose = (float(x), float(y), float(z), desired_yaw)
         self.human_move_pending = True
         future = self.set_cli.call_async(req)
-        future.add_done_callback(self.human_move_callback)
+        future.add_done_callback(
+            lambda result_future: self.human_move_callback(
+                result_future, target_pose))
+        return True
 
-    def human_move_callback(self, future):
+    def human_move_callback(self, future, target_pose):
         self.human_move_pending = False
         try:
-            if not future.result().success:
-                print('[ERROR] Cannot move/rotate human.')
+            result = future.result()
+            if not result.success:
+                print('[ERROR] Gazebo rejected person pose:', result.status_message)
+                return
+
+            with self.pose_lock:
+                (self.human_x, self.human_y,
+                 self.human_z, self.human_yaw) = target_pose
+                self.human_pose_received = True
+
+            print('[OK] Person pose updated in Gazebo.')
         except Exception as e:
-            print('[ERROR] human update failed:', e)
+            print('[ERROR] Person update failed:', e)
 
     def move_human(self, msg):
         if self.spawn_step < 1:
@@ -200,17 +233,14 @@ class SpawnHuman(Node):
 
         if frame in ('', 'world', 'map'):
             x_world, y_world = x, y
-
         elif frame in ('base', 'base_link', 'trunk'):
             if not self.robot_pose_received:
                 print('[WAIT] Go1 pose not received.')
                 return
-
             c = math.cos(self.robot_yaw)
             s = math.sin(self.robot_yaw)
             x_world = self.robot_x + c * x - s * y
             y_world = self.robot_y + s * x + c * y
-
         else:
             print('[ERROR] Unsupported frame:', frame)
             return
@@ -220,34 +250,40 @@ class SpawnHuman(Node):
         print(f'[HUMAN] Goal -> ({x_world:.2f}, {y_world:.2f}, {z:.2f})')
 
     def calculate_hand_pose(self):
+        with self.pose_lock:
+            human_x = self.human_x
+            human_y = self.human_y
+            human_z = self.human_z
+            person_yaw = self.human_yaw
+
         with self.offset_lock:
             x = self.last_hx
             y = self.last_hy
             z = self.last_hz
             hand_yaw = self.hand_yaw_offset
 
-        human_yaw = self.human_yaw - self.MODEL_YAW_OFFSET
-        c = math.cos(human_yaw)
-        s = math.sin(human_yaw)
+        c = math.cos(person_yaw)
+        s = math.sin(person_yaw)
 
-        hx = self.human_x + c * x - s * y
-        hy = self.human_y + s * x + c * y
-        hz = self.human_z + z
+        hx = human_x + c * x - s * y
+        hy = human_y + s * x + c * y
+        hz = human_z + z
 
-        return hx, hy, hz, human_yaw + hand_yaw
+        return hx, hy, hz, normalize_angle(person_yaw + hand_yaw)
 
     def update_hand_pose(self):
         if self.spawn_step < 2 or not self.human_pose_received:
             return
-
-        if self.hand_update_pending or not self.set_cli.service_is_ready():
+        if self.hand_update_pending:
+            return
+        if not self.set_cli.service_is_ready():
             return
 
         hx, hy, hz, hand_yaw = self.calculate_hand_pose()
 
         state = EntityState()
         state.name = self.hand_name
-        state.reference_frame = "world"
+        state.reference_frame = 'world'
         state.pose.position.x = hx
         state.pose.position.y = hy
         state.pose.position.z = hz
@@ -262,7 +298,7 @@ class SpawnHuman(Node):
 
         hand_msg = PoseStamped()
         hand_msg.header.stamp = self.get_clock().now().to_msg()
-        hand_msg.header.frame_id = "world"
+        hand_msg.header.frame_id = 'world'
         hand_msg.pose.position.x = hx
         hand_msg.pose.position.y = hy
         hand_msg.pose.position.z = hz
@@ -272,8 +308,9 @@ class SpawnHuman(Node):
     def hand_update_callback(self, future):
         self.hand_update_pending = False
         try:
-            if not future.result().success:
-                print('[ERROR] Cannot update hand.')
+            result = future.result()
+            if not result.success:
+                print('[ERROR] Cannot update hand:', result.status_message)
         except Exception as e:
             print('[ERROR] Hand update failed:', e)
 
@@ -294,7 +331,7 @@ class SpawnHuman(Node):
 
                 target = int(values[0])
                 if target not in (1, 2):
-                    print('[ERROR] First value must be 1 (human) or 2 (hand).')
+                    print('[ERROR] First value must be 1 (person) or 2 (hand).')
                     continue
 
                 numbers = [float(v) for v in values[1:]]
@@ -306,13 +343,11 @@ class SpawnHuman(Node):
 
                 if target == 1 and len(numbers) == 2:
                     x, y = numbers
-                    if not self.human_pose_received:
-                        print('[WAIT] Human pose is not initialized yet.')
-                        continue
-
-                    desired_yaw = self.human_yaw - self.MODEL_YAW_OFFSET
-                    self.set_human_pose(x, y, self.human_z, desired_yaw)
-                    print(f'[HUMAN] Position -> ({x:.2f}, {y:.2f}, {self.human_z:.2f})')
+                    with self.pose_lock:
+                        z = self.human_z
+                        yaw = self.human_yaw
+                    if self.set_human_pose(x, y, z, yaw):
+                        print(f'[HUMAN] Move -> x={x:.2f}, y={y:.2f}')
 
                 elif target == 2 and len(numbers) == 3:
                     x, y, z = numbers
@@ -322,23 +357,20 @@ class SpawnHuman(Node):
                         self.last_hz = z
                     print(f'[HAND] Local offset -> ({x:.2f}, {y:.2f}, {z:.2f})')
 
+                elif target == 1:
+                    yaw = numbers[0]
+                    with self.pose_lock:
+                        x = self.human_x
+                        y = self.human_y
+                        z = self.human_z
+                    if self.set_human_pose(x, y, z, yaw):
+                        print(f'[HUMAN] Rotate -> yaw={yaw:.3f} rad')
+
                 else:
                     yaw = numbers[0]
-
-                    if target == 1:
-                        if not self.human_pose_received:
-                            print('[WAIT] Human pose not received from Gazebo.')
-                            continue
-
-                        self.set_human_pose(
-                            self.human_x, self.human_y, self.human_z, yaw
-                        )
-                        print(f'[HUMAN] Yaw -> {yaw:.3f} rad')
-
-                    else:
-                        with self.offset_lock:
-                            self.hand_yaw_offset = yaw
-                        print(f'[HAND] Relative yaw -> {yaw:.3f} rad')
+                    with self.offset_lock:
+                        self.hand_yaw_offset = yaw
+                    print(f'[HAND] Relative yaw -> {yaw:.3f} rad')
 
             except ValueError:
                 print('[ERROR] Invalid number.')
