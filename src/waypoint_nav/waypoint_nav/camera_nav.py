@@ -35,7 +35,6 @@ class CameraNav(Node):
         self.hy = None
         self.hyaw = 0.0
 
-        self.last_goal_yaw = None
         self.last_detect = False
 
         self.enable_motion = True
@@ -167,67 +166,40 @@ class CameraNav(Node):
 
         self.hx, self.hy = human
 
-        safe_dist = 0.28
-
         dx = self.hx - self.x
         dy = self.hy - self.y
-
         dist = math.sqrt(dx * dx + dy * dy)
 
-        if dist > 1e-6:
-            ux = dx / dist
-            uy = dy / dist
-        else:
-            ux = 0.0
-            uy = 0.0
+        stop_dist = 0.30
+        align_thresh = 0.05
 
-        gx = self.hx - safe_dist * ux
-        gy = self.hy - safe_dist * uy
-
-        print(
-            f'[GOAL] '
-            f'human=({self.hx:.2f}, {self.hy:.2f}) -> '
-            f'goal=({gx:.2f}, {gy:.2f})')
-
-        rho = math.sqrt(
-            (gx - self.x) ** 2 +
-            (gy - self.y) ** 2)
+        rho = dist - stop_dist
 
         theta = math.atan2(dy, dx)
         alpha = math.atan2(
             math.sin(theta - self.yaw),
             math.cos(theta - self.yaw))
 
-        stop_dist = 0.30
-        align_thresh = 0.05
-
         if dist > stop_dist:
+            vx = 0.8 * rho
+            wz = 1.5 * alpha
 
-            if abs(alpha) > align_thresh:
-                vx = 0.0
-                wz = 1.5 * alpha
+            if rho < 0.6:
+                vx *= rho / 0.6
 
-            else:
-                vx = 0.8 * rho
-                wz = 0.0
-
-                if rho < 0.6:
-                    vx *= rho / 0.6
-
-                if rho < 0.2:
-                    vx = min(vx, 0.15)
+            if rho < 0.2:
+                vx = min(vx, 0.15)
 
         else:
             vx = 0.0
 
-            if abs(alpha) > align_thresh:
+            if dist > 1e-6 and abs(alpha) > align_thresh:
                 wz = max(min(1.0 * alpha, 0.4), -0.4)
-
             else:
                 wz = 0.0
                 print('[STOP]')
 
-        vx = min(vx, 0.6)
+        vx = max(0.0, min(vx, 0.6))
         wz = max(min(wz, 1.0), -1.0)
 
         if self.enable_motion:
@@ -240,11 +212,11 @@ class CameraNav(Node):
             f'[CTRL] '
             f'robot=({self.x:.2f}, {self.y:.2f}) '
             f'yaw={math.degrees(self.yaw):.1f}deg | '
-            f'rho={rho:.2f} '
-            f'alpha={alpha:.2f} | '
+            f'd={dist:.2f}m '
+            f'rho={rho:.2f}m '
+            f'alpha={alpha:.2f}rad | '
             f'vx={vx:.2f} '
-            f'wz={wz:.2f}'
-        )
+            f'wz={wz:.2f}')
 
 
 def main():
