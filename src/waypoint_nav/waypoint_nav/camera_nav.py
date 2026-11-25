@@ -96,7 +96,6 @@ class CameraNav(Node):
             x1, y1, x2, y2 = map(int, box.xyxy[0])
 
             cx = int((x1 + x2) * 0.5)
-
             cy = int(y1 + 0.8 * (y2 - y1))
 
             if (cx < 0 or cx >= w or

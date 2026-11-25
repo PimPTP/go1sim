@@ -66,7 +66,7 @@ class WaypointNav(Node):
 
         # TARGET
         if self.hx is not None:
-            safe_dist = 0.28
+            safe_dist = 0.30
 
             dx = self.hx - self.x
             dy = self.hy - self.y

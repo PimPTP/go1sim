@@ -2,12 +2,6 @@
 #define STATE_PAWREQUEST_H
 
 #include "FSM/FSMState.h"
-#include "VisionUDP.h"
-
-struct VisionTarget{ 
-    Vec3 pos_cam; 
-    bool valid; 
-};
 
 class State_PawRequest : public FSMState {
 public:
@@ -28,7 +22,6 @@ private:
     float _startPos[12];
     float _targetPos[12];
 
-    VisionUDP _visionUDP;
     bool _target_init;
     bool _hasTarget;
 
@@ -36,7 +29,7 @@ private:
 
     Vec3 _p_target_filt;
 
-    bool  _use_path;   
+    bool  _use_path;
     bool  _path_init;
     float _path_t;
 
